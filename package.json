@@ -1,0 +1,15 @@
+{
+  "name": "antropolys",
+  "version": "1.0.0",
+  "description": "Juego Antropolys",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https: //Vergel09@bitbucket.org/Vergel09/antropolys.git"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,225 @@
+@font-face{
+  font-family: "Tondu_Beta";
+  font-style: normal;
+  font-weight: normal;
+  src: url(../assets/font/Tondu_Beta.ttf);
+}
+
+@font-face{
+  font-family: "Lalezar-Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: url(../assets/font/Lalezar-Regular.ttf);
+}
+
+body {
+  background-color: #02020c;
+  background-image: url(../assets/pix/fondo.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 88vh;
+}
+
+.container {
+  width:400px;
+  height:370px;
+  margin-top: 5%;
+}
+
+#formContainer{
+  background-image: url(../assets/imagenes_nuevas/PNG/tablero_solo.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#img_login{
+  width: 55%;
+  margin-left: 95px;
+  margin-top: -115px;
+  margin-bottom: -102px;
+}
+
+.form-signin {
+  max-width: 280px;
+  padding: 20px;
+  margin: 20px auto;
+}
+
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: relative;
+  background-color: #EAEBE5;
+  color:#7e8c8d;
+  outline:none;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.form-control{
+  height: 25px;
+  font-family: "Lalezar-Regular";
+}
+
+.form-signin input[type="text"] {
+  margin-bottom: -1px;
+  border-radius: 10px;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: -1px;
+  border-radius: 10px;
+}
+
+.form-control#user{
+  margin-left: 10px;
+  padding-left: 36px;
+}
+.form-control#celular{
+  margin-left: 10px;
+  padding-left: 36px;
+}
+
+.form-group{
+  margin-right: 10px;
+}
+
+.form-signin label{
+  color: #8e3cbc;
+  font-family: "Lalezar-Regular";
+  font-size: 20px;
+  margin-bottom: 2px;
+}
+
+.form-signin #img_icon1{
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  margin-left: -116px;
+  margin-top: -38px;
+}
+
+.form-signin #img_icon2{
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  margin-left: -116px;
+  margin-top: -38px;
+}
+
+#link_olvidoClave{
+  color: #8e3cbc;
+}
+
+.btn#btn_siguiente{
+  background-image: url(../assets/imagenes_nuevas/PNG/btn_siguiente1.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: unset;
+  position: absolute;
+  width: 35vh;
+  height: 7vh;
+}
+
+.btn:focus{
+  border: solid;
+}
+
+.btn#btn_siguiente1{
+  display: none;
+}
+
+#img_logo{
+  margin-left: -80px;
+  margin-top: -115px;
+  width: 80vh;
+}
+
+@media screen and (max-width: 480px){
+  html,body{
+    overflow: hidden;
+  }
+
+  body{
+    background-image: url(../assets/pix/fondo_res.jpg);
+    min-height: 88vh;
+  }
+
+  .container {
+    width:320px;
+    height:380px;
+    margin-top: 6%;
+  }
+
+  #img_login{
+    margin-left: 80px;
+    margin-bottom: -150px;
+  }
+
+  .form-signin {
+    max-width: 280px;
+    padding: 20px;
+    margin: 40px auto;
+  }
+
+  .form-group{
+    margin-right: 20px;
+    margin-left: 10px;
+  }
+
+  .form-signin #img_icon1{
+    width: 45px;
+    height: 45px;
+    margin-left: -103px;
+  }
+  
+  .form-signin #img_icon2{
+    width: 45px;
+    height: 45px;
+    margin-left: -103px;
+  }
+
+  #img_logo{
+    margin-left: -88px;
+    margin-top: -158px;
+    width: 77vh;
+  }
+
+  .btn#btn_siguiente{
+    display: none;
+  }
+ 
+  .btn#btn_siguiente1{
+    display: inline-block;
+    background-image: url(../assets/imagenes_nuevas/PNG/btn_siguiente1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: unset;
+    position: absolute;
+    width: 46vh;
+    height: 9vh;
+    margin-top: 120px;
+  }
+  
+
+}
+
+
+
+
+
+
+
