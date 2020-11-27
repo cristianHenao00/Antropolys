@@ -14,7 +14,7 @@
 
 body {
   background-color: #02020c;
-  background-image: url(../assets/pix/fondo.jpg);
+  background-image: url(../assets/imagenes_nuevas/PNG/fondo2.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -154,7 +154,7 @@ body {
   }
 
   body{
-    background-image: url(../assets/pix/fondo_res.jpg);
+    background-image: url(../assets/imagenes_nuevas/PNG/fondo1.png);
     min-height: 88vh;
   }
 
