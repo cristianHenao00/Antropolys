@@ -169,7 +169,6 @@ body {
 
   #img_login{
     margin-left: 80px;
-    margin-bottom: -150px;
   }
 
   .form-signin {
@@ -200,7 +199,9 @@ body {
     margin-top: -158px;
     width: 77vh;
   }
-
+   #formContainer{
+	   margin-top: -58px;
+   }
   .btn#btn_siguiente{
     display: none;
   }
