@@ -24,7 +24,7 @@ body {
 .container {
   width:400px;
   height:370px;
-  margin-top: 5%;
+  margin-top: 4%;
 }
 
 #formContainer{
@@ -127,27 +127,35 @@ body {
   color: #8e3cbc;
 }
 
-.btn#btn_siguiente{
-  background-image: url(../assets/imagenes_nuevas/PNG/btn_siguiente1.png);
+.btn#btn_entrar{
+  background-image: url(../assets/imagenes_nuevas/PNG/btn-entrar.png);
   background-repeat: no-repeat;
   background-position: center;
   background-color: unset;
   position: absolute;
   width: 35vh;
   height: 7vh;
+  margin-top: 5px;
 }
 
-.btn:focus{
-  border: solid;
+.btn#btn_registro{
+  background-image: url(../assets/imagenes_nuevas/PNG/btn-registro.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: unset;
+  position: absolute;
+  width: 35vh;
+  height: 7vh;
+  margin-top: 60px;
 }
 
-.btn#btn_siguiente1{
+.btn#btn_entrar1,#btn_registro1{
   display: none;
 }
 
 #img_logo{
-  margin-left: -80px;
-  margin-top: -115px;
+  margin-left: -75px;
+  margin-top: -55px;
   width: 80vh;
 }
 
@@ -195,27 +203,40 @@ body {
   }
 
   #img_logo{
-    margin-left: -88px;
-    margin-top: -158px;
+    margin-left: -84px;
+    margin-top: -150px;
     width: 77vh;
   }
    #formContainer{
 	   margin-top: -58px;
    }
-  .btn#btn_siguiente{
+  .btn#btn_entrar,#btn_registro{
     display: none;
   }
  
-  .btn#btn_siguiente1{
-    display: inline-block;
-    background-image: url(../assets/imagenes_nuevas/PNG/btn_siguiente1.png);
+  .btn#btn_entrar1{
+    display: block;
+    background-image: url(../assets/imagenes_nuevas/PNG/btn-entrar1.png);
     background-repeat: no-repeat;
     background-position: center;
     background-color: unset;
     position: absolute;
     width: 46vh;
     height: 9vh;
-    margin-top: 120px;
+    top: 69%;
+    z-index: 3;
+  }
+
+  .btn#btn_registro1{
+    display: block;
+    background-image: url(../assets/imagenes_nuevas/PNG/btn-registro1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: unset;
+    position: absolute;
+    width: 46vh;
+    height: 9vh;
+    top: 78%;
   }
   
 
