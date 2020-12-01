@@ -220,6 +220,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-color: unset;
+	background-size: 60%;
     position: absolute;
     width: 46vh;
     height: 9vh;
