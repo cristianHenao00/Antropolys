@@ -12,7 +12,7 @@
   src: url(../assets/font/Lalezar-Regular.ttf);
 }
 
-body {
+#body_index{
   background-color: #02020c;
   background-image: url(../assets/imagenes_nuevas/PNG/fondo2.png);
   background-repeat: no-repeat;
@@ -132,6 +132,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-color: unset;
+  background-size: 70%;
   position: absolute;
   width: 35vh;
   height: 7vh;
@@ -220,7 +221,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-color: unset;
-	background-size: 60%;
+	  background-size: 62%;
     position: absolute;
     width: 46vh;
     height: 9vh;
@@ -239,13 +240,6 @@ body {
     height: 9vh;
     top: 78%;
   }
-  
 
 }
-
-
-
-
-
-
 
