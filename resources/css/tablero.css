@@ -1,0 +1,174 @@
+@font-face {
+    font-family: "Tondu_Beta";
+    font-style: normal;
+    font-weight: normal;
+    src: url(../assets/font/Tondu_Beta.ttf);
+}
+
+@font-face {
+    font-family: "Lalezar-Regular";
+    font-style: normal;
+    font-weight: normal;
+    src: url(../assets/font/Lalezar-Regular.ttf);
+}
+
+#body_tablero {
+    background-color: #fff;
+    min-height: 88vh;
+}
+
+#body_tablero .container {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#body_tablero .container,
+#body_tablero .row .estancia_1,
+#body_tablero .row .estancia_2,
+#body_tablero .row .estancia_3,
+#body_tablero .row .estancia_4,
+#body_tablero .row .estancia_5,
+#body_tablero .row .estancia_6,
+#body_tablero .row .estancia_7,
+#body_tablero .row .estancia_8,
+#body_tablero .row .estancia_9,
+#body_tablero .row .estancia_13,
+#body_tablero .row .estancia_14,
+#body_tablero .row .estancia_15,
+#body_tablero .row .estancia_1 .content_img,
+#body_tablero .row .estancia_2 .content_img,
+#body_tablero .row .estancia_3 .content_img,
+#body_tablero .row .estancia_4 .content_img,
+#body_tablero .row .estancia_5 .content_img,
+#body_tablero .row .estancia_6 .content_img,
+#body_tablero .row .estancia_7 .content_img,
+#body_tablero .row .estancia_8 .content_img,
+#body_tablero .row .estancia_9 .content_img,
+#body_tablero .row .estancia_13 .content_img,
+#body_tablero .row .estancia_14 .content_img,
+#body_tablero .row .estancia_15 .content_img,
+#body_tablero .row .estancia_1 .content_streetVertical,
+#body_tablero .row .estancia_2 .content_streetVertical,
+#body_tablero .row .estancia_4 .content_streetVertical,
+#body_tablero .row .estancia_5 .content_streetVertical,
+#body_tablero .row .estancia_7 .content_streetVertical,
+#body_tablero .row .estancia_8 .content_streetVertical
+#body_tablero .row .estancia_14 .content_streetVertical,
+#body_tablero .row .content_streetHorizontal {
+    padding: 0;
+}
+
+#body_tablero .row .estancia_1 .content_img img,
+#body_tablero .row .estancia_4 .content_img img,
+#body_tablero .row .estancia_7 .content_img img,
+#body_tablero .row .estancia_13 .content_img img {
+    position: relative;
+    left: 5px;
+}
+
+#body_tablero .row .estancia_4 .content_img img {
+    left: 10px;
+}
+
+#body_tablero .row .estancia_1 .content_img img,
+#body_tablero .row .estancia_3 .content_img img,
+#body_tablero .row .estancia_4 .content_img img,
+#body_tablero .row .estancia_6 .content_img img,
+#body_tablero .row .estancia_7 .content_img img,
+#body_tablero .row .estancia_9 .content_img img,
+#body_tablero .row .estancia_1 .content_streetVertical,
+#body_tablero .row .estancia_2 .content_streetVertical,
+#body_tablero .row .estancia_4 .content_streetVertical,
+#body_tablero .row .estancia_5 .content_streetVertical,
+#body_tablero .row .estancia_7 .content_streetVertical,
+#body_tablero .row .estancia_8 .content_streetVertical {
+    width: 10vh;
+    height: 30vh;
+}
+
+#body_tablero .row .estancia_7 .content_streetVertical,
+#body_tablero .row .estancia_8 .content_streetVertical{
+    height: 34vh;
+}
+
+#body_tablero .row .estancia_7 .content_img img,
+#body_tablero .row .estancia_9 .content_img img{
+    height: 34vh;
+}
+
+#body_tablero .row .estancia_14 .content_streetVertical{
+    width: 12vh;
+    height: 18vh;
+}
+
+#body_tablero .row .estancia_13 .content_img img{
+    width: 20vh;
+    height: 18vh;
+}
+
+#body_tablero .row .estancia_15 .content_img img {
+    width: 18vh;
+    height: 18vh;
+}
+
+#body_tablero .row .estancia_3 .content_img img,
+#body_tablero .row .estancia_6 .content_img img,
+#body_tablero .row .estancia_9 .content_img img {
+    left: 140px;
+    position: relative;
+    z-index: 1;
+}
+
+#body_tablero .row .estancia_15 .content_img img{
+    left: 98px;
+    position: relative;
+    z-index: 1;
+}
+
+#body_tablero .row .estancia_2 .content_img img,
+#body_tablero .row .estancia_5 .content_img img,
+#body_tablero .row .estancia_8 .content_img img {
+    height: 30vh;
+    width: 40vh;
+    position: relative;
+    left: -26px;
+}
+
+#body_tablero .row .estancia_8 .content_img img{
+    height: 34vh;
+}
+
+#body_tablero .row .estancia_14 .content_img img {
+    position: relative;
+    left: -56px;
+    height: 18vh;
+    width: 44vh;
+}
+
+
+#body_tablero .row .estancia_1 .content_streetVertical,
+#body_tablero .row .estancia_4 .content_streetVertical,
+#body_tablero .row .estancia_7 .content_streetVertical {
+    position: relative;
+    left: -12px;
+}
+
+#body_tablero .row .estancia_2 .content_streetVertical,
+#body_tablero .row .estancia_5 .content_streetVertical,
+#body_tablero .row .estancia_8 .content_streetVertical,
+#body_tablero .row .estancia_14 .content_streetVertical {
+    position: relative;
+    left: 155px;
+    z-index: 2;
+}
+
+#body_tablero .row .estancia_1 .content_streetVertical img, 
+#body_tablero .row .estancia_2 .content_streetVertical img {
+    width: 12vh;
+    height: 76vh;
+}
+
+#body_tablero .row .content_streetHorizontal img{
+    width: 10.75vh;
+    height: 10vh;
+}
