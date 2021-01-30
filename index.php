@@ -38,6 +38,7 @@ and open the template in the editor.
                     <br>
                     <button class="btn btn-block" type="submit" id="btn_entrar"></button>
                     <button class="btn btn-block" type="submit" id="btn_registro"></button>
+                    
                 </form>
                 <img id="img_logo" src="resources/assets/imagenes_nuevas/PNG/Logo.png"> 
             </div> <!-- /container -->

@@ -1,0 +1,150 @@
+#body_registro {
+    background-color: #02020c;
+    min-height: 88vh;
+}
+
+#formContainer {
+    margin-top: -25px;
+}
+
+.form-group {
+    margin-bottom: 5px;
+}
+
+.form-registro label {
+    color: #984ba6 !important;
+    font-size: 18px;
+    margin-bottom: -2px;
+}
+
+.form-registro input[type="text"] {
+    margin-bottom: -5px;
+}
+
+.form-registro input[type="radio"] {
+    cursor: pointer;
+    z-index: 2;
+}
+
+
+.form-registro .form-group .content_label {
+    padding: 0;
+    position: relative;
+    left: -25px;
+    top: 4px;
+    z-index: 1;
+}
+
+.btn#btn_registro {
+    margin-top: -9px;
+}
+
+#img_logo {
+    margin-left: -70px;
+    margin-top: -135px;
+}
+
+.form-registro #nameUser_group,
+.form-registro #name1User_group,
+.form-registro #emailUser_group,
+.form-registro #celularNew_group,
+.form-registro #celularConfirmar_group,
+.form-registro #infoCiudad_group,
+.form-registro #infoEdad_group{
+    margin-right: -6px;
+}
+
+.form-registro #generoUser_group{
+    position: relative;
+    top: -5px;
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        background-color: black !important;
+        background-image: none;
+    }
+
+    .container {
+        height: 395px;
+    }
+
+    .form-registro {
+        margin: 60px auto;
+    }
+
+    .form-registro label {
+        font-family: "Lalezar-Regular";
+        font-size: 15px;
+    }
+
+    .btn#btn_registro {
+        display: block;
+        margin-left: 38px;
+        margin-top: -14px;
+        background-size: contain;
+    }
+
+    .form-registro input[type="text"] {
+        margin-bottom: -1px;
+        border-radius: 10px;
+        margin-left: 15px;
+        width: 91%;
+    }
+
+    .form-registro input[type="password"] {
+        margin-bottom: -1px;
+        border-radius: 10px;
+        margin-left: 15px;
+        width: 91%;
+    }
+
+    .form-registro .form-control {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        position: relative;
+        background-color: #EAEBE5;
+        color: #7e8c8d;
+        outline: none;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    .container #content_info #content_info_edad .form-control {
+        position: relative;
+        left: -29px;
+        width: 90% !important;
+    } 
+
+    .container #generoUser_group {
+        position: relative;
+        left: -5px;
+        top: -5px;
+    }
+
+    .form-registro #emailUser_group #emailUser{
+        width: 85% !important;
+    }
+
+    .form-registro .bloque #name1User_group,
+    .form-registro .bloque #celularConfirmar_group {
+        position: relative;
+        left: -10px;
+    }
+
+    .form-registro .bloque{
+        position: relative;
+        left: -20px;
+    }
+
+    #img_logo {
+        margin-left: -70px;
+        margin-top: -150px;
+    }
+
+}
