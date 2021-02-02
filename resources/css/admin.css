@@ -1,0 +1,73 @@
+@font-face {
+    font-family: "Tondu_Beta";
+    font-style: normal;
+    font-weight: normal;
+    src: url(../assets/font/Tondu_Beta.ttf);
+}
+
+@font-face {
+    font-family: "Lalezar-Regular";
+    font-style: normal;
+    font-weight: normal;
+    src: url(../assets/font/Lalezar-Regular.ttf);
+}
+
+
+.skin-blue .main-header .logo {
+    background-color: #623774;
+}
+
+.skin-blue .main-header .logo:hover {
+    background-color: #623774;
+}
+
+.skin-blue .main-header .navbar {
+    background-color: #8e3cbc;
+}
+
+.skin-blue .main-header .navbar .sidebar-toggle:hover {
+    background-color: #8e3cbc;
+}
+
+.skin-blue .content-wrapper .content-header{
+    margin-left: 20px;
+    font-weight: bolder;
+}
+
+.skin-blue .content-wrapper .content-header span{
+    color: grey;
+}
+
+.skin-blue .content-wrapper .container .nav.nav-tabs{
+    margin-top: 15px;
+    background-color: #fff;
+    border-radius: 0;
+}
+
+
+.skin-blue .content-wrapper .container .nav.nav-tabs li.active a {
+    color: grey;
+    border: 3px solid transparent;
+    border-top-color: #3c8dbc;
+    border-radius: 0;
+    
+}
+
+.skin-blue .content-wrapper .container .nav.nav-tabs li a{
+    color: grey;
+    font-weight: bold;
+    border-radius: 0;
+}
+
+.skin-blue .content-wrapper .container .nav.nav-tabs li a:hover{
+    background-color: #fff;
+}
+
+.skin-blue .content-wrapper .container .nav.nav-tabs li a:focus{
+    background-color: #fff;
+    border: none;
+}
+
+.skin-blue .sidebar-menu>li.active>a {
+    border-left-color: #3c8dbc !important;
+}
