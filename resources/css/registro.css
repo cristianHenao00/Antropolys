@@ -1,10 +1,9 @@
-#body_registro {
-    background-color: #02020c;
-    min-height: 88vh;
+.formContainer {
+    margin-top: -25px;
 }
 
-#formContainer {
-    margin-top: -25px;
+.form-registro{
+    margin-left: 30px;
 }
 
 .form-group {
@@ -15,6 +14,10 @@
     color: #984ba6 !important;
     font-size: 18px;
     margin-bottom: -2px;
+}
+
+.form-registro .label_ {
+    margin-left: 30px;
 }
 
 .form-registro input[type="text"] {
@@ -35,50 +38,75 @@
     z-index: 1;
 }
 
-.btn#btn_registro {
+.btn.btnRegistro {
     margin-top: -9px;
 }
 
-#img_logo {
+.imgLogo {
     margin-left: -70px;
     margin-top: -135px;
 }
 
-.form-registro #nameUser_group,
-.form-registro #name1User_group,
-.form-registro #emailUser_group,
-.form-registro #celularNew_group,
-.form-registro #celularConfirmar_group,
-.form-registro #infoCiudad_group,
-.form-registro #infoEdad_group{
-    margin-right: -6px;
+.form-registro .nameUserGroup,
+.form-registro .name1UserGroup,
+.form-registro .emailUserGroup,
+.form-registro .passNewGroup,
+.form-registro .passConfirmarGroup,
+.form-registro .infoCiudadGroup,
+.form-registro .infoFechaGroup{
+    margin-right: -25px;
 }
 
-.form-registro #generoUser_group{
+.form-registro .generoUserGroup{
     position: relative;
     top: -5px;
 }
 
-@media screen and (max-width: 480px) {
-    body {
-        background-color: black !important;
-        background-image: none;
-    }
+.btn.btnRegistrarme {
+    background-image: url(../assets/imagenes_nuevas/PNG/Button-registrarme.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: unset;
+    background-size: contain;
+    position: absolute;
+    width: 35vh;
+    height: 7vh;
+    margin-left: 14px;
+    margin-top: -15px;
+}
 
+.form-registro .form-control.fecha{
+    font-size: 10px;
+}
+
+.imgLogoR {
+    background-image: url(../assets/imagenes_nuevas/PNG/Logo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: unset;
+    background-size: 160%;
+    margin-left: 25px;
+    margin-top: -118px;
+    width: 50vh;
+    height: 50vh;
+    z-index: -1;
+  }
+
+@media screen and (max-width: 480px) {
     .container {
         height: 395px;
     }
 
     .form-registro {
-        margin: 60px auto;
+        margin: 45px auto;
+        margin-left: -15px;
     }
 
     .form-registro label {
-        font-family: "Lalezar-Regular";
         font-size: 15px;
     }
 
-    .btn#btn_registro {
+    .btn.btnRegistrarme {
         display: block;
         margin-left: 38px;
         margin-top: -14px;
@@ -99,6 +127,13 @@
         width: 91%;
     }
 
+    .form-registro input[type="radio"] {
+        position: relative;
+        top: -2px;
+        left: -5px;
+        width: 15px;
+    }
+
     .form-registro .form-control {
         -webkit-touch-callout: none;
         -webkit-user-select: none;
@@ -115,26 +150,23 @@
         box-sizing: border-box;
     }
 
-    .container #content_info #content_info_edad .form-control {
-        position: relative;
-        left: -29px;
+    .container .contentInfo .content_infoFecha .form-control {       
         width: 90% !important;
     } 
 
-    .container #generoUser_group {
-        position: relative;
-        left: -5px;
-        top: -5px;
+    .form-registro .emailUserGroup .emailUser{
+        width: 90% !important;
     }
 
-    .form-registro #emailUser_group #emailUser{
-        width: 85% !important;
+    .form-registro .bloque .name1UserGroup,
+    .form-registro .bloque .passConfirmarGroup {
+        position: relative;
+        left: 3px;
     }
 
-    .form-registro .bloque #name1User_group,
-    .form-registro .bloque #celularConfirmar_group {
+    .form-registro .bloque .label_ {
         position: relative;
-        left: -10px;
+        left: 15px;
     }
 
     .form-registro .bloque{
@@ -142,9 +174,18 @@
         left: -20px;
     }
 
-    #img_logo {
+    .imgLogo {
         margin-left: -70px;
         margin-top: -150px;
+    }
+
+    .form-registro .form-control.fecha{
+        font-size: 10px;
+    }
+
+    .btn.btnRegistrarme {
+        margin-left: 15px;
+        margin-top: -20px;
     }
 
 }

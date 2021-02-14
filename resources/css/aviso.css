@@ -1,0 +1,90 @@
+@font-face {
+    font-family: "Tondu_Beta";
+    font-style: normal;
+    font-weight: normal;
+    src: url(../assets/font/Tondu_Beta.ttf);
+  }
+  
+  @font-face {
+    font-family: "Lalezar-Regular";
+    font-style: normal;
+    font-weight: normal;
+    src: url(../assets/font/Lalezar-Regular.ttf);
+  }
+
+.bodyAviso {
+    background-color: #02020c;
+    background-image: url(../assets/imagenes_nuevas/PNG/bg_mapa.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 85vh;
+}
+
+.container {
+    width: 510px;
+    height: 340px;
+    margin-top: 8%;
+    padding: 0;
+}
+
+.bodyAviso .imgAviso{
+    width: 70%;
+    margin-left: 60px;
+    z-index: 1;
+    position: relative;
+}
+
+.formContainer {
+    background-image: url(../assets/imagenes_nuevas/PNG/hoja_PopUp.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 125%;
+    z-index: 2;
+    margin-top: -85px;
+    margin-left: -84px;
+    position: relative;
+    font-family: "Lalezar-Regular";
+    font-size: 25px;
+}
+
+.formContainer .textAviso {
+    color: saddlebrown;
+    position: relative;
+    top: 90px;
+    left: 140px;
+    text-align: center;
+    width: 60%;
+    padding: 0;
+}
+
+.btn.btnNo {
+    background-image: url(../assets/imagenes_nuevas/PNG/btn_no.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: unset;
+    background-size: 40%;
+    position: absolute;
+    width: 50vh;
+    height: 13vh;
+}
+
+.btn.btnSi {
+    background-image: url(../assets/imagenes_nuevas/PNG/btn_si.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: unset;
+    background-size: 40%;
+    position: absolute;
+    width: 50vh;
+    height: 13vh;
+}
+
+.formContainer .textAviso .styleUser {color: red;}
+
+.formContainer .contentBtns {
+    position: relative;
+    left: 78px;
+    top: 70px;
+}

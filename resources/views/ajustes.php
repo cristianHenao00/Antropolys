@@ -16,32 +16,32 @@ and open the template in the editor.
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Ajustes antropolys</title>
 </head>
-<body id="body_ajustes">
+<body class="bodyAjustes" id="body_ajustes">
 
     <div class="container ajustes" >
-        <img id="img_ajustes" src="../../resources/assets/imagenes_nuevas/PNG/tablero_ajustes.png">
-        <button class="btn btn-block" type="submit" id="btn_cerrarAjustes"></button>
+        <img class="imgAjustes" id="img_ajustes" src="../../resources/assets/imagenes_nuevas/PNG/tablero_ajustes.png">
+        <button class="btn btn-block btnCerrarAjustes" type="submit" id="btn_cerrarAjustes"></button>
         <div class="row">
-            <div class="container" id="content_ajustes">
-                <div class="row" id="content_ajustes1">
+            <div class="container contentAjustes" id="content_ajustes">
+                <div class="row contentAjustes1" id="content_ajustes1">
                     <div class="col-md-6">
                         <label for="sonido">Sonido</label>
-                        <button class="btn" type="submit" id="btn_off_on"></button>
+                        <button class="btn btnOffOn" type="submit" id="btn_off_on"></button>
                     </div>
                     <div class="col-md-6">
                         <label for="musica">Música</label>
-                        <button class="btn" type="submit" id="btn_off_on1"></button>
+                        <button class="btn btnOffOn1" type="submit" id="btn_off_on1"></button>
                     </div>
                 </div>
-                <div class="row" id="content_ajustes2">
+                <div class="row contentAjustes2" id="content_ajustes2">
                     <div class="col-md-5">
                         <label for="lenguaje">Lenguaje</label>
                         <label for="lenguaje">Aqui va los lenguajes</label>
                     </div>
                     <div class="col-md-7">
-                        <button class="btn" type="submit" id="acercaDe"></button>
+                        <button class="btn acercaDe" type="submit" id="acercaDe"></button>
                     </div>
-                    <button class="btn" type="submit" id="restaurar"></button>
+                    <button class="btn restaurar" type="submit" id="restaurar"></button>
                 </div>
             </div>
         </div>

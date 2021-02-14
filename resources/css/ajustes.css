@@ -12,18 +12,18 @@
   src: url(../assets/font/Lalezar-Regular.ttf);
 }
 
-#body_ajustes{
+.bodyAjustes{
     background-color: black;
     min-height: 88vh;  
 }
 
 .container{
-    width:400px;
+    width:390px;
     height:370px;
     margin-top: 4%;
 }
 
-#content_ajustes{
+.contentAjustes{
     background-image: url(../assets/imagenes_nuevas/PNG/tablero_solo.png);
     background-repeat: no-repeat;
     background-position: center;
@@ -36,14 +36,14 @@
     color: #02020c;
 }
 
-#img_ajustes{
+.imgAjustes{
     width: 55%;
     margin-left: 95px;
     z-index: 1;
     position: relative;
 }
 
-.btn#btn_cerrarAjustes{
+.btn.btnCerrarAjustes{
     background-image: url(../assets/imagenes_nuevas/PNG/btn_cerrar.png);
     background-repeat: no-repeat;
     background-position: center;
@@ -57,14 +57,14 @@
     z-index: 3;
 }
 
-#content_ajustes1{
+.contentAjustes1{
     max-width: 300px;
     padding: 20px;
     margin: 45px auto;
     text-align: center;
 }
 
-.btn#btn_off_on{
+.btn.btnOffOn{
     background-image: url(../assets/imagenes_nuevas/PNG/btn_on.png);
     background-repeat: no-repeat;
     background-position: center;
@@ -74,7 +74,7 @@
     height: 5vh;
 }
 
-.btn#btn_off_on:hover{
+.btn.btnOffOn:hover{
     background-image: url(../assets/imagenes_nuevas/PNG/btn_off.png);
     background-repeat: no-repeat;
     background-position: center;
@@ -84,7 +84,7 @@
     height: 5vh;
 }
 
-.btn#btn_off_on1{
+.btn.btnOffOn1{
     background-image: url(../assets/imagenes_nuevas/PNG/btn_off1.png);
     background-repeat: no-repeat;
     background-position: center;
@@ -94,7 +94,7 @@
     height: 4vh;
 }
 
-.btn#btn_off_on1:hover{
+.btn.btnOffOn1:hover{
     background-image: url(../assets/imagenes_nuevas/PNG/btn_on1.png);
     background-repeat: no-repeat;
     background-position: center;
@@ -104,14 +104,14 @@
     height: 4vh;      
 }
 
-#content_ajustes2{
+.contentAjustes2{
     max-width: 285px;
     padding: 18px;
     margin: -40px auto;
     text-align: center;
 }
 
-.btn#acercaDe{
+.btn.acercaDe{
     background-image: url(../assets/imagenes_nuevas/PNG/btn_acerca_de.png);
     background-repeat: no-repeat;
     background-position: left;
@@ -125,7 +125,7 @@
     padding-left: 15px;
 }
   
-.btn#restaurar{
+.btn.restaurar{
     background-image: url(../assets/imagenes_nuevas/PNG/btn_restaurar.png);
     background-repeat: no-repeat;
     background-position: center;
@@ -140,16 +140,25 @@
         overflow: hidden;
     }
 
-    .btn#btn_cerrarAjustes{
-        top: 11vh;
-        left: 42vh;
+    .container{
+        width: 385px;
     }
 
-    .btn#restaurar{
+    .imgAjustes{
+        top: 10px;
+        position: relative;
+    }
+
+    .btn.btnCerrarAjustes{
+        top: 11vh;
+        left: 36vh;
+    }
+
+    .btn.restaurar{
         margin-top: 10px;
     }
 
-    #content_ajustes2{
+    .contentAjustes2{
        margin-top: -60px;
      
     }

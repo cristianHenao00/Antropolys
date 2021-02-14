@@ -12,163 +12,134 @@
     src: url(../assets/font/Lalezar-Regular.ttf);
 }
 
-#body_tablero {
-    background-color: #fff;
+.bodyTablero {
+    background-color: #415167;
+    /* background-color: #fff; */
     min-height: 88vh;
 }
 
-#body_tablero .container {
-    margin-left: 10px;
-    margin-right: 10px;
+.bodyTablero .container {
+    margin: 0;
+    padding: 0;
+    padding-left: 15px;
 }
 
-#body_tablero .container,
-#body_tablero .row .estancia_1,
-#body_tablero .row .estancia_2,
-#body_tablero .row .estancia_3,
-#body_tablero .row .estancia_4,
-#body_tablero .row .estancia_5,
-#body_tablero .row .estancia_6,
-#body_tablero .row .estancia_7,
-#body_tablero .row .estancia_8,
-#body_tablero .row .estancia_9,
-#body_tablero .row .estancia_13,
-#body_tablero .row .estancia_14,
-#body_tablero .row .estancia_15,
-#body_tablero .row .estancia_1 .content_img,
-#body_tablero .row .estancia_2 .content_img,
-#body_tablero .row .estancia_3 .content_img,
-#body_tablero .row .estancia_4 .content_img,
-#body_tablero .row .estancia_5 .content_img,
-#body_tablero .row .estancia_6 .content_img,
-#body_tablero .row .estancia_7 .content_img,
-#body_tablero .row .estancia_8 .content_img,
-#body_tablero .row .estancia_9 .content_img,
-#body_tablero .row .estancia_13 .content_img,
-#body_tablero .row .estancia_14 .content_img,
-#body_tablero .row .estancia_15 .content_img,
-#body_tablero .row .estancia_1 .content_streetVertical,
-#body_tablero .row .estancia_2 .content_streetVertical,
-#body_tablero .row .estancia_4 .content_streetVertical,
-#body_tablero .row .estancia_5 .content_streetVertical,
-#body_tablero .row .estancia_7 .content_streetVertical,
-#body_tablero .row .estancia_8 .content_streetVertical
-#body_tablero .row .estancia_14 .content_streetVertical,
-#body_tablero .row .content_streetHorizontal {
+.bodyTablero .container .content_img1,
+.bodyTablero .container .content_img1 .img1,
+.bodyTablero .container .content_img1 .imgStreet,
+.bodyTablero .container .content_img1 .img2,
+.bodyTablero .container .content_img1 .img3,
+.bodyTablero .container .content_img2,
+.bodyTablero .container .content_img2 .img1,
+.bodyTablero .container .content_img2 .imgStreet,
+.bodyTablero .container .content_img2 .img2,
+.bodyTablero .container .content_img2 .img3,
+.bodyTablero .container .content_streetH1,
+.bodyTablero .container .content_streetH1 .img1,
+.bodyTablero .container .content_streetH1 .img2,
+.bodyTablero .container .content_streetH1 .img3,
+.bodyTablero .container .content_streetH2,
+.bodyTablero .container .content_streetH2 .img1,
+.bodyTablero .container .content_streetH2 .img2,
+.bodyTablero .container .content_streetH2 .img3 {
     padding: 0;
 }
 
-#body_tablero .row .estancia_1 .content_img img,
-#body_tablero .row .estancia_4 .content_img img,
-#body_tablero .row .estancia_7 .content_img img,
-#body_tablero .row .estancia_13 .content_img img {
-    position: relative;
-    left: 5px;
-}
-
-#body_tablero .row .estancia_4 .content_img img {
-    left: 10px;
-}
-
-#body_tablero .row .estancia_1 .content_img img,
-#body_tablero .row .estancia_3 .content_img img,
-#body_tablero .row .estancia_4 .content_img img,
-#body_tablero .row .estancia_6 .content_img img,
-#body_tablero .row .estancia_7 .content_img img,
-#body_tablero .row .estancia_9 .content_img img,
-#body_tablero .row .estancia_1 .content_streetVertical,
-#body_tablero .row .estancia_2 .content_streetVertical,
-#body_tablero .row .estancia_4 .content_streetVertical,
-#body_tablero .row .estancia_5 .content_streetVertical,
-#body_tablero .row .estancia_7 .content_streetVertical,
-#body_tablero .row .estancia_8 .content_streetVertical {
-    width: 10vh;
+.bodyTablero .container .content_img1 .img1,
+.bodyTablero .container .content_img1 .img3,
+.bodyTablero .container .content_img2 .img1,
+.bodyTablero .container .content_img2 .img3 {
+    width: 12vh;
     height: 30vh;
 }
 
-#body_tablero .row .estancia_7 .content_streetVertical,
-#body_tablero .row .estancia_8 .content_streetVertical{
-    height: 34vh;
+.bodyTablero .container .content_img2 .img1,
+.bodyTablero .container .content_img2 .img3 {
+    height: 32vh;
 }
 
-#body_tablero .row .estancia_7 .content_img img,
-#body_tablero .row .estancia_9 .content_img img{
-    height: 34vh;
+.bodyTablero .container .content_img1 .imgStreet {
+    width: 13vh;
+    height: 31.75vh;
 }
 
-#body_tablero .row .estancia_14 .content_streetVertical{
-    width: 12vh;
-    height: 18vh;
+.bodyTablero .container .content_img2 .imgStreet {
+    width: 13vh;
+    height: 34.45vh;
+    margin-top: -10px;
 }
 
-#body_tablero .row .estancia_13 .content_img img{
-    width: 20vh;
-    height: 18vh;
-}
-
-#body_tablero .row .estancia_15 .content_img img {
-    width: 18vh;
-    height: 18vh;
-}
-
-#body_tablero .row .estancia_3 .content_img img,
-#body_tablero .row .estancia_6 .content_img img,
-#body_tablero .row .estancia_9 .content_img img {
-    left: 140px;
-    position: relative;
-    z-index: 1;
-}
-
-#body_tablero .row .estancia_15 .content_img img{
-    left: 98px;
-    position: relative;
-    z-index: 1;
-}
-
-#body_tablero .row .estancia_2 .content_img img,
-#body_tablero .row .estancia_5 .content_img img,
-#body_tablero .row .estancia_8 .content_img img {
+.bodyTablero .container .content_img1 .img2,
+.bodyTablero .container .content_img2 .img2 {
+    width: 25%;
     height: 30vh;
-    width: 40vh;
-    position: relative;
-    left: -26px;
 }
 
-#body_tablero .row .estancia_8 .content_img img{
-    height: 34vh;
+.bodyTablero .container .content_img2 .img2 {
+    height: 32vh;
 }
 
-#body_tablero .row .estancia_14 .content_img img {
-    position: relative;
-    left: -56px;
-    height: 18vh;
-    width: 44vh;
+.bodyTablero .container .content_img1 .img1 img,
+.bodyTablero .container .content_img1 .img2 img,
+.bodyTablero .container .content_img1 .img3 img,
+.bodyTablero .container .content_img2 .img1 img,
+.bodyTablero .container .content_img2 .img2 img,
+.bodyTablero .container .content_img2 .img3 img {
+    width: 100%;
+    height: 100%;
 }
 
-
-#body_tablero .row .estancia_1 .content_streetVertical,
-#body_tablero .row .estancia_4 .content_streetVertical,
-#body_tablero .row .estancia_7 .content_streetVertical {
-    position: relative;
-    left: -12px;
+.bodyTablero .container .content_img1 .imgStreet img,
+.bodyTablero .container .content_img2 .imgStreet img {
+    width: 100%;
+    height: 100%;
 }
 
-#body_tablero .row .estancia_2 .content_streetVertical,
-#body_tablero .row .estancia_5 .content_streetVertical,
-#body_tablero .row .estancia_8 .content_streetVertical,
-#body_tablero .row .estancia_14 .content_streetVertical {
-    position: relative;
-    left: 155px;
-    z-index: 2;
+.bodyTablero .container .content_streetH1 .img1 img,
+.bodyTablero .container .content_streetH1 .img2 img,
+.bodyTablero .container .content_streetH1 .img3 img,
+.bodyTablero .container .content_streetH2 .img1 img,
+.bodyTablero .container .content_streetH2 .img2 img,
+.bodyTablero .container .content_streetH2 .img3 img {
+    width: 100%;
+    height: 100%;
 }
 
-#body_tablero .row .estancia_1 .content_streetVertical img, 
-#body_tablero .row .estancia_2 .content_streetVertical img {
-    width: 12vh;
-    height: 76vh;
+.bodyTablero .container .content_streetH1 .img1,
+.bodyTablero .container .content_streetH1 .img2,
+.bodyTablero .container .content_streetH1 .img3,
+.bodyTablero .container .content_streetH2 .img1,
+.bodyTablero .container .content_streetH2 .img2,
+.bodyTablero .container .content_streetH2 .img3 {
+    height: 12vh;
 }
 
-#body_tablero .row .content_streetHorizontal img{
-    width: 10.75vh;
-    height: 10vh;
+.bodyTablero .container .content_streetH1 .img1,
+.bodyTablero .container .content_streetH2 .img1 {
+    width: 14.15vh;
+}
+
+.bodyTablero .container .content_streetH1 .img2,
+.bodyTablero .container .content_streetH2 .img2 {
+    width: 25.85%;
+    margin-left: 80px;
+}
+
+.bodyTablero .container .content_streetH1 .img3,
+.bodyTablero .container .content_streetH2 .img3 {
+    width: 16.45vh;
+    margin-left: 82px;
+}
+
+.bodyTablero .container .content_streetH1 .img1,
+.bodyTablero .container .content_streetH1 .img2,
+.bodyTablero .container .content_streetH1 .img3 {
+    margin-top: -12px;
+    z-index: -1;
+}
+
+.bodyTablero .container .content_streetH2 .img1,
+.bodyTablero .container .content_streetH2 .img2,
+.bodyTablero .container .content_streetH2 .img3 {
+    margin-top: -8px;
 }
