@@ -79,11 +79,11 @@ and open the template in the editor.
                     </div>
                     <label for="genero" style="margin-top: 5px; margin-left: 30px;">Genero</label>
                     <div class="row form-group generoUserGroup" id="generoUser_group" style="position: relative; ;left: 10px;">
-                        <div class="col-xs-6" style="position: relative; left: 60px;">
+                        <div class="col-xs-6 _radio" style="position: relative; left: 60px;">
                             <div class="col-xs-6"> <input type="radio" class="form-control generoMUser" name="genero" id="generoMUser" value="M" required autofocus> </div>
                             <div class="col-xs-6 content_label"> <label> M </label> </div>
                         </div>
-                        <div class="col-xs-6" style="position: relative; left: -15px;">
+                        <div class="col-xs-6 _radio" style="position: relative; left: -15px;">
                             <div class="col-xs-6"> <input type="radio" class="form-control generoFUser" name="genero" id="generoFUser" value="F" required autofocus>  </div>
                             <div class="col-xs-6 content_label"> <label> F </label> </div>
                         </div>

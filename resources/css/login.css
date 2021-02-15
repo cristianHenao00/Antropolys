@@ -119,6 +119,7 @@
 
 .linkOlvidoClave {
   color: #8e3cbc;
+  cursor: pointer;
 }
 
 .btn.btnEntrar {
@@ -138,6 +139,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-color: unset;
+  background-size: 70%;
   position: absolute;
   width: 35vh;
   height: 7vh;
@@ -162,7 +164,69 @@
   z-index: -1;
 }
 
-@media screen and (max-width: 480px) {
+.container .modal.fade.collapse.in , 
+.container .modal.fade.collapse {
+  background-image: url(../assets/imagenes_nuevas/PNG/hoja_PopUp.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: unset;
+  background-size: 135%;
+  width: 36%;
+  height: 38%;
+  margin-top: 13%;
+  margin-left: 32%;
+  font-family: "Lalezar-Regular";
+  -webkit-box-shadow: 0px 0px 243px 39px rgb(0 0 0 / 75%);
+  -moz-box-shadow: 0px 0px 243px 39px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 243px 39px rgb(0 0 0 / 75%);
+}
+
+.container .modal.fade.collapse.in .head_modal .textAviso, 
+.container .modal.fade.collapse .head_modal .textAviso {
+  color: saddlebrown;
+  position: relative;
+  top: 75px;
+  left: 110px;
+  text-align: center;
+  width: 60%;
+  padding: 0;
+  font-size: 35px;
+}
+
+.container .modal.fade.collapse.in .body_modal .btnsModal, 
+.container .modal.fade.collapse .body_modal .btnsModal {
+  margin-top: 15%;
+  margin-left: -10%;
+}
+
+.container .modal.fade.collapse.in .body_modal .btnsModal .btn1, 
+.container .modal.fade.collapse .body_modal .btnsModal .btn1 {
+  margin-right: 5%;
+}
+
+.btn.btnNo {
+  background-image: url(../assets/imagenes_nuevas/PNG/btn_no.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: unset;
+  background-size: 40%;
+  position: absolute;
+  width: 50vh;
+  height: 13vh;
+}
+
+.btn.btnSi {
+  background-image: url(../assets/imagenes_nuevas/PNG/btn_si.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: unset;
+  background-size: 40%;
+  position: absolute;
+  width: 50vh;
+  height: 13vh;
+}
+
+@media screen and (max-width: 480px) and (max-height: 900px) {
 
   html,
   body {
@@ -249,12 +313,50 @@
     height: 9vh;
   }
 
-}
-
-@media screen and (max-height: 900px) {
   .container .contentBotones {
     margin-left: -25px;
   }
+
+  .container .modal.fade.collapse.in , 
+  .container .modal.fade.collapse {
+    background-size: 125%;
+    width: 90%;
+    height: 22%;
+    margin-top: 40%;
+    margin-left: 5%;
+  }
+
+  .container .modal.fade.collapse.in .head_modal .textAviso, 
+  .container .modal.fade.collapse .head_modal .textAviso {
+    top: 45px;
+    left: 80px;
+    font-size: 25px;
+  }
+
+  .container .modal.fade.collapse.in .body_modal .btnsModal, 
+  .container .modal.fade.collapse .body_modal .btnsModal {
+    margin-top: 5%;
+  }
+
+  .container .modal.fade.collapse.in .body_modal .btnsModal .btn1, 
+  .container .modal.fade.collapse .body_modal .btnsModal .btn1 {
+    margin-right: 10px;
+  }
+
+  .btn.btnNo {
+    background-size: 45%;
+    position: absolute;
+    width: 30vh;
+    height: 13vh;
+  }
+
+  .btn.btnSi {
+    background-size: 45%;
+    position: absolute;
+    width: 30vh;
+    height: 13vh;
+  }
+
 }
 
 

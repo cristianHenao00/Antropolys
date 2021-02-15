@@ -51,7 +51,12 @@ class registro{
                 if (this.readyState == 4 && this.status == 200) {
                     var fjson = JSON.parse(this.responseText);
                     if(fjson.ack){
-                        setTimeout(function(){ location.href = "url"; }, 3000);
+                        if(fjson.respuesta == "Juego nuevo"){
+                            setTimeout(function(){ location.href = "resources/views/configuracion.php"; }, 3000);
+                        }else{
+                            setTimeout(function(){ location.href = "resources/views/aviso.php"; }, 3000);
+                        }
+                        console.log('...',fjson);
                         
                     }else msjBC.informacion('ERROR',fjson.respuesta); 
                 }
@@ -84,6 +89,8 @@ class registro{
         }
         return true;
     }
+
+    
 }
 
 var regi = new registro();
