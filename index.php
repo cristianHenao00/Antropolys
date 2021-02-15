@@ -21,7 +21,7 @@ and open the template in the editor.
     <script src="resources/js/tostadas/pnotify.animate.js"></script>
     <script src="resources/js/tostadas/pnotify.buttons.js"></script>
     <script src="resources/js/tostadas/mensajes.js"></script>
-    <script src="resources/js/registro.js""></script>
+    <script src="resources/js/registro.js"></script>
 
     <title>Login antropolys</title>
 </head>
@@ -33,7 +33,7 @@ and open the template in the editor.
             <div class="container formContainer" id="formContainer">
                 
                 <form method='post' class="form-signin text-center" id="login" role="form">
-                    <label for="user">Usuario</label>
+                    <label for="user">Correo</label>
                     <div class="form-group userGroup" id="user_group">
                         <input type="text" class="form-control user" name="user" id="user" required autofocus>
                         <img src="resources/assets/imagenes_nuevas/PNG/estrella.png" class="imgIcon1" id="img_icon1">

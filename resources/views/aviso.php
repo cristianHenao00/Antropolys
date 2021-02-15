@@ -14,12 +14,14 @@ and open the template in the editor.
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="../js/registro.js"></script>
     <title>Aviso antropolys</title>
 </head>
-<body class="bodyAviso" id="body_aviso">
+<body class="bodyAviso" id="body_aviso" onload="/*regi.aviso_data_game()*/">
     <?php
-        $user = "Camilo_64";
-        $dificultad = "estrella normal";
+        session_start();//iniciando session 
+        $user = $_SESSION['data_game_antropolys']['nombre'].' '.$_SESSION['data_game_antropolys']['apellido'];
+        $dificultad = $_SESSION['data_game_antropolys']['longitud'].' '.$_SESSION['data_game_antropolys']['nivel'];;
     ?>
     <div class="container aviso" >
         <img class="imgAviso" id="img_aviso" src="../../resources/assets/imagenes_nuevas/PNG/btn_juguemos.png">
