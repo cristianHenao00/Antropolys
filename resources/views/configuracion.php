@@ -10,43 +10,48 @@ and open the template in the editor.
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="../../resources/assets/pix/favico.png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link href="../../resources/css/ganaste.css" rel="stylesheet" >
-
+    <link rel="stylesheet" href="../../resources/css/login.css">
+    <link rel="stylesheet" href="../../resources/css/configuracion.css">
+    <!-- <script src="js/ajax.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <title>Ganaste antropolys</title>
+    
+    <title>Configuración antropolys</title>
 </head>
-<body id="body_ganaste">
-
-    <div class="container" >
-        <img id="img_ganaste" src="../../resources/assets/imagenes_nuevas/PNG/ganaste_letrero.png">
+<body class="bodyConfig" id="body_config">
+    <div class="container">
+		
         <div class="row">
-            <div class="container" id="content_ganaste">
-                <div class="row" id="content_ganaste1">
-                    <img id="img_fondoEstrella_uno" src="../assets/imagenes_nuevas/PNG/estrella-fondo.png">
-                    <img id="img_fondoEstrella_dos" src="../assets/imagenes_nuevas/PNG/estrella-fondo.png">
-                    <img id="img_fondoEstrella_tres" src="../assets/imagenes_nuevas/PNG/estrella-fondo.png">
-                    <img id="img_estrella_uno" src="../assets/imagenes_nuevas/PNG/estrella.png">
-                    <img id="img_estrella_dos" src="../assets/imagenes_nuevas/PNG/estrella.png">
-                    <img id="img_estrella_tres" src="../assets/imagenes_nuevas/PNG/estrella.png">
+            <div class="container formContainer" id="formContainer">
+                <img class="imgConfig" src="../assets/imagenes_nuevas/PNG/ganaste_letrero.png">    
+                <div class="row contentConfig" id="content_config">
+                    <div class="col-xs-12 label"> DIFICULTAD </div>
+                    <div class="col-xs-12 contentConfigBtns" id="contentConfig_btns">
+                        <div class="col-xs-4 contentConfigBtn1">
+                            <a class="btn btn-block btnDiamante" id="btn_diamante" type="submit" href="#" onclick=""></a>
+                        </div>
+                        <div class="col-xs-4 contentConfigBtn2">
+                            <a class="btn btn-block btnEstrella" id="btn_estrella" type="submit" href="#" onclick=""></a>
+                        </div>
+                    </div>
                 </div>
-                <div class="row" id="content_ganaste2">
-                    <label for="etiqueta">Puntaje Total</label>
-                    <br>
-                    <label id="puntos" for="puntos">. . . . . . . . . . . . . . . . . . . . . . .</label>
-                    <br>
-                    <label id="puntaje" for="puntaje">12 584</label>
-                    <br>
-                    <img id="img_reloj" src="../assets/imagenes_nuevas/PNG/reloj.png">
-                    <label for="tiempo">Tiempo</label>
+                <div class="row contentConfig" id="content_config">
+                    <div class="col-xs-12 label"> EXTENCIÓN DEL JUEGO </div>
+                    <div class="col-xs-12 contentConfigBtns" id="contentConfig_btns" style="margin-left: 3%;">
+                        <div class="col-xs-4 contentConfigBtn1">
+                            <a class="btn btn-block btnNormal" id="btn_normal" type="submit" href="#" onclick=""></a>
+                        </div>
+                        <div class="col-xs-4 contentConfigBtn2">
+                            <a class="btn btn-block btnLargo" id="btn_largo" type="submit" href="#" onclick=""></a>
+                        </div>
+                    </div>
                 </div>
-                <div class="row" id="content_ganaste3">
-                    <button class="btn" id="btn_menu" type="submit"></button>
-                    <button class="btn" id="btn_recarga" type="submit"></button>
-                    <button class="btn" id="btn_flecha_ste" type="submit"></button>
-                </div>
-            </div>
+                <a class="btn btn-block btnAdelante" id="btn_adelante" type="submit" href="#" onclick=""></a>
+            </div> 
+            
         </div>
+        
     </div>
+    
 </body>
 </html>
