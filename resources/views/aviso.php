@@ -21,7 +21,8 @@ and open the template in the editor.
     <?php
         session_start();//iniciando session 
         $user = $_SESSION['data_game_antropolys']['nombre'].' '.$_SESSION['data_game_antropolys']['apellido'];
-        $dificultad = $_SESSION['data_game_antropolys']['longitud'].' '.$_SESSION['data_game_antropolys']['nivel'];;
+        $logi = $_SESSION['data_game_antropolys']['longitud'];
+        $dificultad = $_SESSION['data_game_antropolys']['nivel'];
     ?>
     <div class="container aviso" >
         <img class="imgAviso" id="img_aviso" src="../../resources/assets/imagenes_nuevas/PNG/btn_juguemos.png">
@@ -31,7 +32,7 @@ and open the template in the editor.
                     <div class="row">
                         <div class="col-xs-12 textAviso" id="text_aviso">
                             <p>
-                                El Usuario <?php echo "<span class=\"styleUser\">$user</span>"?> ha creado un juego con dificultad <?php echo $dificultad?> desea ingresar.
+                                El Usuario <?php echo "<span class=\"styleUser\">$user</span>"?> ha creado un juego  <?php echo $logi?> - <?php echo $dificultad?>, desea ingresar?
                             </p>
                         </div>
                     </div>
