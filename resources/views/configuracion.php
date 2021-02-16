@@ -28,21 +28,21 @@ and open the template in the editor.
                     <div class="col-xs-12 label"> DIFICULTAD </div>
                     <div class="col-xs-12 contentConfigBtns" id="contentConfig_btns">
                         <div class="col-xs-4 contentConfigBtn1">
-                            <a class="btn btn-block btnDiamante" id="btn_diamante" type="submit" href="#" onclick=""></a>
+                            <div class="btn btn-block btnDiamante" id="btn_diamante" type="submit" href="#" onclick=""></div>
                         </div>
                         <div class="col-xs-4 contentConfigBtn2">
-                            <a class="btn btn-block btnEstrella" id="btn_estrella" type="submit" href="#" onclick=""></a>
+                            <div class="btn btn-block btnEstrella" id="btn_estrella" type="submit" href="#" onclick=""></div>
                         </div>
                     </div>
                 </div>
                 <div class="row contentConfig" id="content_config">
                     <div class="col-xs-12 label"> ESTENCIÓN DEL JUEGO </div>
-                    <div class="col-xs-12 contentConfigBtns" id="contentConfig_btns" style="margin-left: 3%;">
+                    <div class="col-xs-12 contentConfigBtns configBtns" id="contentConfig_btns" style="margin-left: 3%;">
                         <div class="col-xs-4 contentConfigBtn1">
-                            <a class="btn btn-block btnNormal" id="btn_normal" type="submit" href="#" onclick=""></a>
+                            <div class="btn btn-block btnNormal" id="btn_normal" type="submit"  onclick=""></div>
                         </div>
                         <div class="col-xs-4 contentConfigBtn2">
-                            <a class="btn btn-block btnLargo" id="btn_largo" type="submit" href="#" onclick=""></a>
+                            <div class="btn btn-block btnLargo" id="btn_largo" type="submit" onclick=""></div>
                         </div>
                     </div>
                 </div>
