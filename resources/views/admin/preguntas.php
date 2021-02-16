@@ -78,13 +78,9 @@
                             <a href="#">
                                 <i class="fa fa-question-circle"></i> 
                                 <span>PREGUNTAS</span>
-                                
                             </a>
-                            
-                        </li>
-                        
-                        
-                        
+                        </li>                     
+                                            
                         <li class="reportes">
                             <a href="#">
                                 <i class="fa fa-laptop"></i> 
@@ -145,7 +141,7 @@
                     <label id="label_select_tipo" for="select_tipo"> Tipo de pregunta </label>
                     <select id="select_tipo" name="cars">
                         <option value="0">Abierta</option>
-                        <option value="1">Opc Múltiple</option>
+                        <option value="1">Opc Mï¿½ltiple</option>
                     </select>
                     <br>
                     <label id="label_respuesta" for="respuesta_pregunta"> Separe con un menos las posibles respuestas (-) </label>

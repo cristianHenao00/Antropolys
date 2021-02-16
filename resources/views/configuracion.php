@@ -36,7 +36,7 @@ and open the template in the editor.
                     </div>
                 </div>
                 <div class="row contentConfig" id="content_config">
-                    <div class="col-xs-12 label"> ESTENCIÓN DEL JUEGO </div>
+                    <div class="col-xs-12 label"> EXTENCIÓN DEL JUEGO </div>
                     <div class="col-xs-12 contentConfigBtns configBtns" id="contentConfig_btns" style="margin-left: 3%;">
                         <div class="col-xs-4 contentConfigBtn1">
                             <div class="btn btn-block btnNormal" id="btn_normal" type="submit"  onclick=""></div>

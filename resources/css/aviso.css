@@ -88,3 +88,46 @@
     left: 78px;
     top: 70px;
 }
+
+
+@media screen and (max-width: 480px) and (max-height: 900px) {
+    html, body {
+        overflow: hidden;
+    }
+    
+    .container {
+        width: 400px;
+        height: 395px;
+        margin-top: 30%;
+    }
+
+    .bodyAviso .imgAviso{
+        width: 55%;
+        margin-left: 100px;
+    }  
+    
+    .formContainer {
+        width: 110%;
+        margin-top: -128px;
+        margin-left: -20px;
+        font-size: 18px;
+    }
+
+    .formContainer .textAviso {
+        top: 140px;
+        left: 100px;
+    }
+
+    .btn.btnNo {
+        width: 30vh;
+    }
+    
+    .btn.btnSi {
+        width: 30vh;
+    }
+    
+    .formContainer .contentBtns {
+        left: 42px;
+        top: 100px;
+    }
+}

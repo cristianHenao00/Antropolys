@@ -48,7 +48,7 @@
 .skin-blue .content-wrapper .container .nav.nav-tabs li.active a {
     color: grey;
     border: 3px solid transparent;
-    border-top-color: #3c8dbc;
+    border-top-color: #8e3cbc;
     border-radius: 0;
     
 }
@@ -69,5 +69,18 @@
 }
 
 .skin-blue .sidebar-menu>li.active>a {
-    border-left-color: #3c8dbc !important;
+    border-left-color: #8e3cbc !important;
 }
+
+.skin-blue .content-wrapper .btn.btn-primary {
+    background-color: #8e3cbc;
+    border:1px solid #8e3cbc;
+    box-shadow: 0px 0px 243px 39px rgba(0, 0, 0, 0.75);
+}
+
+.skin-blue .content-wrapper .btn.btn-success {
+    background-color: #828282;
+    border:1px solid #828282;
+    box-shadow: 0px 0px 243px 39px rgba(0, 0, 0, 0.75);
+}
+

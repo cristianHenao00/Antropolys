@@ -105,9 +105,9 @@ class conexion {
                                         INNER JOIN nivel n ON n.idnivel = j.idnivel
                                         WHERE j.estado = 1');
             if ($result1->num_rows > 0) {
-                $row1 = $result1->fetch_array(MYSQLI_ASSOC);//array los datos arrojados
+                $row = $result1->fetch_array(MYSQLI_ASSOC);//array los datos arrojados
                 $mensajes['respuesta'] = 'Juego iniciado';
-                $_SESSION['data_game_antropolys'] = $row1;
+                $_SESSION['data_game_antropolys'] = $row;
             }
             else $mensajes['respuesta'] = 'Juego nuevo';
             

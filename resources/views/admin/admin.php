@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Admin antropolys</title>
-        <link rel="icon" type="image/png" href="../../resources/assets/pix/favico.png">
+        <link rel="icon" type="image/png" href="../../../resources/assets/pix/favico.png">
         <!-- Tell the browser to be responsive to screen width -->
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <meta http-equiv="cache-control" content="no-cache"/>
         <!-- Bootstrap 3.3.7 -->
         <link rel="stylesheet" href="https://adminlte.io/themes/AdminLTE/bower_components/bootstrap/dist/css/bootstrap.min.css">
         <!-- Font Awesome -->
-        <link rel="stylesheet" href="../css/font-awesome.min.css">
+        <link rel="stylesheet" href="../../css/font-awesome.min.css">
         <!-- Ionicons -->
         <link rel="stylesheet" href="https://adminlte.io/themes/AdminLTE/bower_components/Ionicons/css/ionicons.min.css">
         <!-- Theme style -->
@@ -22,7 +22,7 @@
         <!-- Google Font -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
         
-        <link rel="stylesheet" href="../../resources/css/admin.css">
+        <link rel="stylesheet" href="../../../resources/css/admin.css">
     </head>
     
     <body  id="body_juego" onload="" class="hold-transition skin-blue sidebar-mini">

@@ -156,7 +156,11 @@
         width: 110px;
         height: 105px;
         margin-left: 36%;
-        margin-top: 13%;
+        margin-top: 10%;
+    }
+
+    .configBtns {
+        margin-left: 7% !important;
     }
 
     
