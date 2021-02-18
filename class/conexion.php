@@ -127,7 +127,7 @@ class conexion {
         $sql = 'SELECT * FROM juegos WHERE estado = 1';
         
         $result = $mysqli->query($sql);
-        if ($result1->num_rows > 0) {
+        if ($result->num_rows > 0) {
             $row = $result->fetch_array(MYSQLI_ASSOC);//array los datos arrojados
             $mensajes['respuesta'] = 'Juego iniciado';
             $_SESSION['data_game_antropolys'] = $row;
