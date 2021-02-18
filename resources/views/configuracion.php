@@ -36,10 +36,10 @@ and open the template in the editor.
                     <div class="col-xs-12 label"> DIFICULTAD </div>
                     <div class="col-xs-12 contentConfigBtns" id="contentConfig_btns1">
                         <div class="col-xs-4 contentConfigBtn1">
-                            <div class="btn btn-block btnDiamante" id="btn_normal" value="1" type="submit" onclick="vari.select_config(this, 1)"></div>
+                            <div class="btn btn-block btnDiamante" id="difi_1" value="1" type="submit" onclick="vari.select_config(this, 1)"></div>
                         </div>
                         <div class="col-xs-4 contentConfigBtn2">
-                            <div class="btn btn-block btnEstrella" id="btn_dificil" value="2" type="submit" onclick="vari.select_config(this, 1)"></div>
+                            <div class="btn btn-block btnEstrella" id="difi_2" value="2" type="submit" onclick="vari.select_config(this, 1)"></div>
                         </div>
                     </div>
                 </div>
@@ -47,10 +47,10 @@ and open the template in the editor.
                     <div class="col-xs-12 label"> EXTENCIÓN DEL JUEGO </div>
                     <div class="col-xs-12 contentConfigBtns configBtns" id="contentConfig_btns2" style="margin-left: 3%;">
                         <div class="col-xs-4 contentConfigBtn1">
-                            <div class="btn btn-block btnNormal" id="btn_corto" value="1" type="submit"  onclick="vari.select_config(this, 2)"></div>
+                            <div class="btn btn-block btnNormal" id="extent_1" value="1" type="submit"  onclick="vari.select_config(this, 2)"></div>
                         </div>
                         <div class="col-xs-4 contentConfigBtn2">
-                            <div class="btn btn-block btnLargo" id="btn_largo" value="2" type="submit" onclick="vari.select_config(this, 2)"></div>
+                            <div class="btn btn-block btnLargo" id="extent_2" value="2" type="submit" onclick="vari.select_config(this, 2)"></div>
                         </div>
                     </div>
                 </div>
