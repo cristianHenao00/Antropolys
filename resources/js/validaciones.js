@@ -18,6 +18,7 @@ class validaciones {
         var botones1 = contentPadre1.getElementsByClassName('btn');
         var contentPadre2 = document.getElementById('contentConfig_btns2');
         var botones2 = contentPadre2.getElementsByClassName('btn');
+
         for(var i=0; i < botones1.length; i++){
             var val = botones2[i].i.split('_');
             if(botones1[i].getAttribute('class').indexOf('sombra') > -1) dificultad = val[1];
@@ -26,6 +27,7 @@ class validaciones {
             var val = botones2[i].i.split('_');
             if(botones2[i].getAttribute('class').indexOf('sombra') > -1) extencion = val[1];
         }
+       
         if(dificultad && extencion) {
             var formData = new FormData();           
             formData.append("key", "C2");
