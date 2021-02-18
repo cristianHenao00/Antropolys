@@ -13,7 +13,9 @@ class conexion {
             case 'Q1':
                 $res = $this->login();
                 break;
-            
+            case 'C2':
+                $res = $this->save_config();
+                break;
         }
 
         echo json_encode($res); die();
@@ -117,6 +119,43 @@ class conexion {
     }
 
     /* */
+    private function save_config() {
+        $mensajes['ack'] = 0;
+        $mysqli = $this->conectar();
+
+        session_start();//iniciando session 
+        $sql = 'SELECT * FROM juegos WHERE estado = 1';
+        
+        $result = $mysqli->query($sql);
+        if ($result1->num_rows > 0) {
+            $row = $result->fetch_array(MYSQLI_ASSOC);//array los datos arrojados
+            $mensajes['respuesta'] = 'Juego iniciado';
+            $_SESSION['data_game_antropolys'] = $row;
+        }else{
+            $user_create = $_SESSION['data_user_antropolys']['iduser'];
+            $longitud = $_POST['longitud'];
+            $nivel = $_POST['nivel'];
+
+            $row = array();
+            $sql = "INSERT INTO juegos (estado, idlongitud, user_create, idnivel) 
+                        values ('1', '$longitud', '$user_create', '$nivel')";
+
+            $result = $mysqli->query($sql);
+            if($result){
+                $sql = 'SELECT * FROM juegos WHERE estado = 1';
+        
+                $result = $mysqli->query($sql);
+                $row = $result->fetch_array(MYSQLI_ASSOC);//array los datos arrojados
+                $_SESSION['data_game_antropolys'] = $row;
+                $mensajes['respuesta'] = "juego creado";
+                $mensajes['ack'] = 1;
+            }
+        }
+       
+        $this->close_conexion($mysqli);
+        return $mensajes;
+
+    }
   
 
 }

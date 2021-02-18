@@ -12,9 +12,17 @@ and open the template in the editor.
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../resources/css/login.css">
     <link rel="stylesheet" href="../../resources/css/configuracion.css">
+    <link rel="stylesheet" href="../../resources/css/tostadas/pnotify.brighttheme.css">
+    <link rel="stylesheet" href="../../resources/css/tostadas/pnotify.buttons.css">
+    <link rel="stylesheet" href="../../resources/css/tostadas/pnotify.css">
     <!-- <script src="js/ajax.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="../js/tostadas/pnotify.js"></script>
+    <script src="../js/tostadas/pnotify.animate.js"></script>
+    <script src="../js/tostadas/pnotify.buttons.js"></script>
+    <script src="../js/tostadas/mensajes.js"></script>
+    <script src="../js/validaciones.js"></script>
     
     <title>Configuración antropolys</title>
 </head>
@@ -24,29 +32,29 @@ and open the template in the editor.
         <div class="row">
             <div class="container formContainer" id="formContainer">
                 <img class="imgConfig" src="../assets/imagenes_nuevas/PNG/ganaste_letrero.png">    
-                <div class="row contentConfig" id="content_config">
+                <div class="row contentConfig" id="content_config1">
                     <div class="col-xs-12 label"> DIFICULTAD </div>
-                    <div class="col-xs-12 contentConfigBtns" id="contentConfig_btns">
+                    <div class="col-xs-12 contentConfigBtns" id="contentConfig_btns1">
                         <div class="col-xs-4 contentConfigBtn1">
-                            <div class="btn btn-block btnDiamante" id="btn_diamante" type="submit" href="#" onclick=""></div>
+                            <div class="btn btn-block btnDiamante" id="btn_normal" value="1" type="submit" onclick="vari.select_config(this, 1)"></div>
                         </div>
                         <div class="col-xs-4 contentConfigBtn2">
-                            <div class="btn btn-block btnEstrella" id="btn_estrella" type="submit" href="#" onclick=""></div>
+                            <div class="btn btn-block btnEstrella" id="btn_dificil" value="2" type="submit" onclick="vari.select_config(this, 1)"></div>
                         </div>
                     </div>
                 </div>
-                <div class="row contentConfig" id="content_config">
+                <div class="row contentConfig" id="content_config2">
                     <div class="col-xs-12 label"> EXTENCIÓN DEL JUEGO </div>
-                    <div class="col-xs-12 contentConfigBtns configBtns" id="contentConfig_btns" style="margin-left: 3%;">
+                    <div class="col-xs-12 contentConfigBtns configBtns" id="contentConfig_btns2" style="margin-left: 3%;">
                         <div class="col-xs-4 contentConfigBtn1">
-                            <div class="btn btn-block btnNormal" id="btn_normal" type="submit"  onclick=""></div>
+                            <div class="btn btn-block btnNormal" id="btn_corto" value="1" type="submit"  onclick="vari.select_config(this, 2)"></div>
                         </div>
                         <div class="col-xs-4 contentConfigBtn2">
-                            <div class="btn btn-block btnLargo" id="btn_largo" type="submit" onclick=""></div>
+                            <div class="btn btn-block btnLargo" id="btn_largo" value="2" type="submit" onclick="vari.select_config(this, 2)"></div>
                         </div>
                     </div>
                 </div>
-                <a class="btn btn-block btnAdelante" id="btn_adelante" type="submit" href="#" onclick=""></a>
+                <a class="btn btn-block btnAdelante" id="btn_adelante" type="submit" href="#" onclick="vari.save_config()"></a>
             </div> 
             
         </div>
