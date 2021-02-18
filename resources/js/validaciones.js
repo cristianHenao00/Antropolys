@@ -40,7 +40,7 @@ class validaciones {
                     var fjson = JSON.parse(this.responseText);
                     if(fjson.ack){
                         setTimeout(function(){ location.href = "resources/views/tablero.php"; }, 3000);
-                    }else setTimeout(function(){ location.href = "resources/views/aviso.php"; }, 3000);
+                    }else setTimeout(function(){ location.href = "aviso.php"; }, 3000);
                     msjBC.informacion('INFORMACIÓN',fjson.respuesta); 
                 }
             };

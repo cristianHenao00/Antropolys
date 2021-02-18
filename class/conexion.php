@@ -124,8 +124,12 @@ class conexion {
         $mysqli = $this->conectar();
 
         session_start();//iniciando session 
-        $sql = 'SELECT * FROM juegos WHERE estado = 1';
-        
+        $sql = 'SELECT j.*, u.nombre, u.apellido, l.name AS longitud, n.name AS nivel
+                FROM juegos j
+                INNER JOIN users u ON u.iduser = j.user_create
+                INNER JOIN longitud l ON l.idlongitud = j.idlongitud
+                INNER JOIN nivel n ON n.idnivel = j.idnivel
+                WHERE j.estado = 1';
         $result = $mysqli->query($sql);
         if ($result->num_rows > 0) {
             $row = $result->fetch_array(MYSQLI_ASSOC);//array los datos arrojados
@@ -142,7 +146,12 @@ class conexion {
 
             $result = $mysqli->query($sql);
             if($result){
-                $sql = 'SELECT * FROM juegos WHERE estado = 1';
+                $sql = 'SELECT j.*, u.nombre, u.apellido, l.name AS longitud, n.name AS nivel
+                            FROM juegos j
+                            INNER JOIN users u ON u.iduser = j.user_create
+                            INNER JOIN longitud l ON l.idlongitud = j.idlongitud
+                            INNER JOIN nivel n ON n.idnivel = j.idnivel
+                            WHERE j.estado = 1';
         
                 $result = $mysqli->query($sql);
                 $row = $result->fetch_array(MYSQLI_ASSOC);//array los datos arrojados
