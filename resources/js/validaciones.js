@@ -19,10 +19,10 @@ class validaciones {
         var contentPadre2 = document.getElementById('contentConfig_btns2');
         var botones2 = contentPadre2.getElementsByClassName('btn');
         for(var i=0; i > botones1.length; i++){
-            if(botones1[i].indexOf('sombra') > -1) dificultad = botones1[i].value;
+            if(botones1[i].getAttribute('class').indexOf('sombra') > -1) dificultad = botones1[i].value;
         }
         for(var i=0; i > botones2.length; i++){
-            if(botones2[i].indexOf('sombra') > -1) extencion = botones2[i].value;
+            if(botones2[i].getAttribute('class').indexOf('sombra') > -1) extencion = botones2[i].value;
         }
         if(dificultad && extencion) {
             var formData = new FormData();           
