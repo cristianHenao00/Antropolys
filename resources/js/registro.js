@@ -70,6 +70,7 @@ class registro{
     validacion_campos(form){
         var formData = new FormData();
         var data = $("#"+form).serializeArray();
+        console.log("...", data)
         for(var i=0; i<data.length; i++){
             if(/^\s*$/.test(data[i].value)){
                 

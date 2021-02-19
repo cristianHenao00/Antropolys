@@ -23,7 +23,22 @@
         <!-- Google Font -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
         
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
         <link rel="stylesheet" href="../../../resources/css/admin.css">
+        <link rel="stylesheet" href="../../../resources/css/tostadas/pnotify.brighttheme.css">
+        <link rel="stylesheet" href="../../../resources/css/tostadas/pnotify.buttons.css">
+        <link rel="stylesheet" href="../../../resources/css/tostadas/pnotify.css">
+
+        <script src="../../js/tostadas/pnotify.js"></script>
+        <script src="../../js/tostadas/pnotify.animate.js"></script>
+        <script src="../../js/tostadas/pnotify.buttons.js"></script>
+        <script src="../../js/tostadas/mensajes.js"></script>
+
+        <script src="../../js/preguntas.js"></script>
+
+        
     </head>
     
     <body  id="body_juego" onload="" class="hold-transition skin-blue sidebar-mini">
@@ -133,28 +148,29 @@
             <div class="content-wrapper" id="vista_content">
                 <br>
             <?php    echo '<h3>Hola Admin ' . $_SESSION['data_user_antropolys']['nombre'] . '</h3>';?>
-                <div class="col-sm-5">
-                    <h3>Preguntas</h3>
-                    <label id="label_name" for="nombre_pregunta"> Nombre de la pregunta </label>
-                    <input type="text" class="form-control" name="nombre" id="nombre_pregunta" placeholder="nombre">
-                    <br>
-                    <label id="label_select_tipo" for="select_tipo"> Tipo de pregunta </label>
-                    <select id="select_tipo" name="cars">
-                        <option value="0">Abierta</option>
-                        <option value="1">Opc M�ltiple</option>
-                    </select>
-                    <br>
-                    <label id="label_respuesta" for="respuesta_pregunta"> Separe con un menos las posibles respuestas (-) </label>
-                    <textarea class="form-control" name="respuesta" id="respuesta_pregunta" placeholder="-Respuesta 1 -Respuesta2"></textarea>
-                    <br>
-                    <?php echo '<button type="button" class="btn btn-primary" onclick="ajax_b.create_forma(' . $_SESSION['data_user_antropolys']['iduser'] . ')">Crear Forma</button>';?>
-                    <button type="button" class="btn btn-success" onclick="ajax_b.limpiar_forma()">Limpiar Tablero</button>
-                </div>
-                <div class="col-sm-7">
-                    <h3>Lista de Preguntas</h3>
-                    <ul id="list_formas"></ul>
-                </div>
-
+                <form method='post' class="form-question text-center" id="question" role="form">
+                    <div class="col-sm-5" id="content_question">
+                        <h3>Preguntas</h3>
+                        <label id="label_name" for="nombre_pregunta"> Nombre de la pregunta </label>
+                        <input type="text" class="form-control" name="nombre" id="nombre_pregunta" placeholder="nombre">
+                        <br>
+                        <label id="label_select_tipo" for="select_tipo"> Tipo de pregunta </label>
+                        <select id="select_tipo" name="cars">
+                            <option value="0">Abierta</option>
+                            <option value="1">Opc M�ltiple</option>
+                        </select>
+                        <br>
+                        <label id="label_respuesta" for="respuesta_pregunta"> Separe con un menos las posibles respuestas (-) </label>
+                        <textarea class="form-control" name="respuesta" id="respuesta_pregunta" placeholder="-Respuesta 1 -Respuesta2"></textarea>
+                        <br>
+                        <?php echo '<button type="button" class="btn btn-primary" onclick="pre.save_questions(' . $_SESSION['data_user_antropolys']['iduser'] . ')">Crear Forma</button>';?>
+                        <button type="button" class="btn btn-success" onclick="ajax_b.limpiar_forma()">Limpiar Tablero</button>
+                    </div>
+                    <div class="col-sm-7">
+                        <h3>Lista de Preguntas</h3>
+                        <ul id="list_formas"></ul>
+                    </div>
+                </form>
             </div>
             <?php
             

@@ -16,6 +16,9 @@ class conexion {
             case 'C2':
                 $res = $this->save_config();
                 break;
+            case 'C3':
+                $res = $this->save_question();
+                break;
         }
 
         echo json_encode($res); die();
@@ -155,6 +158,43 @@ class conexion {
         $this->close_conexion($mysqli);
         return $mensajes;
 
+    }
+
+
+    private function save_question() {
+        $mensajes = array();
+        $mensajes['ack'] = 0;
+        $mysqli = $this->conectar();
+        
+        
+        $row = array();
+        $sql = 'SELECT * FROM preguntas WHERE nombre = "'.$_POST['nombre'].'"';
+        
+        $result = $mysqli->query($sql);
+        if ($result->num_rows > 0) {//Si hay resultados…
+            $mensajes['respuesta'] = 'Pregunta creada';
+        } else if (array_key_exists('nombre', $_POST)) {
+            
+            $nombre = $_POST['nombre'];
+            $tipo = $_POST['cars'];
+            $respuesta = $_POST['respuesta'];
+           
+            $sql = "INSERT INTO preguntas (nombre, tipo, respuesta) 
+                       values ('$nombre', '$tipo', '$respuesta')";
+            
+            $result = $mysqli->query($sql);
+            if($result){
+                $row = $_POST;
+                $row['idpreguntas'] = $mysqli->insert_id;
+        
+                session_start();
+                $mensajes['respuesta'] = $row;
+                $mensajes['ack'] = 1;
+            }
+                
+        }
+        $this->close_conexion($mysqli);
+        return $mensajes;
     }
   
 
