@@ -42,6 +42,7 @@
     </head>
     
     <body  id="body_juego" onload="" class="hold-transition skin-blue sidebar-mini">
+        <?php session_start();?>
         <div class="wrapper">
 
             <header class="main-header">
@@ -88,7 +89,7 @@
                     
                     <ul class="sidebar-menu" data-widget="tree">
                         <li class="header">MENÚ NAVEGACIÓN</li>
-                        <?php session_start();?>
+                        
                         <li class="preguntas active">
                             <a href="#">
                                 <i class="fa fa-question-circle"></i> 
