@@ -230,7 +230,107 @@
     height: 18vh;
 }
 
+/* .tableroNormal .tablero3 .content_img3 .imgStreet {
+    top: -19.6vh;
+    height: 18vh;
+} */
+
 .tableroNormal .tablero3 .content_img3 .img1 .opcion {
     display: none;
     height: 16vh;
+}
+
+/* .tableroNormal .tablero3 .content_img3 .img1 .opcion1 {
+    display: none;
+}  */
+
+.imgStreet .posicion,
+.imgStreet .posicion1,
+.imgStreet .posicion2,
+.imgStreet .posicion3,
+.imgStreet .posicion4,
+.imgStreet .posicion5,
+.imgStreet .posicion6,
+.imgStreet .posicion7,
+.imgStreet .posicion8 {
+    margin-left: 2vh;
+    width: 10vh;
+}
+
+.imgStreet .posicion1,
+.imgStreet .posicion2,
+.imgStreet .posicion3 {
+    z-index: 2;
+    position: relative;
+    margin-top: -10vh;
+}
+
+.imgStreet .posicion5,
+.imgStreet .posicion6,
+.imgStreet .posicion7,
+.imgStreet .posicion8 {
+    z-index: 2;
+    position: relative;
+    margin-top: 5vh;
+}
+
+.imgStreet .posicion1 {
+    margin-left: 28vh;
+}
+
+.imgStreet .posicion2 {
+    margin-left: 50vh;
+}
+
+.imgStreet .posicion3 {
+    margin-left: 72vh;
+}
+
+.imgStreet .posicion8 {
+    margin-top: 11vh;
+}
+
+.tableroLargo .tablero3 .imgStreet .posicion3 {
+    margin-top: -28vh;
+}
+
+.imgStreet .posicion .posicionGris,
+.imgStreet .posicion1 .posicionGris,
+.imgStreet .posicion2 .posicionGris,
+.imgStreet .posicion3 .posicionGris,
+.imgStreet .posicion4 .posicionGris,
+.imgStreet .posicion5 .posicionGris,
+.imgStreet .posicion6 .posicionGris,
+.imgStreet .posicion7 .posicionGris,
+.imgStreet .posicion8 .posicionGris {
+    display: block;
+}
+
+.imgStreet .posicion .posicionVerde,
+.imgStreet .posicion1 .posicionVerde, 
+.imgStreet .posicion2 .posicionVerde,
+.imgStreet .posicion3 .posicionVerde,
+.imgStreet .posicion4 .posicionVerde,
+.imgStreet .posicion5 .posicionVerde,
+.imgStreet .posicion6 .posicionVerde,
+.imgStreet .posicion7 .posicionVerde,
+.imgStreet .posicion8 .posicionVerde {
+    display: none;
+}
+
+.imgStreet .posicion .posicionAzul,
+.imgStreet .posicion1 .posicionAzul, 
+.imgStreet .posicion2 .posicionAzul,
+.imgStreet .posicion3 .posicionAzul,
+.imgStreet .posicion4 .posicionAzul,
+.imgStreet .posicion5 .posicionAzul,
+.imgStreet .posicion6 .posicionAzul,
+.imgStreet .posicion7 .posicionAzul,
+.imgStreet .posicion8 .posicionAzul {
+    display: none;
+}
+
+.imgStreet .posicion1 .posicionRojo,
+.imgStreet .posicion3 .posicionRojo {
+    display: block;
 }
