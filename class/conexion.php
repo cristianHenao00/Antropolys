@@ -175,18 +175,19 @@ class conexion {
         $mensajes['ack'] = 0;
         $mysqli = $this->conectar();
         
+        $nombre = $_POST['nombre'];
+        $tipo = $_POST['tipo'];
+        $respuesta = $_POST['respuesta'];
         
         $row = array();
-        $sql = 'SELECT * FROM preguntas WHERE nombre = "'.$_POST['nombre'].'"';
+        $sql = 'SELECT * FROM preguntas WHERE nombre = "'.$nombre.'"';
         
         $result = $mysqli->query($sql);
         if ($result->num_rows > 0) {//Si hay resultados…
-            $mensajes['respuesta'] = 'Pregunta creada';
+            $mensajes['respuesta'] = 'Pregunta ya existe';
         } else if (array_key_exists('nombre', $_POST)) {
             
-            $nombre = $_POST['nombre'];
-            $tipo = $_POST['cars'];
-            $respuesta = $_POST['respuesta'];
+            
            
             $sql = "INSERT INTO preguntas (nombre, tipo, respuesta) 
                        values ('$nombre', '$tipo', '$respuesta')";

@@ -156,15 +156,15 @@
                         <input type="text" class="form-control" name="nombre" id="nombre_pregunta" placeholder="nombre">
                         <br>
                         <label id="label_select_tipo" for="select_tipo"> Tipo de pregunta </label>
-                        <select id="select_tipo" name="cars">
+                        <select id="select_tipo" name="tipo">
                             <option value="0">Abierta</option>
-                            <option value="1">Opc M�ltiple</option>
+                            <option value="1">Opc M&uacuteltiple</option>
                         </select>
                         <br>
-                        <label id="label_respuesta" for="respuesta_pregunta"> Separe con un menos las posibles respuestas (-) </label>
-                        <textarea class="form-control" name="respuesta" id="respuesta_pregunta" placeholder="-Respuesta 1 -Respuesta2"></textarea>
+                        <label id="label_respuesta" for="respuesta_pregunta"> Separe con un menos las posibles respuestas (-) y con asterisco (*) la respuesta correcta, para las preguntas abiertas separe las palabras con coma (,)</label>
+                        <textarea class="form-control" name="respuesta" id="respuesta_pregunta" placeholder="-Respuesta 1 -Respuesta2 -*Respuesta3Correcta"></textarea>
                         <br>
-                        <?php echo '<button type="button" class="btn btn-primary" onclick="pre.save_questions(' . $_SESSION['data_user_antropolys']['iduser'] . ')">Crear Forma</button>';?>
+                        <?php echo '<button type="button" class="btn btn-primary" onclick="pre.valid_save_questions()">Crear Forma</button>';?>
                         <button type="button" class="btn btn-success" onclick="ajax_b.limpiar_forma()">Limpiar Tablero</button>
                     </div>
                     <div class="col-sm-7">
