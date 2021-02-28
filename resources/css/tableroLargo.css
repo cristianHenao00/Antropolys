@@ -1,0 +1,360 @@
+@font-face {
+    font-family: "Tondu_Beta";
+    font-style: normal;
+    font-weight: normal;
+    src: url(../assets/font/Tondu_Beta.ttf);
+}
+
+@font-face {
+    font-family: "Lalezar-Regular";
+    font-style: normal;
+    font-weight: normal;
+    src: url(../assets/font/Lalezar-Regular.ttf);
+}
+
+.bodyTablero {
+    background-color: #415167;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.bodyTablero .container {
+    margin: 0;
+    padding: 0;
+    padding-left: 15px;
+}
+
+.row {
+    margin-right: -130px;
+}
+
+.content_img1,
+.content_img2,
+.content_img3,
+.content_img1 .img1,
+.content_img1 .img2,
+.content_img1 .img3,
+.content_img1 .imgStreet,
+.content_img1 .img1 img,
+.content_img1 .img2 img,
+.content_img1 .img3 img,
+.content_img1 .imgStreet img,
+.content_img2 .img1,
+.content_img2 .img2,
+.content_img2 .img3,
+.content_img2 .imgStreet,
+.content_img2 .imgStreet img,
+.content_img3 .img1,
+.content_img3 .img2,
+.content_img3 .img3,
+.content_img3 .imgStreet,
+.content_img3 .imgStreet img,
+.content_imgStreetH,
+.content_imgStreetH img,
+.content_imgStreetH1,
+.content_imgStreetH1 img,
+.content_imgStreetH2,
+.content_imgStreetH2 img,
+.content_imgStreetH3,
+.content_imgStreetH3 img,
+.content_imgStreetH4,
+.content_imgStreetH4 img {
+    padding: 0;
+}
+
+.content_img1 .img1,
+.content_img2 .img1,
+.content_img3 .img1,
+.content_imgStreetH4 {
+    margin-left: -8px;
+}
+
+.content_img1 .img1 img,
+.content_img1 .imgStreet img,
+.content_img1 .img2 img,
+.content_img1 .img3 img,
+.content_img2 .img1 img,
+.content_img2 .imgStreet img,
+.content_img2 .img2 img,
+.content_img2 .img3 img,
+.content_img3 .img1 img,
+.content_img3 .imgStreet img,
+.content_img3 .img2 img,
+.content_img3 .img3 img,
+.content_imgStreetH img,
+.content_imgStreetH1 img,
+.content_imgStreetH2 img,
+.content_imgStreetH3 img,
+.content_imgStreetH4 img {
+    width: 100%;
+    height: 100%;
+}
+
+.content_img1 .img1 {
+    width: 22vh;
+    height: 26vh;
+}
+
+.content_img1 .imgStreet {
+    width: 14vh;
+    height: 18vh;
+}
+
+.content_img1 .img2 {
+    width: 80vh;
+    height: 16vh;
+}
+
+.content_img1 .img3 {
+    margin-top: -2px;
+    width: 57vh;
+    height: 16vh;
+}
+
+.content_img2 .img1 {
+    width: 22vh;
+    height: 58vh;
+    margin-top: -6vh;
+}
+
+.tablero2 .content_img2 .img1 {
+    height: 65vh;
+    margin-top: -16vh;
+}
+
+.tablero3 .content_img2 .img1 {
+    margin-top: 0vh;
+}
+
+.content_img2 .imgStreet {
+    width: 14vh;
+    height: 51vh;
+    margin-top: -1.2vh;
+}
+
+.content_img2 .img2 {
+    width: 80vh;
+    height: 49vh;
+}
+
+.content_img2 .img3 {
+    width: 57vh;
+    height: 49vh;
+}
+
+.content_img3 .img1 {
+    width: 22vh;
+    height: 58vh;
+    margin-top: -20vh;
+}
+
+.content_img3 .imgStreet {
+    width: 14vh;
+    height: 35vh;
+    margin-top: -1.2vh;
+}
+
+.content_img3 .img2 {
+    width: 80vh;
+    height: 16vh;
+}
+
+.content_img3 .img3 {
+    width: 57vh;
+    height: 16vh;
+}
+
+.content_img3 .img1 .calle {
+    margin-top: 7vh;
+    width: 23.5vh;
+    height: 13vh;
+}
+
+.content_imgStreetH {
+    width: 83.5vh;
+    height: 13vh;
+    margin-top: -10vh;
+    margin-left: 33.5vh;
+}
+
+.content_imgStreetH1 {
+    width: 59vh;
+    height: 13vh;
+    margin-top: -13vh;
+    margin-left: 127.2vh;
+}
+
+.tablero2 .content_imgStreetH,
+.tablero3 .content_imgStreetH {
+    margin-top: -6vh;
+}
+
+.content_imgStreetH2 {
+    width: 83.5vh;
+    height: 13vh;
+    margin-top: -3vh;
+    margin-left: 33.5vh;
+}
+
+.tablero2 .content_imgStreetH2 {
+    margin-top: -1vh;
+}
+
+.tablero3 .content_imgStreetH2 {
+    margin-top: -9vh;
+}
+
+
+.content_imgStreetH3 {
+    width: 59vh;
+    height: 13vh;
+    margin-top: -13vh;
+    margin-left: 127.2vh;
+}
+
+.tablero3 .content_img3 .img1 .opcion,
+.tablero3 .content_img3 .img1 .opcion {
+    height: 16vh;
+}
+
+.tableroLargo  .tablero3 .content_img3 .imgStreet {
+    height: 18vh;
+}
+
+.tableroLargo .tablero3 .content_img3 .imgStreet.uno {
+    margin-left: 21vh;
+}
+
+
+.tableroLargo .tablero3 .content_img3,
+.tableroLargo .tablero3 .content_img3 .img1 {
+    height: 0;
+}
+
+.tableroLargo .tablero3 .imgStreet .posicion3 {
+    margin-top: -28vh;
+}
+
+.tableroLargo {
+    position: relative;
+    top: -22vh;
+}
+
+.imgStreet .posicion,
+.imgStreet .posicion1,
+.imgStreet .posicion2,
+.imgStreet .posicion3,
+.imgStreet .posicion4,
+.imgStreet .posicion5,
+.imgStreet .posicion6,
+.imgStreet .posicion7,
+.imgStreet .posicion8 {
+    margin-left: 2vh;
+    width: 10vh;
+    height: 10vh;
+}
+
+.imgStreet .posicion1,
+.imgStreet .posicion2,
+.imgStreet .posicion3 {
+    z-index: 2;
+    position: relative;
+    margin-top: -10vh;
+}
+
+.imgStreet .posicion5,
+.imgStreet .posicion6,
+.imgStreet .posicion7,
+.imgStreet .posicion8 {
+    z-index: 2;
+    position: relative;
+    margin-top: 5vh;
+}
+
+.imgStreet .posicion1 {
+    margin-left: 28vh;
+}
+
+.imgStreet .posicion2 {
+    margin-left: 50vh;
+}
+
+.imgStreet .posicion3 {
+    margin-left: 72vh;
+}
+
+.imgStreet .posicion8 {
+    margin-top: 11vh;
+}
+
+.imgStreet .btnUser1,
+.imgStreet .btnUser2,
+.imgStreet .btnUser3 {
+    cursor: pointer;
+    position: relative;
+    z-index: 3;
+    top: -18vh;
+    background-size: 100%;
+    height: 12vh;
+    width: 10vh;
+}
+
+.imgStreet .btnUser1 {
+    background-image: url(../assets/Tablero-tajado/avatar_1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.imgStreet .btnUser2 {
+    background-image: url(../assets/Tablero-tajado/avatar_2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.imgStreet .btnUser3 {
+    background-image: url(../assets/Tablero-tajado/avatar_3.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.imgStreet .posicion .posicionGris,
+.imgStreet .posicion1 .posicionGris,
+.imgStreet .posicion2 .posicionGris,
+.imgStreet .posicion3 .posicionGris,
+.imgStreet .posicion4 .posicionGris,
+.imgStreet .posicion5 .posicionGris,
+.imgStreet .posicion6 .posicionGris,
+.imgStreet .posicion7 .posicionGris,
+.imgStreet .posicion8 .posicionGris {
+    display: block;
+}
+
+.imgStreet .posicion .posicionVerde,
+.imgStreet .posicion1 .posicionVerde, 
+.imgStreet .posicion2 .posicionVerde,
+.imgStreet .posicion3 .posicionVerde,
+.imgStreet .posicion4 .posicionVerde,
+.imgStreet .posicion5 .posicionVerde,
+.imgStreet .posicion6 .posicionVerde,
+.imgStreet .posicion7 .posicionVerde,
+.imgStreet .posicion8 .posicionVerde {
+    display: none;
+}
+
+.imgStreet .posicion .posicionAzul,
+.imgStreet .posicion1 .posicionAzul, 
+.imgStreet .posicion2 .posicionAzul,
+.imgStreet .posicion3 .posicionAzul,
+.imgStreet .posicion4 .posicionAzul,
+.imgStreet .posicion5 .posicionAzul,
+.imgStreet .posicion6 .posicionAzul,
+.imgStreet .posicion7 .posicionAzul,
+.imgStreet .posicion8 .posicionAzul {
+    display: none;
+}
+
+.imgStreet .posicion1 .posicionRojo,
+.imgStreet .posicion3 .posicionRojo {
+    display: block;
+}
