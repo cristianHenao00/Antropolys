@@ -193,6 +193,7 @@ class conexion {
                        values ('$nombre', '$tipo', '$respuesta')";
             
             $result = $mysqli->query($sql);
+            echo '<pre>$result: '; print_r($result);  echo '</pre>';
             if($result){
                 $row = $_POST;
                 $row['idpreguntas'] = $mysqli->insert_id;

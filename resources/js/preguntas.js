@@ -30,10 +30,10 @@ class preguntas {
                 }else msjBC.error('ERROR','Las respuestas deben estar separadas por -'); 
                                   
             }else{
-                if(res.indexOf(',') == -1){
-                    msjBC.error('ERROR','Las palabras deben estar separadas por ,'); 
-                    seguir =1;
-                } 
+                seguir =1;
+                if(res.indexOf(',') > -1){
+                    seguir =0;
+                }else msjBC.error('ERROR','Las palabras deben estar separadas por comas'); 
             }
             if(seguir == 0){
                 formData.append("key", "C3");
@@ -49,6 +49,7 @@ class preguntas {
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 var fjson = JSON.parse(this.responseText);
+                console.log('fjson',fjson);
                 if(fjson.ack){
                     msjBC.ok('Hola','Pregunta Ingresada'); 
 
