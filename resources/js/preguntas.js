@@ -20,7 +20,7 @@ class preguntas {
                     if(respuestas.length <1){
                         msjBC.error('ERROR','Pregunta sin respuestas'); 
                         seguir =1;
-                    }else formData.append("respuestas", respuestas);
+                    }else formData.append("respuesta", respuestas);
                     
                     if(!correcta){
                         msjBC.error('ERROR','Pregunta sin respuesta correcta'); 
@@ -49,10 +49,10 @@ class preguntas {
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 var fjson = JSON.parse(this.responseText);
-                console.log('fjson',fjson);
+                pre.list_preguntas();
                 if(fjson.ack){
-                    msjBC.ok('Hola','Pregunta Ingresada'); 
-
+                    msjBC.ok('Bien!','Pregunta Ingresada'); 
+                    pre.limpiar_forma();
                 }else msjBC.informacion('ERROR',fjson.respuesta); 
             }
         };
@@ -72,6 +72,53 @@ class preguntas {
             }else formData.append(data[i].name, data[i].value);
         }
         return formData;
+    }
+    
+    list_preguntas(){
+        var formData = new FormData();
+        formData.append("key", "Q2");
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var fjson = JSON.parse(this.responseText);
+                var tb = document.getElementById('list_preguntas');
+                tb.innerHTML = '';
+                if(fjson.ack){
+                    var list = fjson.respuesta;
+                    for(var i=0; i<list.length; i++){
+                        var dat = JSON.parse(list[i]);
+                         tb.innerHTML += '<tr id="pregunta_'+dat.idpreguntas+'">'+
+                                            '<td>'+dat.idpreguntas+'</td>'+
+                                            '<td>'+dat.nombre+'</td>'+
+                                            '<td>'+dat.clase+'</td>'+
+                                            '<td style="display:none">'+dat.tipo+'</td>'+
+                                            '<td>'+dat.respuestas+'</td>'+
+                                            '<td><button type="button" class="btn btn-block btn-default" onclick="pre.editar_pregunta('+dat.idpreguntas+')">Editar</button></td>'+
+                                          '</tr>';
+                    }
+                    //msjBC.ok('Hola','Pregunta Ingresada'); 
+
+                }else msjBC.informacion('ERROR',fjson.respuesta); 
+            }
+        };
+        xhttp.open("post", '../../../class/conexion.php', true);
+        xhttp.send(formData);
+    }
+    
+    editar_pregunta(id){
+        var preg = document.getElementById('pregunta_'+id);
+        var it_preg = preg.getElementsByTagName('td');
+        console.log('it_preg',it_preg);
+        document.getElementById('idpreguntas').value = it_preg[0].innerHTML;
+        document.getElementById('nombre_pregunta').value = it_preg[1].innerHTML;
+        document.getElementById('select_tipo').value = it_preg[3].innerHTML;
+        document.getElementById('respuesta_pregunta').value = it_preg[4].innerHTML;
+        //document.getElementById('nombre_pregunta').value = it_preg[1].innerHTML;
+    }
+    
+    limpiar_forma(){
+        $('#question')[0].reset();
+        document.getElementById('idpreguntas').value = 0;
     }
 }
 
