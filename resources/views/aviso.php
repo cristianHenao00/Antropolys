@@ -23,6 +23,8 @@ and open the template in the editor.
         $user = $_SESSION['data_game_antropolys']['nombre'].' '.$_SESSION['data_game_antropolys']['apellido'];
         $logi = $_SESSION['data_game_antropolys']['longitud'];
         $dificultad = $_SESSION['data_game_antropolys']['nivel'];
+
+        $ir = ($logi == "Corto") ? "../../resources/views/tableroNormal.php" : "../../resources/views/tableroLargo.php";
     ?>
     <div class="container aviso" >
         <img class="imgAviso" id="img_aviso" src="../../resources/assets/imagenes_nuevas/PNG/btn_juguemos.png">
@@ -37,8 +39,10 @@ and open the template in the editor.
                         </div>
                     </div>
                     <div class="row contentBtns" id="content_btns">
-                        <div class="col-xs-3"> <a class="btn btn-block btnNo" type="submit" id="btn_no" href=""></a> </div>
-                        <div class="col-xs-3"> <a class="btn btn-block btnSi" type="submit" id="btn_si" href=""></a> </div>
+                        <div class="col-xs-3"> <a class="btn btn-block btnNo" type="submit" id="btn_no" href="/"></a> </div>
+                        <div class="col-xs-3">
+                            <a class="btn btn-block btnSi" type="submit" id="btn_si" href="<?php echo $ir?>"></a>
+                        </div>
                     </div>
                 </div>
             </div>

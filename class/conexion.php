@@ -19,6 +19,9 @@ class conexion {
             case 'C3':
                 $res = $this->save_question();
                 break;
+            case 'Q2':
+                $res = $this->list_preguntas();
+                break;
         }
 
         echo json_encode($res); die();
@@ -177,27 +180,61 @@ class conexion {
         
         $nombre = $_POST['nombre'];
         $tipo = $_POST['tipo'];
-        $respuesta = $_POST['respuesta'];
+        $respuestas = $_POST['respuestas'];
         
         $row = array();
         $sql = 'SELECT * FROM preguntas WHERE nombre = "'.$nombre.'"';
-        
         $result = $mysqli->query($sql);
         if ($result->num_rows > 0) {//Si hay resultados…
             $mensajes['respuesta'] = 'Pregunta ya existe';
+            if (array_key_exists('idpreguntas', $_POST) && $_POST['idpreguntas']) {
+                $sql = 'UPDATE preguntas SET nombre="' .$nombre. '", tipo=' .$tipo. ', respuestas="' .$respuestas. '" '
+                    . 'WHERE idpreguntas= ' . $_POST['idpreguntas'];
+                if ($result = $mysqli->query($sql)) $mensajes['respuesta'] = 'Se actualizó';
+                $sql = 'DELETE FROM preguntas WHERE idpregunta = '.$_POST['idpreguntas'];
+                if ($result = $mysqli->query($sql)) {
+                    $respuesta = json_decode($_POST['respuesta']);
+                    $correcta = $_POST['correcta'];
+                    $idpregunta = $_POST['idpreguntas'];
+                    $respuestas_save = array();
+                    foreach ($respuesta as $key => $value) {
+                        if($value){
+                            $sql = "INSERT INTO respuestas (idpregunta, respuesta, correcta) values ($idpregunta, '$value','$correcta')";
+                            $row = $_POST;
+                            $result3 = $mysqli->query($sql);
+                            if ($result3) {//Si hay resultados…
+                                $mensajes['ack'] = 1;
+                                $respuestas_save[] = $result3;
+                            }else  $mensajes['ack'] = 0;
+                        }        
+                    }
+                }
+            }
         } else if (array_key_exists('nombre', $_POST)) {
+            $sql = "INSERT INTO preguntas (nombre, tipo, respuestas) values ('$nombre', $tipo, '$respuestas')";
             
-            
-           
-            $sql = "INSERT INTO preguntas (nombre, tipo, respuesta) 
-                       values ('$nombre', '$tipo', '$respuesta')";
-            
-            $result = $mysqli->query($sql);
-            echo '<pre>$result: '; print_r($result);  echo '</pre>';
-            if($result){
-                $row = $_POST;
+            $result2 = $mysqli->query($sql);
+            if($result2){
+                $mensajes['ack'] = 1;
+                if($tipo){
+                    $respuesta = json_decode($_POST['respuesta']);
+                    $correcta = $_POST['correcta'];
+                    $idpregunta = $result2;
+                    $respuestas_save = array();
+                    foreach ($respuesta as $key => $value) {
+                        if($value){
+                            $sql = "INSERT INTO respuestas (idpregunta, respuesta, correcta) values ($idpregunta, '$value','$correcta')";
+                            $row = $_POST;
+                            $result3 = $mysqli->query($sql);
+                            if ($result3) {//Si hay resultados…
+                                $mensajes['ack'] = 1;
+                                $respuestas_save[] = $result3;
+                            }else  $mensajes['ack'] = 0;
+                        }        
+                    }
+                        
+                }
                 $row['idpreguntas'] = $mysqli->insert_id;
-        
                 session_start();
                 $mensajes['respuesta'] = $row;
                 $mensajes['ack'] = 1;
@@ -208,6 +245,25 @@ class conexion {
         return $mensajes;
     }
   
+    private function list_preguntas(){
+        $mensajes = array();
+        $mensajes['ack'] = 0;
+        $mysqli = $this->conectar();
+        $row = array();
+        $sql = 'SELECT *, CASE
+                    WHEN tipo = 0 THEN "Abierta" 
+                    ELSE "Múltiple"
+                END AS clase 
+                FROM preguntas';
+        $result = $mysqli->query($sql);
+        if ($result->num_rows > 0) {//Si hay resultados…
+            while ($fila = $result->fetch_array(MYSQLI_ASSOC))$row[] = json_encode($fila);
+            $mensajes['ack'] = 1;
+            $mensajes['respuesta'] = $row;
+        }else{$mensajes['respuesta'] = 'Sin preguntas cargadas';}
+        $this->close_conexion($mysqli);
+        return $mensajes;
+    }
 
 }
 

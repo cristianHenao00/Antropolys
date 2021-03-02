@@ -64,9 +64,9 @@
     background-repeat: no-repeat;
     background-position: center;
     background-color: unset;
-    background-size: 40%;
+    background-size: 100%;
     position: absolute;
-    width: 50vh;
+    width: 20vh;
     height: 13vh;
 }
 
@@ -75,9 +75,9 @@
     background-repeat: no-repeat;
     background-position: center;
     background-color: unset;
-    background-size: 40%;
+    background-size: 100%;
     position: absolute;
-    width: 50vh;
+    width: 20vh;
     height: 13vh;
 }
 
@@ -85,7 +85,7 @@
 
 .formContainer .contentBtns {
     position: relative;
-    left: 78px;
+    left: 180px;
     top: 70px;
 }
 
@@ -119,15 +119,15 @@
     }
 
     .btn.btnNo {
-        width: 30vh;
+        width: 15vh;
     }
     
     .btn.btnSi {
-        width: 30vh;
+        width: 15vh;
     }
     
     .formContainer .contentBtns {
-        left: 42px;
+        left: 100px;
         top: 100px;
     }
 }
