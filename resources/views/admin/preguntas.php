@@ -41,7 +41,7 @@
         
     </head>
     
-    <body  id="body_juego" onload="" class="hold-transition skin-blue sidebar-mini">
+    <body  id="body_juego" onload="pre.list_preguntas()" class="hold-transition skin-blue sidebar-mini">
         <?php session_start();?>
         <div class="wrapper">
 
@@ -154,6 +154,7 @@
                         <h3>Preguntas</h3>
                         <label id="label_name" for="nombre_pregunta"> Nombre de la pregunta </label>
                         <input type="text" class="form-control" name="nombre" id="nombre_pregunta" placeholder="nombre">
+                        <input type="hidden" class="form-control" name="idpreguntas" id="idpreguntas" value="0">
                         <br>
                         <label id="label_select_tipo" for="select_tipo"> Tipo de pregunta </label>
                         <select id="select_tipo" name="tipo">
@@ -162,14 +163,27 @@
                         </select>
                         <br>
                         <label id="label_respuesta" for="respuesta_pregunta"> Separe con un menos las posibles respuestas (-) y con asterisco (*) la respuesta correcta, para las preguntas abiertas separe las palabras con coma (,)</label>
-                        <textarea class="form-control" name="respuesta" id="respuesta_pregunta" placeholder="-Respuesta 1 -Respuesta2 -*Respuesta3Correcta"></textarea>
+                        <textarea class="form-control" name="respuestas" id="respuesta_pregunta" placeholder="-Respuesta 1 -Respuesta2 -*Respuesta3Correcta"></textarea>
                         <br>
                         <?php echo '<button type="button" class="btn btn-primary" onclick="pre.valid_save_questions()">Crear Forma</button>';?>
-                        <button type="button" class="btn btn-success" onclick="ajax_b.limpiar_forma()">Limpiar Tablero</button>
+                        <button type="button" class="btn btn-success" onclick="pre.limpiar_forma()">Limpiar Tablero</button>
                     </div>
                     <div class="col-sm-7">
                         <h3>Lista de Preguntas</h3>
-                        <ul id="list_formas"></ul>
+                        <table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Tipo</th>
+                                <th scope="col">Respuestas</th>
+                                <th scope="col">Editar</th>
+                              </tr>
+                            </thead>
+                            <tbody id="list_preguntas">
+                                
+                            </tbody>
+                        </table>
                     </div>
                 </form>
             </div>
