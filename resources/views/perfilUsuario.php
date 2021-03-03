@@ -39,7 +39,7 @@ and open the template in the editor.
             <div class="container contentPerfil" id="content_perfil">
                 <div class="bloque">
                     <div class="imgAvatar"></div>
-                    <div class="btn avatar" type="submit" id="btn_avatar"> </div>
+                    <a class="btn avatar" type="submit" id="btn_avatar" href="../../resources/views/avatar.php"> </a>
                     
                     <div class="info">
                         <div class="nombre" id="nombre"> <?php echo $nombre?> </div>

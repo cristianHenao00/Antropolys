@@ -54,12 +54,12 @@
     width: 35vh;
     height: 7vh;
     top: 14vh;
-    right: 55vh;
+    right: 64vh;
     z-index: 3;
 }
 
 .contentAvatar .bloque {
-    margin-top: 20%;
+    margin-top: 22%;
     margin-left: 15%;
 }
 
@@ -82,6 +82,7 @@
     background-size: 100%;
     width: 10vh;
     height: 10vh;
+    cursor: pointer;
 }
 
 .contentAvatar .avatar1 {
@@ -108,6 +109,12 @@
     background-image: url(../assets/imagenes_nuevas/PNG/avatar_06.png);
 }
 
+.contentAvatar .avatar4,
+.contentAvatar .avatar5,
+.contentAvatar .avatar6 {
+    margin-top: 6%;
+}
+
 .contentAvatar .labelActualizar {
     margin-left: 30%;
 }
@@ -124,6 +131,12 @@
     background-size: 100%;
     width: 10vh;
     height: 10vh;
+}
+
+.sombra {
+    -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.75); 
+    -moz-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.75); 
+    box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.75);
 }
 
 @media screen and (max-width: 480px) {
