@@ -183,10 +183,11 @@ class conexion {
         $respuestas = $_POST['respuestas'];
         
         $row = array();
-        $sql = 'SELECT * FROM preguntas WHERE nombre = "'.$nombre.'"';
-        $result = $mysqli->query($sql);
-        if ($result->num_rows > 0) {//Si hay resultados…
-            $mensajes['respuesta'] = 'Pregunta ya existe';
+        //$sql = 'SELECT * FROM preguntas WHERE nombre = "'.$nombre.'"';
+        //$result = $mysqli->query($sql);
+        //if ($result->num_rows > 0) {//Si hay resultados…
+        if (array_key_exists('idpreguntas', $_POST) && $_POST['idpreguntas']) {
+            //$mensajes['respuesta'] = 'Pregunta ya existe';
             if (array_key_exists('idpreguntas', $_POST) && $_POST['idpreguntas']) {
                 $sql = 'UPDATE preguntas SET nombre="' .$nombre. '", tipo=' .$tipo. ', respuestas="' .$respuestas. '" '
                     . 'WHERE idpreguntas= ' . $_POST['idpreguntas'];
