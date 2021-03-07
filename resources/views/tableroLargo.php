@@ -25,21 +25,14 @@
 </head>
 
 <?php
-    // session_start();//iniciando session 
-    // $nombre = $_SESSION['data_user_antropolys']['nombre'];
-    // $apellido = $_SESSION['data_user_antropolys']['apellido'];
-    // $fechaN = $_SESSION['data_user_antropolys']['fecha_nacimineto'];
-    // $ciudad = $_SESSION['data_user_antropolys']['ciudad'];
-    // $genero = $_SESSION['data_user_antropolys']['genero'];
-    // $correo = $_SESSION['data_user_antropolys']['correo'];
+    session_start();//iniciando session 
+    $nombre = $_SESSION['data_user_antropolys']['nombre'];
+    $apellido = $_SESSION['data_user_antropolys']['apellido'];
+    $fechaN = $_SESSION['data_user_antropolys']['fecha_nacimineto'];
+    $ciudad = $_SESSION['data_user_antropolys']['ciudad'];
+    $genero = $_SESSION['data_user_antropolys']['genero'];
+    $correo = $_SESSION['data_user_antropolys']['email'];
 
-
-    $nombre = "Cristian";
-    $apellido = "Henao";
-    $fechaN = "Agos/07/06";
-    $ciudad = "Bogota, Colombia";
-    $genero = "M";
-    $correo = "jjjjjj@gmail.com";
     $icono = ($genero == "M") ? "<i class='fa fa-mars genero'></i>" : "<i class='fa fa-venus genero'></i>";
 ?>
 

@@ -447,7 +447,7 @@
     }
     
     .content_img1 .img3 {
-        width: 13vh;
+        width: 20vh;
         height: 5vh;
     }
     
@@ -478,7 +478,7 @@
     }
     
     .content_img2 .img3 {
-        width: 16vh;
+        width: 20vh;
         height: 16.7vh;
     }
     
@@ -500,7 +500,7 @@
     }
     
     .content_img3 .img3 {
-        width: 16vh;
+        width: 20vh;
         height: 3.7vh;
     }
     
@@ -538,7 +538,7 @@
     
     .content_imgStreetH1,
     .content_imgStreetH3 {
-        width: 14vh;
+        width: 20vh;
         height: 5vh;
         margin-top: -5.2vh;
         margin-left: 31.5vh;
@@ -569,22 +569,24 @@
     }
 
     .containerTablero .perfilDados {
-        width: 19vh;
+        width: 23vh;
         margin-left: 8vh;
         position: fixed;
-        bottom: -24%;
+        bottom: -23%;
     }
     
     .containerTablero .perfilDados .btn.btnUsuario {
-        margin-left: 5vh;
-        margin-top: -7.7vh;
-        width: 4vh;
+        margin-left: 6vh;
+        margin-top: 3.6vh;
+        width: 5vh;
+        height: 5vh;
     }
     
     .containerTablero .perfilDados .btn.btnDados {
         margin-left: 1vh;
-        margin-top: -8vh;
-        width: 4vh;
+        margin-top: 2.6vh;
+        width: 6vh;
+        height: 5vh;
     }
 
     .imgStreet .posicion,

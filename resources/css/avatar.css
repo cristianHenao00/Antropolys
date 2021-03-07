@@ -139,19 +139,22 @@
 
 @media screen and (max-width: 480px) {
 
-    .container {
-        width: 385px;
-        margin-top: 7%;
+    .container.avatar {
+        width: 380px !important;
+        margin-top: 25% !important;
+        margin-left: 1vh;
     }
 
     .imgAvatar {
         top: 20%;
         position: relative;
+        margin-left: 26%;
     }
 
     .btn.btnCerrarAvatar {
         top: 16vh;
-        left: 20vh;
+        left: 25vh;
+        width: 31vh;
     }
 
     .contentAvatar .avatar1,

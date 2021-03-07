@@ -174,43 +174,42 @@
 
     .containerTablero .perfilDados .container.perfil,
     .containerTablero .perfilDados .container.contentPerfil  {
-        width: 385px;
-        margin-top: 7%;
+        width: 380px;
+        margin-top: 10%;
+        margin-left: 1vh;
     }
 
     .imgPerfil {
-        top: 16%;
+        top: 20%;
         position: relative;
+        margin-left: 26%;
     }
 
     .btn.btnCerrarPerfil {
-        top: 16vh;
-        left: 20vh;
+        top: 18vh;
+        left: 25vh;
+        width: 31vh;
     }
 
     .contentPerfil .imgAvatar {
-        width: 10vh;
-        margin-left: 40%;
-    }
-
-    .contentPerfil .bloque .info {
-        margin-top: -20px;
-    }
-
-    .contentPerfil .bloque .btn.avatar {
-        width: 15Vh;
-        margin-left: 34%;
-        margin-top: -7vh;
+        width: 9vh;
+        margin-left: 41%;
+        position: relative;
+        z-index: -1;
     }
 
     .contentPerfil .bloque .btn.actualizarClave {
-        width: 15vh;
-        margin-left: 34%;
-        margin-top: -7px;
+        margin-left: 32%;
+        margin-top: -1vh;
     }
 
     .contentPerfil .bloque {
-        margin-top: 12%;
+        margin-top: 10%;
+        margin-left: -2vh;
+    }
+
+    .contentPerfil .bloque1 {
+        margin-left: 5%;
     }
 
     .contentPerfil .bloque .info .correo {
@@ -219,11 +218,16 @@
 
     .contentPerfil .labelActualizar {
         margin-left: 37%;
-        margin-top: -15px;
     }
 
     .contentPerfil .btn.actualizar {
         margin-left: 37%;
+        width: 8vh;
+        margin-top: -2vh;
+    }
+
+    .contentPerfil .bloque .btn.avatar {
+        width: 16vh;
     }
 
 }
