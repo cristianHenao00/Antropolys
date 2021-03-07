@@ -12,15 +12,13 @@
     src: url(../assets/font/Lalezar-Regular.ttf);
 }
 
-.bodyAvatar {
-    background-color: black;
-    min-height: 88vh;
-
-}
-
-.container {
+.containerTablero .perfilDados .container.avatar,
+.containerTablero .perfilDados .container.contentAvatar {
     width: 390px;
     height: 370px;
+}
+
+.containerTablero .perfilDados .container.avatar {
     margin-top: 4%;
 }
 
@@ -37,7 +35,7 @@
     color: saddlebrown;
 }
 
-.imgAvatar {
+.imgAvatarTitle {
     width: 55%;
     margin-left: 95px;
     z-index: 1;
@@ -140,11 +138,6 @@
 }
 
 @media screen and (max-width: 480px) {
-
-    html,
-    body {
-        overflow: hidden;
-    }
 
     .container {
         width: 385px;

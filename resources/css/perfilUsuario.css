@@ -12,19 +12,18 @@
     src: url(../assets/font/Lalezar-Regular.ttf);
 }
 
-.bodyPerfil {
-    background-color: black;
-    min-height: 88vh;
-
-}
-
-.container {
+.containerTablero .perfilDados .container.perfil,
+.containerTablero .perfilDados .container.contentPerfil  {
     width: 390px;
     height: 370px;
+    margin-left: 28%;
+}
+
+.containerTablero .perfilDados .container.perfil  {
     margin-top: 4%;
 }
 
-.contentPerfil {
+.containerTablero .perfilDados .container.contentPerfil {
     background-image: url(../assets/imagenes_nuevas/PNG/tablero_solo.png);
     background-repeat: no-repeat;
     background-position: center;
@@ -39,7 +38,7 @@
 
 .imgPerfil {
     width: 55%;
-    margin-left: 95px;
+    margin-left: 55%;
     z-index: 1;
     position: relative;
 }
@@ -54,7 +53,7 @@
     width: 35vh;
     height: 7vh;
     top: 14vh;
-    right: 55vh;
+    right: 61vh;
     z-index: 3;
 }
 
@@ -68,7 +67,6 @@
 }
 
 .contentPerfil .imgAvatar {
-    background-image: url(../assets/imagenes_nuevas/PNG/avatar_principal.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%;
@@ -107,7 +105,7 @@
 .contentPerfil .bloque .info .correo {
     margin-top: 8px;
     font-size: 18px;
-    margin-bottom: -15px;
+    margin-bottom: -5px;
 }
 
 .contentPerfil .bloque .btn.actualizarClave {
@@ -124,7 +122,7 @@
 .contentPerfil .labelActualizar {
     margin-left: 32%;
     margin-top: -10px;
-    margin-bottom: -10px;
+    margin-bottom: -5px;
     font-size: 16px;
 }
 
@@ -143,14 +141,39 @@
     font-size: 17px;
 }
 
+.contentPerfil .imgAvatar.avatarPrincipal {
+    background-image: url(../assets/imagenes_nuevas/PNG/avatar_principal.png);
+}
+
+.contentPerfil .imgAvatar.avatar1 {
+    background-image: url(../assets/imagenes_nuevas/PNG/avatar_01.png);
+}
+
+.contentPerfil .imgAvatar.avatar2 {
+    background-image: url(../assets/imagenes_nuevas/PNG/avatar_02.png);
+}
+
+.contentPerfil .imgAvatar.avatar3 {
+    background-image: url(../assets/imagenes_nuevas/PNG/avatar_03.png);
+}
+
+.contentPerfil .imgAvatar.avatar4 {
+    background-image: url(../assets/imagenes_nuevas/PNG/avatar_04.png);
+}
+
+.contentPerfil .imgAvatar.avatar5 {
+    background-image: url(../assets/imagenes_nuevas/PNG/avatar_05.png);
+}
+
+.contentPerfil .imgAvatar.avatar6 {
+    background-image: url(../assets/imagenes_nuevas/PNG/avatar_06.png);
+}
+
+
 @media screen and (max-width: 480px) {
 
-    html,
-    body {
-        overflow: hidden;
-    }
-
-    .container {
+    .containerTablero .perfilDados .container.perfil,
+    .containerTablero .perfilDados .container.contentPerfil  {
         width: 385px;
         margin-top: 7%;
     }

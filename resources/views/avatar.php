@@ -27,7 +27,7 @@ and open the template in the editor.
 <body class="bodyAvatar" id="body_avatar">
 
     <div class="container avatar" >
-        <img class="imgAvatar" id="img_avatar" src="../../resources/assets/imagenes_nuevas/PNG/cabecera_avatars.png">
+        <img class="imgAvatarTitle" id="img_avatar" src="../../resources/assets/imagenes_nuevas/PNG/cabecera_avatars.png">
         <button class="btn btn-block btnCerrarAvatar" type="submit" id="btn_cerrarAvatar"></button>
         <div class="row">
             <div class="container contentAvatar" id="content_avatar">

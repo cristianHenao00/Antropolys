@@ -38,7 +38,7 @@ class avatar {
             xhttp.open("post", '../../class/conexion.php', true);
             xhttp.send(formData);
         }
-        else msjBC.informacion('ERROR','Seleccione la configuración');
+        else setTimeout(function(){ ; }, 3000);;
     
         
     }

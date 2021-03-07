@@ -5,14 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="../../resources/assets/pix/favico.png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link href="../../resources/css/tableroLargo.css" rel="stylesheet" >
+    <link href="../../resources/css/perfilUsuario.css" rel="stylesheet" >
+    <link href="../../resources/css/avatar.css" rel="stylesheet" >
+    <link rel="stylesheet" href="../../resources/css/tostadas/pnotify.brighttheme.css">
+    <link rel="stylesheet" href="../../resources/css/tostadas/pnotify.buttons.css">
+    <link rel="stylesheet" href="../../resources/css/tostadas/pnotify.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="../js/tostadas/pnotify.js"></script>
+    <script src="../js/tostadas/pnotify.animate.js"></script>
+    <script src="../js/tostadas/pnotify.buttons.js"></script>
+    <script src="../js/tostadas/mensajes.js"></script>
+    <script src="../js/avatar.js"></script>
     <title>Tablero antropolys</title>
 </head>
+
+<?php
+    // session_start();//iniciando session 
+    // $nombre = $_SESSION['data_user_antropolys']['nombre'];
+    // $apellido = $_SESSION['data_user_antropolys']['apellido'];
+    // $fechaN = $_SESSION['data_user_antropolys']['fecha_nacimineto'];
+    // $ciudad = $_SESSION['data_user_antropolys']['ciudad'];
+    // $genero = $_SESSION['data_user_antropolys']['genero'];
+    // $correo = $_SESSION['data_user_antropolys']['correo'];
+
+
+    $nombre = "Cristian";
+    $apellido = "Henao";
+    $fechaN = "Agos/07/06";
+    $ciudad = "Bogota, Colombia";
+    $genero = "M";
+    $correo = "jjjjjj@gmail.com";
+    $icono = ($genero == "M") ? "<i class='fa fa-mars genero'></i>" : "<i class='fa fa-venus genero'></i>";
+?>
+
 <body class="bodyTablero" id="body_tablero">
-    <div class="container">
+    <div class="containerTablero">
         <div class="row tableroNormal" id="tablero_normal">
             <div class="tablero1">
                 <div class="col-xs-12 content_img1">
@@ -454,27 +486,27 @@
                     <div class="col-xs-2 imgStreet"> 
                         <img src="../../resources/assets/Tablero-tajado/calle-vertical2.jpg"> 
                         <div class="posicion" id="posicion_51"> 
-                            <img class="posicionGris" src="../../resources/assets/imagenes_nuevas/PNG/Botonera/gris/botones_Conjunto-de-datos-9_Conjunto-de-datos-52.png">
-                            <img class="posicionVerde" src="../../resources/assets/imagenes_nuevas/PNG/Botonera/verde/botones_Conjunto-de-datos-9_Conjunto-de-datos-52.png">
-                            <img class="posicionAzul" src="../../resources/assets/imagenes_nuevas/PNG/Botonera/Azul/botones_Conjunto-de-datos-52.png"> 
+                            <img class="posicionGris" src="../../resources/assets/imagenes_nuevas/PNG/Botonera/gris/botones_Conjunto-de-datos-9_Conjunto-de-datos-55.png">
+                            <img class="posicionVerde" src="../../resources/assets/imagenes_nuevas/PNG/Botonera/verde/botones_Conjunto-de-datos-9_Conjunto-de-datos-55.png">
+                            <img class="posicionAzul" src="../../resources/assets/imagenes_nuevas/PNG/Botonera/Azul/botones_Conjunto-de-datos-55.png"> 
                             <div class="btnUser" id="btnPosicion_51" type="submit" onclick=""> </div>
                         </div>
                         <div class="posicion1" id="posicion_52"> 
-                            <img class="posicionGris" src="../../resources/assets/imagenes_nuevas/PNG/Botonera/gris/botones_Conjunto-de-datos-9_Conjunto-de-datos-53.png">
-                            <img class="posicionVerde" src="../../resources/assets/imagenes_nuevas/PNG/Botonera/verde/botones_Conjunto-de-datos-9_Conjunto-de-datos-53.png">
-                            <img class="posicionAzul" src="../../resources/assets/imagenes_nuevas/PNG/Botonera/Azul/botones_Conjunto-de-datos-53.png"> 
-                            <div class="btnUser" id="btnPosicion_52" type="submit" onclick=""> </div>
-                        </div>
-                        <div class="posicion2" id="posicion_53"> 
                             <img class="posicionGris" src="../../resources/assets/imagenes_nuevas/PNG/Botonera/gris/botones_Conjunto-de-datos-9_Conjunto-de-datos-54.png">
                             <img class="posicionVerde" src="../../resources/assets/imagenes_nuevas/PNG/Botonera/verde/botones_Conjunto-de-datos-9_Conjunto-de-datos-54.png">
                             <img class="posicionAzul" src="../../resources/assets/imagenes_nuevas/PNG/Botonera/Azul/botones_Conjunto-de-datos-54.png"> 
+                            <div class="btnUser" id="btnPosicion_52" type="submit" onclick=""> </div>
+                        </div>
+                        <div class="posicion2" id="posicion_53"> 
+                            <img class="posicionGris" src="../../resources/assets/imagenes_nuevas/PNG/Botonera/gris/botones_Conjunto-de-datos-9_Conjunto-de-datos-53.png">
+                            <img class="posicionVerde" src="../../resources/assets/imagenes_nuevas/PNG/Botonera/verde/botones_Conjunto-de-datos-9_Conjunto-de-datos-53.png">
+                            <img class="posicionAzul" src="../../resources/assets/imagenes_nuevas/PNG/Botonera/Azul/botones_Conjunto-de-datos-53.png"> 
                             <div class="btnUser" id="btnPosicion_53" type="submit" onclick=""> </div>
                         </div>
                         <div class="posicion3" id="posicion_54"> 
-                            <img class="posicionGris" src="../../resources/assets/imagenes_nuevas/PNG/Botonera/gris/botones_Conjunto-de-datos-9_Conjunto-de-datos-55.png">
-                            <img class="posicionVerde" src="../../resources/assets/imagenes_nuevas/PNG/Botonera/verde/botones_Conjunto-de-datos-9_Conjunto-de-datos-55.png">
-                            <img class="posicionAzul" src="../../resources/assets/imagenes_nuevas/PNG/Botonera/Azul/botones_Conjunto-de-datos-55.png">
+                            <img class="posicionGris" src="../../resources/assets/imagenes_nuevas/PNG/Botonera/gris/botones_Conjunto-de-datos-9_Conjunto-de-datos-52.png">
+                            <img class="posicionVerde" src="../../resources/assets/imagenes_nuevas/PNG/Botonera/verde/botones_Conjunto-de-datos-9_Conjunto-de-datos-52.png">
+                            <img class="posicionAzul" src="../../resources/assets/imagenes_nuevas/PNG/Botonera/Azul/botones_Conjunto-de-datos-52.png">
                             <div class="btnUser" id="btnPosicion_54" type="submit" onclick=""> </div>
                         </div>
                         <div class="posicion8" id="posicion_55"> 
@@ -572,27 +604,27 @@
                     <div class="col-xs-2 imgStreet"> 
                         <img src="../../resources/assets/Tablero-tajado/calle-vertical2.jpg"> 
                         <div class="posicion" id="posicion_65"> 
-                            <img class="posicionGris" src="../../resources/assets/imagenes_nuevas/PNG/Botonera/gris/botones_Conjunto-de-datos-9_Conjunto-de-datos-66.png"> 
-                            <img class="posicionVerde" src="../../resources/assets/imagenes_nuevas/PNG/Botonera/verde/botones_Conjunto-de-datos-9_Conjunto-de-datos-66.png">
-                            <img class="posicionAzul" src="../../resources/assets/imagenes_nuevas/PNG/Botonera/Azul/botones_Conjunto-de-datos-66.png">
-                            <div class="btnUser" id="btnPosicion_65" type="submit" onclick=""> </div>
-                        </div>
-                        <div class="posicion1" id="posicion_66"> 
-                            <img class="posicionGris" src="../../resources/assets/imagenes_nuevas/PNG/Botonera/gris/botones_Conjunto-de-datos-9_Conjunto-de-datos-67.png"> 
-                            <img class="posicionVerde" src="../../resources/assets/imagenes_nuevas/PNG/Botonera/verde/botones_Conjunto-de-datos-9_Conjunto-de-datos-67.png">
-                            <img class="posicionAzul" src="../../resources/assets/imagenes_nuevas/PNG/Botonera/Azul/botones_Conjunto-de-datos-67.png">
-                            <div class="btnUser" id="btnPosicion_66" type="submit" onclick=""> </div>
-                        </div>
-                        <div class="posicion2" id="posicion_67"> 
-                            <img class="posicionGris" src="../../resources/assets/imagenes_nuevas/PNG/Botonera/gris/botones_Conjunto-de-datos-9_Conjunto-de-datos-68.png"> 
-                            <img class="posicionVerde" src="../../resources/assets/imagenes_nuevas/PNG/Botonera/verde/botones_Conjunto-de-datos-9_Conjunto-de-datos-68.png">
-                            <img class="posicionAzul" src="../../resources/assets/imagenes_nuevas/PNG/Botonera/Azul/botones_Conjunto-de-datos-68.png">}
-                            <div class="btnUser" id="btnPosicion_67" type="submit" onclick=""> </div>
-                        </div>
-                        <div class="posicion3" id="posicion_68"> 
                             <img class="posicionGris" src="../../resources/assets/imagenes_nuevas/PNG/Botonera/gris/botones_Conjunto-de-datos-9_Conjunto-de-datos-69.png"> 
                             <img class="posicionVerde" src="../../resources/assets/imagenes_nuevas/PNG/Botonera/verde/botones_Conjunto-de-datos-9_Conjunto-de-datos-69.png">
                             <img class="posicionAzul" src="../../resources/assets/imagenes_nuevas/PNG/Botonera/Azul/botones_Conjunto-de-datos-69.png">
+                            <div class="btnUser" id="btnPosicion_65" type="submit" onclick=""> </div>
+                        </div>
+                        <div class="posicion1" id="posicion_66"> 
+                            <img class="posicionGris" src="../../resources/assets/imagenes_nuevas/PNG/Botonera/gris/botones_Conjunto-de-datos-9_Conjunto-de-datos-68.png"> 
+                            <img class="posicionVerde" src="../../resources/assets/imagenes_nuevas/PNG/Botonera/verde/botones_Conjunto-de-datos-9_Conjunto-de-datos-68.png">
+                            <img class="posicionAzul" src="../../resources/assets/imagenes_nuevas/PNG/Botonera/Azul/botones_Conjunto-de-datos-68.png">
+                            <div class="btnUser" id="btnPosicion_66" type="submit" onclick=""> </div>
+                        </div>
+                        <div class="posicion2" id="posicion_67"> 
+                            <img class="posicionGris" src="../../resources/assets/imagenes_nuevas/PNG/Botonera/gris/botones_Conjunto-de-datos-9_Conjunto-de-datos-67.png"> 
+                            <img class="posicionVerde" src="../../resources/assets/imagenes_nuevas/PNG/Botonera/verde/botones_Conjunto-de-datos-9_Conjunto-de-datos-67.png">
+                            <img class="posicionAzul" src="../../resources/assets/imagenes_nuevas/PNG/Botonera/Azul/botones_Conjunto-de-datos-67.png">
+                            <div class="btnUser" id="btnPosicion_67" type="submit" onclick=""> </div>
+                        </div>
+                        <div class="posicion3" id="posicion_68"> 
+                            <img class="posicionGris" src="../../resources/assets/imagenes_nuevas/PNG/Botonera/gris/botones_Conjunto-de-datos-9_Conjunto-de-datos-66.png"> 
+                            <img class="posicionVerde" src="../../resources/assets/imagenes_nuevas/PNG/Botonera/verde/botones_Conjunto-de-datos-9_Conjunto-de-datos-66.png">
+                            <img class="posicionAzul" src="../../resources/assets/imagenes_nuevas/PNG/Botonera/Azul/botones_Conjunto-de-datos-66.png">
                             <div class="btnUser" id="btnPosicion_68" type="submit" onclick=""> </div>
                         </div>
                         <div class="posicion8" id="posicion_69"> 
@@ -730,6 +762,70 @@
                     </div>             
                 </div>
             </div>               
+        </div>
+
+        <div class="perfilDados" id="dados">
+            <div class="btn btnUsuario avatarPrincipal" id="btnUsuario" type="submit" data-toggle="collapse" data-target="#perfilUsuarioModal"  aria-expanded="true"> </div>
+            <div class="btn btnDados" type="submit" id="btnDados"> </div>
+            
+            <div class="modal fade collapse" tabindex="-1" role="dialog" id="perfilUsuarioModal" aria-expanded="true" style="">
+                <div class="content_modal">
+                    <div class="container perfil" >
+                        <img class="imgPerfil" id="img_perfil" src="../../resources/assets/imagenes_nuevas/PNG/cabecera_perfil_usuario.png">
+                        <div class="btn btn-block btnCerrarPerfil" type="submit" id="btn_cerrarPerfil" onclick="document.getElementById('perfilUsuarioModal').classList.remove('in');"></div>
+                        <div class="row">
+                            <div class="container contentPerfil" id="content_perfil">
+                                <div class="bloque">
+                                    <div class="imgAvatar avatarPrincipal"></div>
+                                    <div class="btn avatar" type="submit" id="btn_avatar" data-toggle="collapse" data-target="#avatarModal"  aria-expanded="true" onclick="document.getElementById('perfilUsuarioModal').classList.remove('in');"> </div>
+                                    
+                                    <div class="info">
+                                        <div class="nombre" id="nombre"> <?php echo $nombre?> </div>
+                                        <div class="apellido" id="apellido"> <?php echo $apellido?> </div>
+                                        <div class="fecha" id="fecha"> <?php echo $fechaN?> </div>
+                                        <div class="ciudad" id="ciudad"> <?php echo $ciudad ?> <?php echo $icono ?> </div>
+                                        <div class="correo" id="correo"> <?php echo $correo?> </div>
+                                    </div>
+                                    <div class="btn actualizarClave" type="submit" id="actualizar_clave"></div>
+                                </div>
+                                
+                                <div class="bloque1">
+                                    <div class="labelActualizar"> actualizar </div>
+                                    <div class="btn actualizar" type="submit" id="actualizar"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal fade collapse" tabindex="-1" role="dialog" id="avatarModal" aria-expanded="true" style="">
+                <div class="content_modal">
+                    <div class="container avatar" >
+                        <img class="imgAvatarTitle" id="img_avatar" src="../../resources/assets/imagenes_nuevas/PNG/cabecera_avatars.png">
+                        <div class="btn btn-block btnCerrarAvatar" type="submit" id="btn_cerrarAvatar" data-toggle="collapse" data-target="#perfilUsuarioModal"  aria-expanded="true" onclick="document.getElementById('avatarModal').classList.remove('in');"></div>
+                        <div class="row">
+                            <div class="container contentAvatar" id="content_avatar">
+                                <div class="bloque">
+                                    <div class="col-xs-12" id="bloqueAvatar">
+                                        <div class="btn avatar1" type="submit" id="avatar_1" onclick="ava.select_avatar(this)"> </div>
+                                        <div class="btn avatar2" type="submit" id="avatar_2" onclick="ava.select_avatar(this)" style="margin-left:10px; margin-right:10px;"> </div>
+                                        <div class="btn avatar3" type="submit" id="avatar_3" onclick="ava.select_avatar(this)"> </div>
+                                        <div class="btn avatar4" type="submit" id="avatar_4" onclick="ava.select_avatar(this)"> </div>
+                                        <div class="btn avatar5" type="submit" id="avatar_5" onclick="ava.select_avatar(this)" style="margin-left:10px; margin-right:10px;"> </div>
+                                        <div class="btn avatar6" type="submit" id="avatar_6" onclick="ava.select_avatar(this)"> </div>
+                                    </div>
+                                </div>
+                                <div class="bloque1">
+                                    <div class="labelActualizar"> actualizar </div>
+                                    <div class="btn actualizar" type="submit" id="actualizar"  onclick="ava.save_avatar()"> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
     </div>
