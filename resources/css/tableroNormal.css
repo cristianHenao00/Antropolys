@@ -384,9 +384,7 @@
 
 .containerTablero .perfilDados .modal.fade.collapse.in,
 .containerTablero .perfilDados .modal.fade.collapse {
-    -webkit-box-shadow: 0px 0px 243px 39px rgb(0 0 0 / 75%);
-    -moz-box-shadow: 0px 0px 243px 39px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 0px 243px 39px rgb(0 0 0 / 75%);
+    background-color: rgb(152 151 151 / 48%);
 }
 
 .containerTablero .perfilDados .btn.btnUsuario.avatarPrincipal {
