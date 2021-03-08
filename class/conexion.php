@@ -22,6 +22,9 @@ class conexion {
             case 'Q2':
                 $res = $this->list_preguntas();
                 break;
+            case 'U1':
+                $res = $this->update_avatar();
+                break;
         }
 
         echo json_encode($res); die();
@@ -262,6 +265,23 @@ class conexion {
             $mensajes['respuesta'] = $row;
         }else{$mensajes['respuesta'] = 'Sin preguntas cargadas';}
         $this->close_conexion($mysqli);
+        return $mensajes;
+    }
+    
+    private function update_avatar() {
+        $mensajes = array();
+        $mensajes['ack'] = 0;
+        $mysqli = $this->conectar();
+        session_start();//iniciando session 
+        $iduser = $_SESSION['data_user_antropolys']['iduser'];
+        $img = $_POST['img'];
+        $sql = "UPDATE users SET img=$img WHERE iduser=$iduser";
+        //echo '----: '; print_r($_SESSION['data_user_antropolys']);
+        if ($result = $mysqli->query($sql)){
+            $mensajes['respuesta'] = 'Se actualizó el avatar';
+            $mensajes['ack'] = 1;
+            $_SESSION['data_user_antropolys']['img'] = $img;
+        }else $mensajes['respuesta'] = 'No se actualizó';
         return $mensajes;
     }
 

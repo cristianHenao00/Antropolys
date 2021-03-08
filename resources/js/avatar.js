@@ -22,16 +22,19 @@ class avatar {
 
         if (indexImg) {
             var formData = new FormData();           
-            formData.append("key", "C4");
+            formData.append("key", "U1");
             formData.append("img", indexImg);
             ////Enviar objeto a crear
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                     var fjson = JSON.parse(this.responseText);
+                    console.log('fjson',fjson);
                     if(fjson.ack){
-                        setTimeout(function(){ location.href = "resources/views/tablero.php"; }, 3000);
-                    }else setTimeout(function(){ location.href = "aviso.php"; }, 3000);
+                        document.getElementById('btnUsuario').style.backgroundImage = 'url(../assets/imagenes_nuevas/PNG/avatar_0'+indexImg+'.png)'
+                        document.getElementsByClassName('imgAvatar avatarPrincipal')[0].style.backgroundImage = 'url(../assets/imagenes_nuevas/PNG/avatar_0'+indexImg+'.png)'
+                        document.getElementById('btn_cerrarAvatar').click();
+                    }
                     msjBC.informacion('INFORMACIÓN',fjson.respuesta); 
                 }
             };
