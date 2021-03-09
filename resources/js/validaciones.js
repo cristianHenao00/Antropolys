@@ -39,7 +39,8 @@ class validaciones {
                 if (this.readyState == 4 && this.status == 200) {
                     var fjson = JSON.parse(this.responseText);
                     if(fjson.ack){
-                        setTimeout(function(){ location.href = "resources/views/tablero.php"; }, 3000);
+                        var tab = extencion == 1 ?'tableroNormal':'tableroLargo';
+                        setTimeout(function(){ location.href = "/resources/views/"+tab+".php"; }, 2000);
                     }else setTimeout(function(){ location.href = "aviso.php"; }, 3000);
                     msjBC.informacion('INFORMACIÓN',fjson.respuesta); 
                 }

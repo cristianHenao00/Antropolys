@@ -154,7 +154,7 @@ class conexion {
             $st_pre = '';
             $preguntas = array();
             $limit = $longitud == 1? 40:80;
-            $sql =  "SELECT * FROM preguntas ORDER BY RAND() LIMIT $limit";
+            $sql =  "SELECT * FROM preguntas WHERE nivel = $nivel ORDER BY RAND() LIMIT $limit";
             $result4 = $mysqli->query($sql);
             if ($result4->num_rows > 0) {
                 while ($fila = $result4->fetch_array(MYSQLI_ASSOC))$preguntas[] = $fila['idpreguntas'];
