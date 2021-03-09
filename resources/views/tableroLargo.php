@@ -759,7 +759,7 @@
         </div>
 
         <div class="perfilDados" id="dados">
-            <div class="btn btnUsuario avatarPrincipal" id="btnUsuario" type="submit" data-toggle="collapse" data-target="#perfilUsuarioModal"  aria-expanded="true" style="background-image: url(../assets/imagenes_nuevas/PNG/<?php echo $img ?>.png)"> </div>
+            <div class="btn btnUsuario avatarPrincipal" id="btnUsuario" type="submit" data-toggle="collapse" data-target="#perfilUsuarioModal"  aria-expanded="true"> </div>
             <div class="btn btnDados" type="submit" id="btnDados"> </div>
             
             <div class="modal fade collapse" tabindex="-1" role="dialog" id="perfilUsuarioModal" aria-expanded="true" style="">
@@ -770,7 +770,7 @@
                         <div class="row">
                             <div class="container contentPerfil" id="content_perfil">
                                 <div class="bloque">
-                                    <div class="imgAvatar avatarPrincipal"  style="background-image: url(../assets/imagenes_nuevas/PNG/<?php echo $img ?>.png)"></div>
+                                    <div class="imgAvatar avatarPrincipal" ></div>
                                     <div class="btn avatar" type="submit" id="btn_avatar" data-toggle="collapse" data-target="#avatarModal"  aria-expanded="true" onclick="document.getElementById('perfilUsuarioModal').classList.remove('in');"> </div>
                                     
                                     <div class="info">
