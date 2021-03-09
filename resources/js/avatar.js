@@ -29,13 +29,13 @@ class avatar {
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                     var fjson = JSON.parse(this.responseText);
-                    console.log('fjson',fjson);
                     if(fjson.ack){
                         document.getElementById('btnUsuario').setAttribute('class','btn btnUsuario avatar'+indexImg);
                         //document.getElementById('btnUsuario').style.backgroundImage = 'url(../assets/imagenes_nuevas/PNG/avatar_0'+indexImg+'.png)'
                         //document.getElementsByClassName('imgAvatar avatarPrincipal')[0].style.backgroundImage = 'url(../assets/imagenes_nuevas/PNG/avatar_0'+indexImg+'.png)'
                         document.getElementsByClassName('imgAvatar')[0].setAttribute('class','imgAvatar avatar'+indexImg);
                         document.getElementById('btn_cerrarAvatar').click();
+                        if(usuario && usuario.img) usuario.img = indexImg;
                     }
                     msjBC.informacion('INFORMACIÓN',fjson.respuesta); 
                 }

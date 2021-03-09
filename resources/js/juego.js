@@ -3,10 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-var my_pos_actual = 0;
-var my_pos_futura = 0;
+var my_pos_actual = 0;//la posicion en la que el jugador está
+var my_pos_futura = 0;//el marcado de los dados
+var my_pos_posible = 0;//la suma de la actual y la futura
+var largo_juego = 0;
 class juego {
     generate_turno(){
+        if(eljuego.idlongitud == 1){
+            if(window.location.pathname != '/resources/views/tableroNormal.php'){
+               var n = window.location.href.replace('/resources/views/tableroLargo.php','/resources/views/tableroNormal.php') 
+               window.location.href = n;
+            }
+        }else{
+            if(window.location.pathname != '/resources/views/tableroLargo.php'){
+               var n = window.location.href.replace('/resources/views/tableroNormal.php','/resources/views/tableroLargo.php') 
+               window.location.href = n;
+            }
+        }
+        largo_juego = (eljuego.idlongitud == 1)? 40:80;
+
         var formData = new FormData();           
         formData.append("key", "C1");
         ////Enviar objeto a crear
@@ -42,18 +57,35 @@ class juego {
     
     lanzar(){
         document.getElementById('btnDados').style.backgroundImage = 'url(../assets/dadomorado.gif)';
+        document.getElementById('btnDados').style.backgroundSize = '75%';
         document.getElementById('btnDados').setAttribute('onclick','');
-        var caer = 1+ (Math.floor(Math.random() * 6));
+        my_pos_futura = 1+ (Math.floor(Math.random() * 6));
         
-        my_pos_futura = caer;
         setTimeout(function(){
-            document.getElementById('btnDados').style.backgroundImage = 'none';
-            document.getElementById('btnDados').innerHTML = caer;
-            setTimeout(function(){
+            //document.getElementById('btnDados').style.backgroundImage = 'none';
+            document.getElementById('btnDados').innerHTML = my_pos_futura;
+            my_pos_posible = my_pos_actual + my_pos_futura;
+            if(my_pos_posible > largo_juego) my_pos_posible = largo_juego;
+            
+            /*var btn_posible = document.getElementById('posicion_'+my_pos_posible);
+            btn_posible.getElementsByClassName('posicionGris')[0].style.display = 'none';
+            btn_posible.getElementsByClassName('posicionAzul')[0].style.display = 'block';*/
+            
+            var avatar_posible = document.getElementById('btnPosicion_'+my_pos_posible);
+            avatar_posible.style.backgroundImage = 'url(../assets/imagenes_nuevas/PNG/avatar_0'+usuario.img+'.png)'
+            avatar_posible.classList.add("flash");
+            avatar_posible.style.display = 'block';
+            
+            console.log('eljuego',eljuego);
+            console.log('usuario',usuario);
+            
+            /*setTimeout(function(){
+             * document.getElementById('btnDados').style.backgroundSize = '100%';
                 document.getElementById('btnDados').setAttribute('onclick','ju_ego.lanzar()');
                 document.getElementById('btnDados').style.display = 'none';
-            }, 1500);
-            ju_ego.mostrar_pregunta();
+                ju_ego.mostrar_pregunta();
+            }, 3000);*/
+            
         }, 2000);
     }
     

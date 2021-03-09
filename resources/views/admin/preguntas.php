@@ -37,7 +37,14 @@
         <script src="../../js/tostadas/mensajes.js"></script>
 
         <script src="../../js/preguntas.js"></script>
-
+        <style>
+            .table-bordered>thead>tr>th, .table-bordered>tbody>tr>th, 
+            .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, 
+            .table-bordered>tbody>tr>td, .table-bordered>tfoot>tr>td,
+            .table-bordered{
+                border: 1px solid #8e3cbc;
+            }
+        </style>
         
     </head>
     
@@ -146,7 +153,7 @@
             
             //echo '<button type="button" class="btn btn-success">Crear Juego</button>';
             ?>
-            <div class="content-wrapper" id="vista_content">
+            <div class="content-wrapper" id="vista_content" style="float: left;">
                 <br>
             <?php    echo '<h3>Hola Admin ' . $_SESSION['data_user_antropolys']['nombre'] . '</h3>';?>
                 <form method='post' class="form-question text-center" id="question" role="form">
@@ -175,7 +182,7 @@
                     </div>
                     <div class="col-sm-7">
                         <h3>Lista de Preguntas</h3>
-                        <table class="table">
+                        <table class="table table-striped table-bordered">
                             <thead>
                               <tr>
                                 <th scope="col">#</th>
