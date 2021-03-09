@@ -36,6 +36,12 @@
     $img = $_SESSION['data_user_antropolys']['img']? 'avatar'.$_SESSION['data_user_antropolys']['img']: 'avatarPrincipal';
 
     $icono = ($genero == "M") ? "<i class='fa fa-mars genero'></i>" : "<i class='fa fa-venus genero'></i>";
+    $usuario = json_encode($_SESSION['data_user_antropolys']);
+    $eljuego = json_encode($_SESSION['data_game_antropolys']);
+    echo "<script>
+            var usuario = $usuario;
+            var eljuego = $eljuego;
+           </script>";
 ?>
 
 <body class="bodyTablero" id="body_tablero" onload="ju_ego.generate_turno();">

@@ -12,6 +12,9 @@ class juego {
             case 'Q1':
                 $res = $this->conocer_turno();
                 break;
+            case 'Q2':
+                $res = $this->ver_pregunta();
+                break;
             
         }
 
@@ -91,7 +94,22 @@ class juego {
                 $result2 = $mysqli->query($sql);
             }
         }
-        
+        $this->close_conexion($mysqli);
+        return $mensajes;
+    }
+    
+    private function ver_pregunta() {$mensajes = array();
+        $mensajes['ack'] = 0;
+        session_start();//iniciando session 
+        $mysqli = $this->conectar();
+        $mensajes['ack']  = 0;
+        $idpregunta = $_POST['idpregunta'];
+        $sql = "SELECT * FROM preguntas WHERE idpreguntas = $idpregunta";
+        $result1 = $mysqli->query($sql);
+        if ($result1->num_rows > 0) {//Si hay resultados…
+            $mensajes['ack']  = 1;
+            $mensajes['respuesta']  = $result1->fetch_array(MYSQLI_ASSOC);//array los datos arrojados
+        }
         
         $this->close_conexion($mysqli);
         return $mensajes;
