@@ -32,7 +32,7 @@
     $ciudad = $_SESSION['data_user_antropolys']['ciudad'];
     $genero = $_SESSION['data_user_antropolys']['genero'];
     $correo = $_SESSION['data_user_antropolys']['email'];
-    $img = $_SESSION['data_user_antropolys']['img']? 'avatar_0'.$_SESSION['data_user_antropolys']['img']: 'avatar_principal';
+    $img = $_SESSION['data_user_antropolys']['img']? 'avatar'.$_SESSION['data_user_antropolys']['img']: 'avatarPrincipal';
 
     $icono = ($genero == "M") ? "<i class='fa fa-mars genero'></i>" : "<i class='fa fa-venus genero'></i>";
 ?>
@@ -759,7 +759,7 @@
         </div>
 
         <div class="perfilDados" id="dados">
-            <div class="btn btnUsuario avatarPrincipal" id="btnUsuario" type="submit" data-toggle="collapse" data-target="#perfilUsuarioModal"  aria-expanded="true"> </div>
+            <div class="btn btnUsuario <?php echo $img ?>" id="btnUsuario" type="submit" data-toggle="collapse" data-target="#perfilUsuarioModal"  aria-expanded="true"> </div>
             <div class="btn btnDados" type="submit" id="btnDados"> </div>
             
             <div class="modal fade collapse" tabindex="-1" role="dialog" id="perfilUsuarioModal" aria-expanded="true" style="">
@@ -770,7 +770,7 @@
                         <div class="row">
                             <div class="container contentPerfil" id="content_perfil">
                                 <div class="bloque">
-                                    <div class="imgAvatar avatarPrincipal" ></div>
+                                    <div class="imgAvatar <?php echo $img ?>" ></div>
                                     <div class="btn avatar" type="submit" id="btn_avatar" data-toggle="collapse" data-target="#avatarModal"  aria-expanded="true" onclick="document.getElementById('perfilUsuarioModal').classList.remove('in');"> </div>
                                     
                                     <div class="info">
