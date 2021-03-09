@@ -196,15 +196,17 @@ class conexion {
         
         $nombre = $_POST['nombre'];
         $tipo = $_POST['tipo'];
+        $nivel = $_POST['nivel'];
         $respuestas = $_POST['respuestas'];
         
         $row = array();
-        $sql = 'SELECT * FROM preguntas WHERE nombre = "'.$nombre.'"';
+        /*$sql = 'SELECT * FROM preguntas WHERE nombre = "'.$nombre.'"';
         $result = $mysqli->query($sql);
-        if ($result->num_rows > 0) {//Si hay resultados…
+        if ($result->num_rows > 0 ) {//Si hay resultados…*/
+        if (array_key_exists('idpreguntas', $_POST) && $_POST['idpreguntas']) {//Si hay resultados…
             $mensajes['respuesta'] = 'Pregunta ya existe';
             if (array_key_exists('idpreguntas', $_POST) && $_POST['idpreguntas']) {
-                $sql = 'UPDATE preguntas SET nombre="' .$nombre. '", tipo=' .$tipo. ', respuestas="' .$respuestas. '" '
+                $sql = 'UPDATE preguntas SET nombre="' .$nombre. '", tipo=' .$tipo. ', nivel=' .$nivel. ', respuestas="' .$respuestas. '" '
                     . 'WHERE idpreguntas= ' . $_POST['idpreguntas'];
                 if ($result = $mysqli->query($sql)) $mensajes['respuesta'] = 'Se actualizó';
                 $sql = 'DELETE FROM preguntas WHERE idpregunta = '.$_POST['idpreguntas'];
@@ -227,7 +229,7 @@ class conexion {
                 }
             }
         } else if (array_key_exists('nombre', $_POST)) {
-            $sql = "INSERT INTO preguntas (nombre, tipo, respuestas) values ('$nombre', $tipo, '$respuestas')";
+            $sql = "INSERT INTO preguntas (nombre, tipo, nivel, respuestas) values ('$nombre', $tipo, $nivel, '$respuestas')";
             
             $result2 = $mysqli->query($sql);
             if($result2){
@@ -269,7 +271,11 @@ class conexion {
         $sql = 'SELECT *, CASE
                     WHEN tipo = 0 THEN "Abierta" 
                     ELSE "Múltiple"
-                END AS clase 
+                END AS clase,
+                CASE
+                    WHEN nivel = 1 THEN "Normal" 
+                    ELSE "Difícil"
+                END AS niv 
                 FROM preguntas';
         $result = $mysqli->query($sql);
         if ($result->num_rows > 0) {//Si hay resultados…

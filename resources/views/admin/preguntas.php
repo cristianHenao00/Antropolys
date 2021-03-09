@@ -152,10 +152,15 @@
                 <form method='post' class="form-question text-center" id="question" role="form">
                     <div class="col-sm-5" id="content_question">
                         <h3>Preguntas</h3>
-                        <label id="label_name" for="nombre_pregunta"> Nombre de la pregunta </label>
+                        <label id="label_name" for="nombre_pregunta"> Enunciado de la pregunta </label>
                         <input type="text" class="form-control" name="nombre" id="nombre_pregunta" placeholder="nombre">
                         <input type="hidden" class="form-control" name="idpreguntas" id="idpreguntas" value="0">
                         <br>
+                        <label id="label_select_nivel" for="select_nivel"> Nivel de pregunta </label>
+                        <select id="select_nivel" name="nivel">
+                            <option value="1">Normal</option>
+                            <option value="2">Difícil</option>
+                        </select><br>
                         <label id="label_select_tipo" for="select_tipo"> Tipo de pregunta </label>
                         <select id="select_tipo" name="tipo">
                             <option value="0">Abierta</option>
@@ -176,6 +181,7 @@
                                 <th scope="col">#</th>
                                 <th scope="col">Nombre</th>
                                 <th scope="col">Tipo</th>
+                                <th scope="col">Nivel</th>
                                 <th scope="col">Respuestas</th>
                                 <th scope="col">Editar</th>
                               </tr>

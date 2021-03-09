@@ -92,6 +92,8 @@ class preguntas {
                                             '<td>'+dat.nombre+'</td>'+
                                             '<td>'+dat.clase+'</td>'+
                                             '<td style="display:none">'+dat.tipo+'</td>'+
+                                            '<td style="display:none">'+dat.nivel+'</td>'+
+                                            '<td >'+dat.niv+'</td>'+
                                             '<td>'+dat.respuestas+'</td>'+
                                             '<td><button type="button" class="btn btn-block btn-default" onclick="pre.editar_pregunta('+dat.idpreguntas+')">Editar</button></td>'+
                                           '</tr>';
@@ -112,7 +114,8 @@ class preguntas {
         document.getElementById('idpreguntas').value = it_preg[0].innerHTML;
         document.getElementById('nombre_pregunta').value = it_preg[1].innerHTML;
         document.getElementById('select_tipo').value = it_preg[3].innerHTML;
-        document.getElementById('respuesta_pregunta').value = it_preg[4].innerHTML;
+        document.getElementById('select_nivel').value = it_preg[4].innerHTML;
+        document.getElementById('respuesta_pregunta').value = it_preg[6].innerHTML;
         //document.getElementById('nombre_pregunta').value = it_preg[1].innerHTML;
     }
     
