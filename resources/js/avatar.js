@@ -31,8 +31,10 @@ class avatar {
                     var fjson = JSON.parse(this.responseText);
                     console.log('fjson',fjson);
                     if(fjson.ack){
-                        document.getElementById('btnUsuario').style.backgroundImage = 'url(../assets/imagenes_nuevas/PNG/avatar_0'+indexImg+'.png)'
-                        document.getElementsByClassName('imgAvatar avatarPrincipal')[0].style.backgroundImage = 'url(../assets/imagenes_nuevas/PNG/avatar_0'+indexImg+'.png)'
+                        document.getElementById('btnUsuario').setAttribute('class','btn btnUsuario avatar'+indexImg);
+                        //document.getElementById('btnUsuario').style.backgroundImage = 'url(../assets/imagenes_nuevas/PNG/avatar_0'+indexImg+'.png)'
+                        //document.getElementsByClassName('imgAvatar avatarPrincipal')[0].style.backgroundImage = 'url(../assets/imagenes_nuevas/PNG/avatar_0'+indexImg+'.png)'
+                        document.getElementsByClassName('imgAvatar avatarPrincipal')[0].setAttribute('class','imgAvatar avatar'+indexImg);
                         document.getElementById('btn_cerrarAvatar').click();
                     }
                     msjBC.informacion('INFORMACIÓN',fjson.respuesta); 
