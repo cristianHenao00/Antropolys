@@ -148,13 +148,26 @@ class conexion {
             $user_create = $_SESSION['data_user_antropolys']['iduser'];
             $longitud = $_POST['longitud'];
             $nivel = $_POST['nivel'];
-
+            
             $row = array();
-            $sql = "INSERT INTO juegos (estado, idlongitud, user_create, idnivel) 
-                        values ('1', '$longitud', '$user_create', '$nivel')";
+            
+            $st_pre = '';
+            $preguntas = array();
+            $limit = $longitud == 1? 40:80;
+            $sql =  "SELECT * FROM preguntas ORDER BY RAND() LIMIT $limit";
+            $result4 = $mysqli->query($sql);
+            if ($result4->num_rows > 0) {
+                while ($fila = $result4->fetch_array(MYSQLI_ASSOC))$preguntas[] = $fila['idpreguntas'];
+                $st_pre = implode(",",$preguntas);
+            }
+            
+            $sql = "INSERT INTO juegos (estado, idlongitud, user_create, idnivel, preguntas) 
+                        values ('1', '$longitud', '$user_create', '$nivel', '$st_pre')";
 
             $result = $mysqli->query($sql);
             if($result){
+                
+                
                 $sql = 'SELECT j.*, u.nombre, u.apellido, l.name AS longitud, n.name AS nivel
                             FROM juegos j
                             INNER JOIN users u ON u.iduser = j.user_create

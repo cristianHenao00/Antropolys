@@ -21,6 +21,7 @@
     <script src="../js/tostadas/pnotify.buttons.js"></script>
     <script src="../js/tostadas/mensajes.js"></script>
     <script src="../js/avatar.js"></script>
+    <script src="../js/juego.js"></script>
 
     <title>Tablero antropolys</title>
 </head>
@@ -38,7 +39,7 @@
     $icono = ($genero == "M") ? "<i class='fa fa-mars genero'></i>" : "<i class='fa fa-venus genero'></i>";
 ?>
 
-<body class="bodyTablero" id="body_tablero">
+<body class="bodyTablero" id="body_tablero"  onload="ju_ego.generate_turno();">
     <div class="containerTablero">
         <div class="row tableroNormal" id="tablero_normal">
             <div class="tablero1">
@@ -400,7 +401,7 @@
         
         <div class="perfilDados" id="dados">
             <div class="btn btnUsuario <?php echo $img ?>" id="btnUsuario" type="submit" data-toggle="collapse" data-target="#perfilUsuarioModal"  aria-expanded="true"> </div>
-            <div class="btn btnDados" type="submit" id="btnDados"> </div>
+            <div class="btn btnDados" type="submit" id="btnDados" onclick="ju_ego.lanzar()"> </div>
             
             <div class="modal fade collapse" tabindex="-1" role="dialog" id="perfilUsuarioModal" aria-expanded="true" style="">
                 <div class="content_modal">
