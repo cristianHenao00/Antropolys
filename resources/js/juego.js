@@ -9,6 +9,7 @@ var my_pos_posible = 0;//la suma de la actual y la futura
 var largo_juego = 0;//longitud del juego normal,corto = 40  largo=80
 var array_preguntas = [];//array del id de las preguntas del juego
 var pregunta_actual = {}; //obj de la pregunta realizada
+var orden_turno = 0;
 
 class juego {
     generate_turno(){
@@ -35,6 +36,7 @@ class juego {
                 var fjson = JSON.parse(this.responseText);
                 msjBC.informacion('INFORMACIÓN',fjson.respuesta); 
                 if(fjson.ack > 1) document.getElementById('btnDados').style.display = 'none';
+                orden_turno = fjson.ack;
                 ju_ego.verificate_primer_turno();
             }
         };
@@ -49,7 +51,6 @@ class juego {
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 var fjson = JSON.parse(this.responseText);
-                console.log('fjson',fjson);
                 if(fjson.respuesta == 'Sin respuestas' && fjson.ack == 1){//solo si voy a inicar el juego
                     msjBC.informacion('INFORMACIÓN','Te toca'); 
                 }
@@ -71,17 +72,10 @@ class juego {
             my_pos_posible = my_pos_actual + my_pos_futura;
             if(my_pos_posible > largo_juego) my_pos_posible = largo_juego;
             
-            /*var btn_posible = document.getElementById('posicion_'+my_pos_posible);
-            btn_posible.getElementsByClassName('posicionGris')[0].style.display = 'none';
-            btn_posible.getElementsByClassName('posicionAzul')[0].style.display = 'block';*/
-            
             var avatar_posible = document.getElementById('btnPosicion_'+my_pos_posible);
             avatar_posible.style.backgroundImage = 'url(../assets/imagenes_nuevas/PNG/avatar_0'+usuario.img+'.png)'
             avatar_posible.classList.add("flash");
             avatar_posible.style.display = 'block';
-            
-            console.log('eljuego',eljuego);
-            console.log('usuario',usuario);
             
             setTimeout(function(){
                 document.getElementById('btnDados').style.backgroundSize = '100%';
@@ -117,7 +111,46 @@ class juego {
     }
     
     validate_pregunta(){
+        //console.log('eljuego',eljuego);
+        //console.log('usuario',usuario);
+        var avatar_posible = document.getElementById('btnPosicion_'+my_pos_posible);
+        avatar_posible.classList.remove("flash");
+        if(respuesta_correcta == respuesta){
+            //letrero de respuesta correcta
+            avatar_posible.style.backgroundImage = 'url(../assets/imagenes_nuevas/PNG/avatar_0'+usuario.img+'.png)'
+            
+            var avatar_actual = document.getElementById('btnPosicion_'+my_pos_actual);
+            avatar_actual? avatar_actual.style.backgroundImage = 'none': '';
+            
+            var btn_posible = document.getElementById('posicion_'+my_pos_posible);
+            btn_posible.getElementsByClassName('posicionGris')[0].style.display = 'none';
+            btn_posible.getElementsByClassName('posicionVerde')[0].style.display = 'block';
+            
+            my_pos_actual = my_pos_posible;
+        }else{
+            //letrero de respuesta incorrecta
+            avatar_posible.style.backgroundImage = 'none';
+            avatar_posible.style.display = 'none';
+        }
         
+        //guardar respuesta y dar nuevo turno
+        var formData = new FormData();           
+        formData.append("key", "C1");
+        formData.append("idpregunta", pregunta_actual.idpreguntas);
+        formData.append("respuesta", '');
+        formData.append("turno", orden_turno);
+        formData.append("idposicion", my_pos_posible);
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var fjson = JSON.parse(this.responseText);
+                console.log('fjson---',fjson);
+
+                
+            }
+        };
+        xhttp.open("post", '../../class/juego.php', true);
+        xhttp.send(formData);
     }
     
     
