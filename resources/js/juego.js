@@ -29,7 +29,6 @@ class juego {
         
         var formData = new FormData();           
         formData.append("key", "C1");
-        ////Enviar objeto a crear
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
@@ -102,6 +101,7 @@ class juego {
                 //estructurar la ventana con un titulo que será la posición del numero que cayó mas la posición actual
                 //con el enunciado de la pregunta y las posibles respuestas si es de opción multiple, 
                 //si es abierta una caja de texto
+                //la var pregunta_actual tiene todos los datos de la pregunta
                 
             }
         };
@@ -133,6 +133,7 @@ class juego {
             avatar_posible.style.display = 'none';
         }
         
+        /*
         //guardar respuesta y dar nuevo turno
         var formData = new FormData();           
         formData.append("key", "C1");
@@ -144,13 +145,12 @@ class juego {
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 var fjson = JSON.parse(this.responseText);
-                console.log('fjson---',fjson);
-
-                
+                console.log('fjson---',fjson);   
             }
         };
         xhttp.open("post", '../../class/juego.php', true);
         xhttp.send(formData);
+        */
     }
     
     
