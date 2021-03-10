@@ -380,11 +380,86 @@
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: bottom;
+    font-family: "Lalezar-Regular";
+    font-size: 65px;
+    color: #a31bef;
 }
 
 .containerTablero .perfilDados .modal.fade.collapse.in,
 .containerTablero .perfilDados .modal.fade.collapse {
     background-color: rgb(152 151 151 / 48%);
+}
+
+.containerTablero .preguntas.modal.fade.collapse.in,
+.containerTablero .preguntas.modal.fade.collapse {
+    background-image: url(../assets/imagenes_nuevas/PNG/Paper.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: unset;
+    background-size: 100%;
+    width: 30%;
+    height: 60%;
+    margin-top: 4%;
+    margin-left: 35%;
+    font-family: "Lalezar-Regular";
+    -webkit-box-shadow: 0px 0px 243px 39px rgb(0 0 0 / 75%);
+    -moz-box-shadow: 0px 0px 243px 39px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 243px 39px rgb(0 0 0 / 100%);
+    background-color: rgb(0 0 0 / 45%);
+}
+
+
+.containerTablero .preguntas.modal.fade.collapse.in .tituloPregunta {
+    margin-top: 15px;
+    margin-left: 80px;
+    margin-bottom: -20px;
+    width: 45%;
+    text-align: center;
+    font-size: 60px;
+    color: #a31bef;
+}
+
+.containerTablero .preguntas.modal.fade.collapse.in .textoPregunta {
+    margin-left: -2%;
+    width: 90%;
+    text-align: center;
+    font-size: 25px;
+    color: saddlebrown;
+}
+
+.containerTablero .preguntas.modal.fade.collapse.in .textoArea {
+    margin-left: 12%;
+    width: 60%;
+    padding: 5px;
+    font-size: 15px;
+    color: saddlebrown;
+    background-color: #ffe7cd;
+}
+
+.containerTablero .preguntas.modal.fade.collapse.in .btn.btn-block {
+    background-image: url(../assets/imagenes_nuevas/PNG/btn_recargar.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: unset;
+    background-size: 100%;
+    width: 8vh;
+    height: 8vh;
+    margin-left: 37%;
+}
+
+.containerTablero .preguntas.modal.fade.collapse.in .textoRespuesta .boxRadio {
+    margin-left: 15%;
+    width: 80%;
+    color: saddlebrown;
+}
+
+.containerTablero .preguntas.modal.fade.collapse.in .textoRespuesta .boxRadio .radio2 {
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.containerTablero .preguntas.modal.fade.collapse.in .textoRespuesta .boxRadio .etiqueta {
+    margin-top: -5px;
 }
 
 .containerTablero .perfilDados .btn.btnUsuario.avatarPrincipal {
@@ -424,80 +499,80 @@
     .bodyTablero {
         background-image: none;
     }
-    
+
     .content_img1 .img1 {
         width: 7vh;
         height: 8vh;
     }
-    
+
     .content_img1 .imgStreet {
         width: 5vh;
         height: 5.5vh;
     }
-    
+
     .content_img1 .img2 {
         width: 16vh;
         height: 5vh;
     }
-    
+
     .content_img1 .img3 {
         width: 20vh;
         height: 5vh;
     }
-    
+
     .content_img2 .img1 {
         width: 7vh;
         height: 18.7vh;
         margin-top: -2vh;
     }
-    
+
     .tablero2 .content_img2 .img1 {
         height: 18.8vh;
         margin-top: -1vh;
     }
-    
+
     .tablero3 .content_img2 .img1 {
         margin-top: 5vh;
     }
-    
+
     .content_img2 .imgStreet {
         width: 5vh;
         height: 18vh;
         margin-top: -0.6vh;
     }
-    
+
     .content_img2 .img2 {
         width: 16vh;
         height: 16.7vh;
     }
-    
+
     .content_img2 .img3 {
         width: 20vh;
         height: 16.7vh;
     }
-    
+
     .content_img3 .img1 {
         width: 7vh;
         height: 18vh;
         margin-top: -6vh;
     }
-    
+
     .content_img3 .imgStreet {
         width: 5vh;
         height: 8vh;
         margin-top: -0.4vh;
     }
-    
+
     .content_img3 .img2 {
         width: 16vh;
         height: 3.7vh;
     }
-    
+
     .content_img3 .img3 {
         width: 20vh;
         height: 3.7vh;
     }
-    
+
     .content_img3 .img1 .calle {
         margin-top: 1.2vh;
         width: 7.6vh;
@@ -507,7 +582,7 @@
     .tablero3 .content_img3 .img1 .calle {
         margin-top: -0.8vh;
     }
-    
+
     .tablero3 .content_img3 .imgStreet {
         height: 5.5vh;
         margin-top: -2.4vh;
@@ -518,12 +593,12 @@
         margin-top: -2.4vh;
         height: 5.5vh;
     }
-    
+
     .tablero3 .content_img3 .imgStreet.uno {
         margin-left: 6vh;
         margin-top: -2.4vh;
     }
-    
+
     .content_imgStreetH,
     .content_imgStreetH2 {
         width: 17vh;
@@ -531,7 +606,7 @@
         margin-top: -3vh;
         margin-left: 10.6vh;
     }
-    
+
     .content_imgStreetH1,
     .content_imgStreetH3 {
         width: 20vh;
@@ -539,12 +614,12 @@
         margin-top: -5.2vh;
         margin-left: 31.5vh;
     }
-    
+
     .tablero2 .content_imgStreetH,
     .tablero3 .content_imgStreetH {
         margin-top: -4.5vh;
     }
-    
+
     .content_imgStreetH2 {
         margin-top: -0.6vh;
     }
@@ -552,13 +627,13 @@
     .tablero2 .content_imgStreetH2 {
         margin-top: -1.1vh;
     }
-    
+
     .tablero3 .content_imgStreetH2,
     .tablero3 .content_imgStreetH3 {
         margin-top: -7vh;
     }
-    
-        
+
+
     .tableroNormal .tablero3 .content_img3 .img1 .opcion {
         height: 5vh;
     }
@@ -569,19 +644,20 @@
         position: fixed;
         bottom: -23%;
     }
-    
+
     .containerTablero .perfilDados .btn.btnUsuario {
         margin-left: 6vh;
         margin-top: 3.6vh;
         width: 5vh;
         height: 5vh;
     }
-    
+
     .containerTablero .perfilDados .btn.btnDados {
         margin-left: 1vh;
         margin-top: 2.6vh;
         width: 6vh;
         height: 5vh;
+        font-size: 35px;
     }
 
     .imgStreet .posicion,
@@ -632,7 +708,42 @@
         top: -9.7vh;
         width: 3vh;
     }
-    
-    
+
+    .containerTablero .preguntas.modal.fade.collapse.in,
+    .containerTablero .preguntas.modal.fade.collapse {
+        background-size: 100%;
+        width: 100%;
+        height: 45%;
+        margin-top: 25%;
+        margin-left: 5%;
+    }
+
+
+    .containerTablero .preguntas.modal.fade.collapse.in .tituloPregunta {
+        margin-left: 33%;
+        margin-bottom: 0px;
+        width: 18%;
+        font-size: 20px;
+        margin-top: 30px;
+    }
+
+    .containerTablero .preguntas.modal.fade.collapse.in .textoPregunta {
+        font-size: 20px;
+        margin-left: 2%;
+    }
+
+    .containerTablero .preguntas.modal.fade.collapse.in .textoArea {
+        margin-left: 10%;
+        width: 65%;
+        font-size: 10px;
+    }
+
+    .containerTablero .preguntas.modal.fade.collapse.in .btn.btn-block {
+        width: 5vh;
+        height: 5vh;
+        margin-left: 38%;
+        margin-top: -6px;
+    }
+
 
 }
