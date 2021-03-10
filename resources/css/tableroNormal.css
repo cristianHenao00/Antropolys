@@ -645,7 +645,7 @@
 
     .containerTablero .perfilDados {
         width: 23vh;
-        margin-left: 13vh;
+        margin-left: 12.5vh;
         position: fixed;
         bottom: -23%;
     }
@@ -717,7 +717,7 @@
     .containerTablero .preguntas .container.boxPreguntas {
         width: 380px !important;
         margin-top: 25% !important;
-        margin-left: 18px;
+        margin-left: 16px;
     }
 
 
