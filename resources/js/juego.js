@@ -12,6 +12,7 @@ var pregunta_actual = {}; //obj de la pregunta realizada
 var orden_turno = 0;
 var correcta = 0;
 var turno_de = '';
+var posicion_old_de = 0;
 
 class juego {
     generate_turno(){
@@ -71,9 +72,6 @@ class juego {
             document.getElementById('btnDados').style.backgroundImage = 'none';
             document.getElementById('btnDados').innerHTML = my_pos_futura;
             my_pos_posible = my_pos_actual + my_pos_futura;
-            console.log('my_pos_actual',my_pos_actual);
-            console.log('my_pos_futura',my_pos_futura);
-            console.log('my_pos_posible',my_pos_posible);
             if(my_pos_posible > largo_juego) my_pos_posible = largo_juego;
             
             var avatar_posible = document.getElementById('btnPosicion_'+my_pos_posible);
@@ -189,8 +187,8 @@ class juego {
                 btn_actual? btn_actual.getElementsByClassName('posicionVerde')[0].style.display = 'none': '';
                 
                 var btn_posible = document.getElementById('posicion_'+my_pos_posible);
-                btn_posible.getElementsByClassName('posicionGris')[0].style.display = 'none';
-                btn_posible.getElementsByClassName('posicionVerde')[0].style.display = 'block';
+                btn_posible.getElementsByClassName('posicionGris')?btn_posible.getElementsByClassName('posicionGris')[0].style.display = 'none':'';
+                btn_posible.getElementsByClassName('posicionVerde')?btn_posible.getElementsByClassName('posicionVerde')[0].style.display = 'block':'';
 
                 my_pos_actual = my_pos_posible;
             }else{
@@ -205,7 +203,8 @@ class juego {
             formData.append("idpregunta", pregunta_actual.respuesta.idpreguntas);
             formData.append("respuesta", respuesta);
             formData.append("turno", orden_turno);
-            formData.append("idposicion", my_pos_posible);
+            //formData.append("idposicion", my_pos_posible);
+            formData.append("idposicion", my_pos_actual);
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
@@ -241,14 +240,22 @@ class juego {
                     document.getElementById('btnDados').style.backgroundImage = 'url(../assets/imagenes_nuevas/PNG/dados_espacio_dados.png)';
                     document.getElementById('btnDados').style.backgroundSize = '100%';
                     document.getElementById('btnDados').setAttribute('onclick','ju_ego.lanzar()');
+                    document.getElementById('btnDados').innerHTML = '';
                 }else {
                     if(turno != turno_de){
                         msjBC.informacion('BIEN','Turno de '+turno);
                         turno_de = turno;
-                        document.getElementById('btnDados').style.display = 'none';
-                        document.getElementById('btnDados').innerHTML = '';
                     }
+                    document.getElementById('btnDados').style.display = 'none';
+                    document.getElementById('btnDados').innerHTML = '';                    
                     ju_ego.conocer_mi_turno();
+                }
+                if(obj.pos_otro != my_pos_actual){
+                    document.getElementById('btnPosicion_'+posicion_old_de)?document.getElementById('btnPosicion_'+posicion_old_de).style.display = 'none':'';
+                    posicion_old_de = obj.pos_otro;
+
+                    document.getElementById('btnPosicion_'+obj.pos_otro)?document.getElementById('btnPosicion_'+obj.pos_otro).style.display = 'block':'';
+                    document.getElementById('btnPosicion_'+obj.pos_otro)?document.getElementById('btnPosicion_'+obj.pos_otro).style.backgroundImage = 'url(../assets/imagenes_nuevas/PNG/avatar_0'+obj.img+'.png)':'';
                 }
                 
             }

@@ -189,7 +189,10 @@ class juego {
         $idjuego = $_SESSION['data_game_antropolys']['idjuegos'];
         $iduser = $_SESSION['data_user_antropolys']['iduser'];
         
-        $sql = 'SELECT * FROM turno_actual t
+        $sql = 'SELECT *,
+                (select idposition from contestar where userid = t.userid 
+                    order by idcontestar desc limit 1) as pos_otro
+                FROM turno_actual t
                 inner join users u on u.iduser = t.userid
                 WHERE t.juegosid = '.$idjuego;
 
