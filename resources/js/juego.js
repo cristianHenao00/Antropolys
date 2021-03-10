@@ -63,7 +63,7 @@ class juego {
     }
     
     lanzar(){
-        document.getElementById('btnDados').style.backgroundImage = 'url(../assets/dadomorado.gif)';
+        document.getElementById('btnDados').style.backgroundImage = 'url(../assets/dados/da2.gif)';
         document.getElementById('btnDados').style.backgroundSize = '75%';
         document.getElementById('btnDados').setAttribute('onclick','');
         my_pos_futura = 1+ (Math.floor(Math.random() * 6));
