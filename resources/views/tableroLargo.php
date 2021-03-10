@@ -830,19 +830,19 @@
 
         <div class="preguntas modal fade collapse" tabindex="-1" role="dialog" id="modal_pregunta" aria-expanded="true" style="">
            <div class="content_modal">
-                <div class="head_modal" style="">
-                    <div class="tituloPregunta" id="pregunta_titulo"> </div>
-                    <div class="textoPregunta" id="pregunta_texto"> </div>
-                    <div id="texto_respuesta"> </div>
-                </div>
-                <div class="body_modal" id="contenido_html" style="">
-                    <div class="row btnsModal" id="btns_modal">
-                        <div class="btn btn-block" type="submit" id="btnPregunta" onclick="document.getElementById('modal_pregunta').classList.remove('in');"> </div>
+                <div class="container boxPreguntas" >
+                    <div class="container box_preguntas" >
+                        <div class="tituloPregunta" id="pregunta_titulo"> </div>
+                        <div class="textoPregunta" id="pregunta_texto"> </div>
+                        <div class="textoRespuesta" id="texto_respuesta"> </div>
+
+                        <div class="row btnsModal" id="btns_modal">
+                            <div class="btn btn-block" type="submit" id="btnPregunta" onclick="document.getElementById('modal_pregunta').classList.remove('in');"> </div>
+                        </div>
                     </div>
                 </div>
            </div>
         </div>
-
     </div>
 </body>
 </html>

@@ -390,31 +390,37 @@
 }
 
 .containerTablero .perfilDados .modal.fade.collapse.in,
-.containerTablero .perfilDados .modal.fade.collapse {
+.containerTablero .perfilDados .modal.fade.collapse,
+.containerTablero .preguntas.modal.fade.collapse.in,
+.containerTablero .preguntas.modal.fade.collapse {
     background-color: rgb(152 151 151 / 48%);
 }
 
-.containerTablero .preguntas.modal.fade.collapse.in,
-.containerTablero .preguntas.modal.fade.collapse {
-    background-image: url(../assets/imagenes_nuevas/PNG/hoja_PopUp.png);
+.containerTablero .preguntas .container.boxPreguntas {
+    margin-top: 4%;
+}
+
+.containerTablero .preguntas .container.boxPreguntas,
+.containerTablero .preguntas .container.box_preguntas {
+    width: 390px;
+    height: 370px;
+}
+
+.containerTablero .preguntas .container.box_preguntas {
+    background-image: url(../assets/imagenes_nuevas/PNG/tablero_solo.png);
     background-repeat: no-repeat;
     background-position: center;
     background-color: unset;
-    background-size: 135%;
-    width: 36%;
-    height: 45%;
-    margin-top: 13%;
-    margin-left: 32%;
+    background-size: cover;
+    margin-top: 4%;
+    margin-left: -12px;
     font-family: "Lalezar-Regular";
-    -webkit-box-shadow: 0px 0px 243px 39px rgb(0 0 0 / 75%);
-    -moz-box-shadow: 0px 0px 243px 39px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 0px 243px 39px rgb(152 151 151 / 100%);
-    background-color: rgb(0 0 0 / 45%);
 }
 
+
 .containerTablero .preguntas.modal.fade.collapse.in .tituloPregunta {
-    margin-top: 15px;
-    margin-left: 80px;
+    margin-top: 41px;
+    margin-left: 105px;
     margin-bottom: -20px;
     width: 45%;
     text-align: center;
@@ -423,7 +429,7 @@
 }
 
 .containerTablero .preguntas.modal.fade.collapse.in .textoPregunta {
-    margin-left: -2%;
+    margin-left: 23px;
     width: 90%;
     text-align: center;
     font-size: 25px;
@@ -431,7 +437,7 @@
 }
 
 .containerTablero .preguntas.modal.fade.collapse.in .textoArea {
-    margin-left: 12%;
+    margin-left: 75px;
     width: 60%;
     padding: 5px;
     font-size: 15px;
@@ -447,7 +453,7 @@
     background-size: 100%;
     width: 8vh;
     height: 8vh;
-    margin-left: 37%;
+    margin-left: 175px;
 }
 
 .containerTablero .preguntas.modal.fade.collapse.in .textoRespuesta .boxRadio {
@@ -642,7 +648,7 @@
 
     .containerTablero .perfilDados {
         width: 23vh;
-        margin-left: 8vh;
+        margin-left: 12vh;
         position: fixed;
         bottom: -23%;
     }
@@ -740,30 +746,27 @@
         top: -10.7vh;
     }
 
-    .containerTablero .preguntas.modal.fade.collapse.in,
-    .containerTablero .preguntas.modal.fade.collapse {
-        background-size: 125%;
-        width: 90%;
-        height: 22%;
-        margin-top: 40%;
-        margin-left: 5%;
+    .containerTablero .preguntas .container.boxPreguntas {
+        width: 380px !important;
+        margin-top: 25% !important;
+        margin-left: 20px;
     }
 
+
     .containerTablero .preguntas.modal.fade.collapse.in .tituloPregunta {
-        margin-left: 33%;
+        margin-left: 28%;
         margin-bottom: 0px;
-        width: 18%;
-        font-size: 20px;
-        margin-top: 30px;
+        font-size: 30px;
+        margin-top: 50px;
     }
 
     .containerTablero .preguntas.modal.fade.collapse.in .textoPregunta {
         font-size: 20px;
-        margin-left: 2%;
+        margin-left: 5%;
     }
 
     .containerTablero .preguntas.modal.fade.collapse.in .textoArea {
-        margin-left: 10%;
+        margin-left: 17%;
         width: 65%;
         font-size: 10px;
     }
@@ -771,8 +774,12 @@
     .containerTablero .preguntas.modal.fade.collapse.in .btn.btn-block {
         width: 5vh;
         height: 5vh;
-        margin-left: 38%;
+        margin-left: 175px;
         margin-top: -6px;
+    }
+
+    .containerTablero .preguntas.modal.fade.collapse.in .textoRespuesta .boxRadio {
+        margin-left: 75px;
     }
     
 
