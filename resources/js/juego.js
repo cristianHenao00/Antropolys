@@ -10,7 +10,7 @@ var largo_juego = 0;//longitud del juego normal,corto = 40  largo=80
 var array_preguntas = [];//array del id de las preguntas del juego
 var pregunta_actual = {}; //obj de la pregunta realizada
 var orden_turno = 0;
-
+var correcta = 0;
 class juego {
     generate_turno(){
         if(eljuego.idlongitud == 1){
@@ -29,6 +29,7 @@ class juego {
         
         var formData = new FormData();           
         formData.append("key", "C1");
+        ////Enviar objeto a crear
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
@@ -79,8 +80,8 @@ class juego {
             setTimeout(function(){
                 document.getElementById('btnDados').style.backgroundSize = '100%';
                 document.getElementById('btnDados').setAttribute('onclick','ju_ego.lanzar()');
-                document.getElementById('btnDados').style.display = 'none';
-                //mostrar ventana
+                //document.getElementById('btnDados').style.display = 'none';
+                document.getElementById('modal_pregunta').classList.add('in');
             }, 3000);
             ju_ego.mostrar_pregunta();
         }, 2000);
@@ -96,13 +97,27 @@ class juego {
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 pregunta_actual = JSON.parse(this.responseText);
-                console.log('pregunta---',pregunta_actual);
-                //sacar la ventana de la pregunta
-                //estructurar la ventana con un titulo que será la posición del numero que cayó mas la posición actual
-                //con el enunciado de la pregunta y las posibles respuestas si es de opción multiple, 
-                //si es abierta una caja de texto
-                //la var pregunta_actual tiene todos los datos de la pregunta
-                
+                var temporal = 1;
+                console.log(pregunta_actual['respuesta']);
+                document.getElementById('pregunta_titulo').innerHTML = my_pos_posible;
+                document.getElementById('pregunta_texto').innerHTML = pregunta_actual['respuesta']['nombre'];
+                if(pregunta_actual['respuesta']['tipo'] == 0){
+                    var areaText = '<textarea class="textoArea" id="texto_area"> </textarea>' ;
+                    document.getElementById('texto_respuesta').innerHTML = areaText;
+                }else{
+                    var respuesta_actual = pregunta_actual['respuesta']['respuestas'];
+                    var res = respuesta_actual.split('-');
+                    var areaRadio = '<div class="row boxRadio">';
+                    for(var i=1; i<res.length; i++){
+                        if(res[i].indexOf('*') > -1) correcta = i;
+                        var tx = res[i].replace('*','');
+                        areaRadio += `<input id="r${i}" type="radio" name="respuesta" value="${i}"> <label class="etiqueta" for="r1"> ${res[0]} </label>${tx}<br>`;
+                    }
+                    areaRadio +='</div>';
+                    document.getElementById('texto_respuesta').innerHTML = areaRadio;
+                    
+                }
+                document.getElementById('btnPregunta').setAttribute('onclick','ju_ego.validate_pregunta()');        
             }
         };
         xhttp.open("post", '../../class/juego.php', true);
@@ -113,6 +128,12 @@ class juego {
     validate_pregunta(){
         //console.log('eljuego',eljuego);
         //console.log('usuario',usuario);
+        if(pregunta_actual['respuesta']['tipo'] == 0){
+            respuesta_correcta = pregunta_actual['respuesta']['respuestas'];
+            
+        }else{
+            respuesta_correcta =correcta;
+        }
         var avatar_posible = document.getElementById('btnPosicion_'+my_pos_posible);
         avatar_posible.classList.remove("flash");
         if(respuesta_correcta == respuesta){
@@ -133,7 +154,6 @@ class juego {
             avatar_posible.style.display = 'none';
         }
         
-        /*
         //guardar respuesta y dar nuevo turno
         var formData = new FormData();           
         formData.append("key", "C1");
@@ -145,12 +165,13 @@ class juego {
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 var fjson = JSON.parse(this.responseText);
-                console.log('fjson---',fjson);   
+                console.log('fjson---',fjson);
+
+                
             }
         };
         xhttp.open("post", '../../class/juego.php', true);
         xhttp.send(formData);
-        */
     }
     
     
