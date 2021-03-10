@@ -187,8 +187,8 @@ class juego {
                 btn_actual? btn_actual.getElementsByClassName('posicionVerde')[0].style.display = 'none': '';
                 
                 var btn_posible = document.getElementById('posicion_'+my_pos_posible);
-                btn_posible.getElementsByClassName('posicionGris')?btn_posible.getElementsByClassName('posicionGris')[0].style.display = 'none':'';
-                btn_posible.getElementsByClassName('posicionVerde')?btn_posible.getElementsByClassName('posicionVerde')[0].style.display = 'block':'';
+                btn_posible.getElementsByClassName('posicionGris')[0]?btn_posible.getElementsByClassName('posicionGris')[0].style.display = 'none':'';
+                btn_posible.getElementsByClassName('posicionVerde')[0]?btn_posible.getElementsByClassName('posicionVerde')[0].style.display = 'block':'';
 
                 my_pos_actual = my_pos_posible;
             }else{
