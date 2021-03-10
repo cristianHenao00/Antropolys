@@ -33,7 +33,8 @@ class conexion {
     /* Hacer conexion con la db */
 
     private function conectar() {
-        $mysqli = new mysqli("45.93.101.103", "u341094424_antropolys", "Antropolys2021*", "u341094424_antropolys");
+        //$mysqli = new mysqli("45.93.101.103", "u341094424_antropolys", "Antropolys2021*", "u341094424_antropolys");
+        $mysqli = new mysqli("localhost", "u341094424_antropolys", "Antropolys2021*", "u341094424_antropolys");
 
         // Check connection
         if ($mysqli->connect_errno) {
