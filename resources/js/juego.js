@@ -64,13 +64,12 @@ class juego {
     
     lanzar(){
         document.getElementById('btnDados').style.backgroundImage = 'url(../assets/dados/da2.gif)';
-        document.getElementById('btnDados').style.backgroundSize = '75%';
         document.getElementById('btnDados').setAttribute('onclick','');
         my_pos_futura = 1+ (Math.floor(Math.random() * 6));
         
         setTimeout(function(){
-            document.getElementById('btnDados').style.backgroundImage = 'none';
-            document.getElementById('btnDados').innerHTML = my_pos_futura;
+            document.getElementById('btnDados').style.backgroundImage = 'url(../assets/dados/dado-'+my_pos_futura+'.png)';
+            //document.getElementById('btnDados').innerHTML = my_pos_futura;
             my_pos_posible = my_pos_actual + my_pos_futura;
             if(my_pos_posible > largo_juego) my_pos_posible = largo_juego;
             
@@ -174,6 +173,7 @@ class juego {
         }
         
         if(seguir == 0){
+            var gano = 0;
             var avatar_posible = document.getElementById('btnPosicion_'+my_pos_posible);
             avatar_posible.classList.remove("flash");
             if(error == 0){
@@ -191,6 +191,8 @@ class juego {
                 btn_posible.getElementsByClassName('posicionVerde')[0]?btn_posible.getElementsByClassName('posicionVerde')[0].style.display = 'block':'';
 
                 my_pos_actual = my_pos_posible;
+                
+                if(my_pos_actual == largo_juego) gano = 1;//ganó
             }else{
                 avatar_posible.style.backgroundImage = 'none';
                 avatar_posible.style.display = 'none';
@@ -203,7 +205,7 @@ class juego {
             formData.append("idpregunta", pregunta_actual.respuesta.idpreguntas);
             formData.append("respuesta", respuesta);
             formData.append("turno", orden_turno);
-            //formData.append("idposicion", my_pos_posible);
+            formData.append("gano", gano);
             formData.append("idposicion", my_pos_actual);
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
@@ -234,36 +236,66 @@ class juego {
                 var fjson = JSON.parse(this.responseText);
                 var obj = fjson.respuesta;
                 var turno = obj.nombre+' '+obj.apellido;
-                if(fjson.ack == 1){
-                    msjBC.ok('VAMOS!','Mi turno'); 
-                    document.getElementById('btnDados').style.display = 'inline-block';
-                    document.getElementById('btnDados').style.backgroundImage = 'url(../assets/imagenes_nuevas/PNG/dados_espacio_dados.png)';
-                    document.getElementById('btnDados').style.backgroundSize = '100%';
-                    document.getElementById('btnDados').setAttribute('onclick','ju_ego.lanzar()');
-                    document.getElementById('btnDados').innerHTML = '';
-                }else {
-                    if(turno != turno_de){
-                        msjBC.informacion('BIEN','Turno de '+turno);
-                        turno_de = turno;
-                    }
-                    document.getElementById('btnDados').style.display = 'none';
-                    document.getElementById('btnDados').innerHTML = '';                    
-                    ju_ego.conocer_mi_turno();
-                }
-                if(obj.pos_otro != my_pos_actual){
-                    document.getElementById('btnPosicion_'+posicion_old_de)?document.getElementById('btnPosicion_'+posicion_old_de).style.display = 'none':'';
-                    posicion_old_de = obj.pos_otro;
-
-                    document.getElementById('btnPosicion_'+obj.pos_otro)?document.getElementById('btnPosicion_'+obj.pos_otro).style.display = 'block':'';
-                    document.getElementById('btnPosicion_'+obj.pos_otro)?document.getElementById('btnPosicion_'+obj.pos_otro).style.backgroundImage = 'url(../assets/imagenes_nuevas/PNG/avatar_0'+obj.img+'.png)':'';
-                }
                 
+                console.log('ganador',obj.ganador);
+                if(obj.ganador){//notificar que hay ganador
+                    ju_ego.notoficar_ganador(obj.name_ganador);
+                }else{
+                    if(fjson.ack == 1){
+                        msjBC.ok('VAMOS!','Mi turno'); 
+                        document.getElementById('btnDados').style.display = 'inline-block';
+                        document.getElementById('btnDados').style.backgroundImage = 'url(../assets/dados/quietos_da2.png)';
+                        document.getElementById('btnDados').setAttribute('onclick','ju_ego.lanzar()');
+                    }else {
+                        if(turno != turno_de){
+                            msjBC.informacion('BIEN','Turno de '+turno);
+                            turno_de = turno;
+                        }
+                        document.getElementById('btnDados').style.display = 'none';
+                        ju_ego.conocer_mi_turno();
+                    }
+                    if(obj.pos_otro != my_pos_actual){
+                        document.getElementById('btnPosicion_'+posicion_old_de)?document.getElementById('btnPosicion_'+posicion_old_de).style.display = 'none':'';
+                        posicion_old_de = obj.pos_otro;
+
+                        document.getElementById('btnPosicion_'+obj.pos_otro)?document.getElementById('btnPosicion_'+obj.pos_otro).style.display = 'block':'';
+                        document.getElementById('btnPosicion_'+obj.pos_otro)?document.getElementById('btnPosicion_'+obj.pos_otro).style.backgroundImage = 'url(../assets/imagenes_nuevas/PNG/avatar_0'+obj.img+'.png)':'';
+                    }
+                }   
             }
         };
         xhttp.open("post", '../../class/juego.php', true);
         xhttp.send(formData);
     }
     
+   
+    notoficar_ganador(name){
+        $.confirm({
+            title: 'HAY GANADOR!',
+            content: 'El jugador '+name,
+            type: 'red',
+            typeAnimated: true,
+            autoClose: 'Espera|'+5000,
+            buttons: {
+                Espera: function () {
+                    location.href = '/';
+                    //sacar ranking
+                    /*var formData = new FormData();
+                    formData.append("key", "Q7");
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
+                            
+                            var fjson = JSON.parse(this.responseText);
+                            
+                        }
+                    };
+                    xhttp.open("post", '../../class/juego.php', true);
+                    xhttp.send(formData);*/
+                }
+            }
+        });
+    }
 }
 
 var ju_ego = new juego();

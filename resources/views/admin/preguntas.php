@@ -157,7 +157,7 @@
                 <br>
             <?php    echo '<h3>Hola Admin ' . $_SESSION['data_user_antropolys']['nombre'] . '</h3>';?>
                 <form method='post' class="form-question text-center" id="question" role="form">
-                    <div class="col-sm-5" id="content_question">
+                    <div class="col-sm-4" id="content_question">
                         <h3>Preguntas</h3>
                         <label id="label_name" for="nombre_pregunta"> Enunciado de la pregunta </label>
                         <input type="text" class="form-control" name="nombre" id="nombre_pregunta" placeholder="nombre">
@@ -180,7 +180,7 @@
                         <?php echo '<button type="button" class="btn btn-primary" onclick="pre.valid_save_questions()">Crear Forma</button>';?>
                         <button type="button" class="btn btn-success" onclick="pre.limpiar_forma()">Limpiar Tablero</button>
                     </div>
-                    <div class="col-sm-7">
+                    <div class="col-sm-8">
                         <h3>Lista de Preguntas</h3>
                         <table class="table table-striped table-bordered">
                             <thead>

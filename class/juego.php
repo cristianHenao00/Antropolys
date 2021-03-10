@@ -175,6 +175,10 @@ class juego {
                         $mensajes['respuesta']  = $next_turno;
                     }
                 }
+                if($_POST['gano']){
+                    $sql = 'UPDATE juegos SET ganador=' .$iduser. ', estado = 0 WHERE idjuegos= ' .$idjuego;
+                    $result0 = $mysqli->query($sql);
+                }
                     
             }
         }
@@ -189,11 +193,16 @@ class juego {
         $idjuego = $_SESSION['data_game_antropolys']['idjuegos'];
         $iduser = $_SESSION['data_user_antropolys']['iduser'];
         
-        $sql = 'SELECT *,
-                (select idposition from contestar where userid = t.userid 
+        $sql = 'SELECT *, j.ganador,
+                CASE
+                    WHEN j.ganador = 0 THEN "NA" 
+                    ELSE (SELECT concat(nombre, " ", apellido) FROM users WHERE iduser = j.ganador)
+                END AS name_ganador,
+                (SELECT idposition FROM contestar WHERE userid = t.userid 
                     order by idcontestar desc limit 1) as pos_otro
                 FROM turno_actual t
-                inner join users u on u.iduser = t.userid
+                INNER JOIN users u on u.iduser = t.userid
+                INNER JOIN juegos j on idjuegos = t.juegosid
                 WHERE t.juegosid = '.$idjuego;
 
         $result = $mysqli->query($sql);
