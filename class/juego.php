@@ -92,8 +92,11 @@ class juego {
         
         $sql = 'SELECT * FROM contestar WHERE juegosid = '.$idjuego;
         $result = $mysqli->query($sql);
-        if ($result->num_rows > 0) $mensajes['respuesta'] = 'Ya hay respuestas';
-        else {
+        if ($result->num_rows > 0) {
+            $sql = 'SELECT * FROM position_juego WHERE juegosid = '.$idjuego.' AND userid = '.$iduser;
+            $result1 = $mysqli->query($sql);
+            if ($result->num_rows > 0) $mensajes['respuesta'] = $result1->fetch_array(MYSQLI_ASSOC);
+        }else {
             $mensajes['respuesta'] = 'Sin respuestas';
             if($mensajes['ack']==1){
                 $sql = 'SELECT * FROM turno_actual WHERE juegosid = '.$idjuego;
@@ -101,11 +104,11 @@ class juego {
                 if (!($result->num_rows > 0)) {
                     $sql = "INSERT INTO turno_actual (juegosid,userid) VALUES ($idjuego,$iduser)";
                     $result2 = $mysqli->query($sql);
-                }
-        
-                    
+                }                    
             }
         }
+            
+        
         $this->close_conexion($mysqli);
         return $mensajes;
     }
@@ -175,10 +178,26 @@ class juego {
                         $mensajes['respuesta']  = $next_turno;
                     }
                 }
+                
                 if($_POST['gano']){
                     $sql = 'UPDATE juegos SET ganador=' .$iduser. ', estado = 0 WHERE idjuegos= ' .$idjuego;
                     $result0 = $mysqli->query($sql);
                 }
+                
+                $sql = 'SELECT * FROM position_juego WHERE juegosid = '.$idjuego. ' AND userid = '.$iduser;
+                $result5 = $mysqli->query($sql);
+                if ($result5->num_rows > 0) {
+                    $position_juego  = $result5->fetch_array(MYSQLI_ASSOC);//array los datos arrojados
+                    $id_position_juego = $position_juego['idposition'];
+                    $sql = 'UPDATE position_juego SET position=' .$idposicion. ' WHERE idposition= ' .$id_position_juego;
+                    $result6 = $mysqli->query($sql);
+                }else{
+                    $sql = "INSERT INTO position_juego (position,juegosid,userid) 
+                            VALUES ($idposicion,$idjuego,$iduser)";
+                    $result6 = $mysqli->query($sql);
+                }
+   
+                
                     
             }
         }
@@ -193,7 +212,7 @@ class juego {
         $idjuego = $_SESSION['data_game_antropolys']['idjuegos'];
         $iduser = $_SESSION['data_user_antropolys']['iduser'];
         
-        $sql = 'SELECT *, j.ganador,
+        $sql = 'SELECT t.*, u.*, j.ganador,
                 CASE
                     WHEN j.ganador = 0 THEN "NA" 
                     ELSE (SELECT concat(nombre, " ", apellido) FROM users WHERE iduser = j.ganador)
@@ -210,6 +229,14 @@ class juego {
             $turno  = $result->fetch_array(MYSQLI_ASSOC);//array los datos arrojados
             $mensajes['respuesta'] = $turno;
             if($turno['iduser'] == $iduser)$mensajes['ack'] = 1;
+            $sql = 'SELECT * FROM position_juego p
+                    INNER JOIN users u on u.iduser = p.userid
+                    WHERE p.juegosid = '.$idjuego.' and p.userid <> '.$iduser;
+            $result1 = $mysqli->query($sql);
+            if ($result1->num_rows > 0){
+                $mensajes['turnos'] = array();
+                while ($fila = $result1->fetch_array(MYSQLI_ASSOC))$mensajes['turnos'][] = $fila;
+            } 
         }
         $this->close_conexion($mysqli);
         return $mensajes;
