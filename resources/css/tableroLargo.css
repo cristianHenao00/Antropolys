@@ -187,8 +187,8 @@
 .content_imgStreetH1 {
     width: 59vh;
     height: 13vh;
-    margin-top: -13vh;
-    margin-left: 127.2vh;
+    margin-top: -71px;
+    margin-left: 70.2px;
 }
 
 .tablero2 .content_imgStreetH,
@@ -200,23 +200,32 @@
     width: 83.5vh;
     height: 13vh;
     margin-top: -3vh;
-    margin-left: 33.5vh;
+    margin-left: 33.6vh;
+}
+
+.tablero2 .content_imgStreetH1,
+.tablero3 .content_imgStreetH1 {
+    margin-top: -41px;
 }
 
 .tablero2 .content_imgStreetH2 {
-    margin-top: -1vh;
+    margin-top: -7px;
 }
 
-.tablero3 .content_imgStreetH2 {
-    margin-top: -9vh;
+.tablero3 .content_imgStreetH2,
+.tablero3 .content_imgStreetH3 {
+    margin-top: -62px;
 }
 
+.tablero2 .content_imgStreetH3 {
+    margin-top: -7px;
+}
 
 .content_imgStreetH3 {
     width: 59vh;
     height: 13vh;
-    margin-top: -13vh;
-    margin-left: 127.2vh;
+    margin-top: -20px;
+    margin-left: 71.2px;
 }
 
 .tablero3 .content_img3 .img1 .opcion,
@@ -375,13 +384,13 @@
 }
 
 .containerTablero .perfilDados .btn.btnDados {
-    background-image: url(../assets/imagenes_nuevas/PNG/dados_espacio_dados.png);
+    background-image: url(../assets/dados/quietos_da2.png);
     cursor: pointer;
     margin-left: 5vh;
     margin-top: 16vh;
     height: 14vh;
     width: 20vh;
-    background-size: 100%;
+    background-size: 70%;
     background-repeat: no-repeat;
     background-position: bottom;
     font-family: "Lalezar-Regular";
@@ -613,20 +622,28 @@
         margin-top: -3vh;
         margin-left: 10.6vh;
     }
-    
+
     .content_imgStreetH1,
     .content_imgStreetH3 {
         width: 20vh;
         height: 5vh;
-        margin-top: -5.2vh;
-        margin-left: 31.5vh;
+        margin-top: -27px;
+        margin-left: 34.5px;
     }
-    
+
+    .tablero1 .content_imgStreetH3 {
+        margin-top: -6px;
+    }
+
+    .tablero2 .content_imgStreetH3 {
+        margin-top: -10px;
+    }
+
     .tablero2 .content_imgStreetH,
     .tablero3 .content_imgStreetH {
-        margin-top: -4.5vh;
+        margin-top: -4.5vh;   
     }
-    
+
     .content_imgStreetH2 {
         margin-top: -0.6vh;
     }
@@ -634,10 +651,18 @@
     .tablero2 .content_imgStreetH2 {
         margin-top: -1.1vh;
     }
-    
+
     .tablero3 .content_imgStreetH2,
     .tablero3 .content_imgStreetH3 {
         margin-top: -7vh;
+    }
+
+    .tablero3 .content_imgStreetH2 {
+        margin-left: 93.2px;    
+    }
+
+    .tablero3 .content_imgStreetH3 {
+        margin-left: 275.2px;
     }
     
         

@@ -192,8 +192,8 @@
 .content_imgStreetH1 {
     width: 59vh;
     height: 13vh;
-    margin-top: -13vh;
-    margin-left: 127.2vh;
+    margin-top: -71px;
+    margin-left: 70.2px;
 }
 
 .tablero2 .content_imgStreetH,
@@ -205,23 +205,32 @@
     width: 83.5vh;
     height: 13vh;
     margin-top: -3vh;
-    margin-left: 33.5vh;
+    margin-left: 33.6vh;
+}
+
+.tablero2 .content_imgStreetH1,
+.tablero3 .content_imgStreetH1 {
+    margin-top: -41px;
 }
 
 .tablero2 .content_imgStreetH2 {
-    margin-top: -1vh;
+    margin-top: -7px;
 }
 
-.tablero3 .content_imgStreetH2 {
-    margin-top: -9vh;
+.tablero3 .content_imgStreetH2,
+.tablero3 .content_imgStreetH3 {
+    margin-top: -62px;
 }
 
+.tablero2 .content_imgStreetH3 {
+    margin-top: -7px;
+}
 
 .content_imgStreetH3 {
     width: 59vh;
     height: 13vh;
-    margin-top: -13vh;
-    margin-left: 127.2vh;
+    margin-top: -20px;
+    margin-left: 71.2px;
 }
 
 .tableroNormal .tablero3 .content_img3 .img1 .opcion {
@@ -371,13 +380,13 @@
 }
 
 .containerTablero .perfilDados .btn.btnDados {
-    background-image: url(../assets/imagenes_nuevas/PNG/dados_espacio_dados.png);
+    background-image: url(../assets/dados/quietos_da2.png);
     cursor: pointer;
     margin-left: 5vh;
     margin-top: 16vh;
     height: 14vh;
     width: 20vh;
-    background-size: 100%;
+    background-size: 70%;
     background-repeat: no-repeat;
     background-position: bottom;
     font-family: "Lalezar-Regular";
@@ -420,15 +429,17 @@
     margin-bottom: -20px;
     width: 45%;
     text-align: center;
-    font-size: 60px;
+    font-size: 40px;
     color: #a31bef;
 }
 
 .containerTablero .preguntas.modal.fade.collapse.in .textoPregunta {
-    margin-left: 23px;
-    width: 90%;
+    margin-left: 57px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    width: 70%;
     text-align: center;
-    font-size: 25px;
+    font-size: 16px;
     color: saddlebrown;
 }
 
@@ -456,6 +467,7 @@
     margin-left: 15%;
     width: 80%;
     color: saddlebrown;
+    font-size: 12px;
 }
 
 .containerTablero .preguntas.modal.fade.collapse.in .textoRespuesta .boxRadio .radio2 {
@@ -506,162 +518,173 @@
     }
 
     .content_img1 .img1 {
-        width: 7vh;
-        height: 8vh;
+        width: 61px;
+        height: 68px;
     }
 
     .content_img1 .imgStreet {
-        width: 5vh;
-        height: 5.5vh;
+        width: 43px;
+        height: 46.5px;
     }
 
     .content_img1 .img2 {
-        width: 16vh;
-        height: 5vh;
+        width: 140px;
+        height: 42px;
     }
 
     .content_img1 .img3 {
-        width: 20vh;
-        height: 5vh;
+        width: 140px;
+        height: 43px;
     }
 
     .content_img2 .img1 {
-        width: 7vh;
-        height: 18.7vh;
-        margin-top: -2vh;
+        width: 61px;
+        height: 160px;
+        margin-top: -19px;    
     }
 
     .tablero2 .content_img2 .img1 {
-        height: 18.8vh;
-        margin-top: -1vh;
+        height: 160px;
+        margin-top: -17px;
     }
 
     .tablero3 .content_img2 .img1 {
-        margin-top: 5vh;
+        margin-top: 49px;
     }
 
     .content_img2 .imgStreet {
-        width: 5vh;
-        height: 18vh;
-        margin-top: -0.6vh;
+        width: 44px;
+        height: 155px;
+        margin-top: -3.6px;
     }
 
     .content_img2 .img2 {
-        width: 16vh;
-        height: 16.7vh;
+        width: 138px;
+        height: 147px;
     }
 
     .content_img2 .img3 {
-        width: 20vh;
-        height: 16.7vh;
+        width: 138px;
+        height: 147px;
     }
 
     .content_img3 .img1 {
-        width: 7vh;
-        height: 18vh;
-        margin-top: -6vh;
+        width: 61px;
+        height: 180px;
+        margin-top: -76px;
     }
 
     .content_img3 .imgStreet {
-        width: 5vh;
-        height: 8vh;
-        margin-top: -0.4vh;
+        width: 44px;
+        height: 73px;
+        margin-top: -3px;
     }
 
     .content_img3 .img2 {
-        width: 16vh;
-        height: 3.7vh;
+        width: 138px;
+        height: 33px;
     }
 
     .content_img3 .img3 {
-        width: 20vh;
-        height: 3.7vh;
+        width: 138px;
+        height: 32px;
     }
 
     .content_img3 .img1 .calle {
-        margin-top: 1.2vh;
-        width: 7.6vh;
-        height: 5vh;
+        margin-top: 32px;
+        width: 66px;
+        height: 44px;
     }
 
     .tablero3 .content_img3 .img1 .calle {
-        margin-top: -0.8vh;
+        margin-top: 15px;
     }
 
     .tablero3 .content_img3 .imgStreet {
-        height: 5.5vh;
-        margin-top: -2.4vh;
+        height: 50px;
+        margin-top: -20px;
     }
 
     .tablero3 .content_img3 .img2,
     .tablero3 .content_img3 .img3 {
-        margin-top: -2.4vh;
-        height: 5.5vh;
+        margin-top: -21px;
+        height: 49px;
     }
 
     .tablero3 .content_img3 .imgStreet.uno {
-        margin-left: 6vh;
-        margin-top: -2.4vh;
+        margin-left: 53px;
+        margin-top: -20px;
     }
 
     .content_imgStreetH,
     .content_imgStreetH2 {
-        width: 17vh;
-        height: 5vh;
-        margin-top: -3vh;
-        margin-left: 10.6vh;
+        width: 148px;
+        height: 42px;
+        margin-top: -25px;
+        margin-left: 93px;
     }
 
     .content_imgStreetH1,
     .content_imgStreetH3 {
-        width: 20vh;
-        height: 5vh;
-        margin-top: -5.2vh;
-        margin-left: 31.5vh;
+        width: 140px;
+        height: 45px;
+        margin-top: -27px;
+        margin-left: 34.5px;
+    }
+
+    .tablero1 .content_imgStreetH3 {
+        margin-top: -6px;
+    }
+
+    .tablero2 .content_imgStreetH3 {
+        margin-top: -10px;
     }
 
     .tablero2 .content_imgStreetH,
     .tablero3 .content_imgStreetH {
-        margin-top: -4.5vh;
+        margin-top: -38px;  
     }
 
     .content_imgStreetH2 {
-        margin-top: -0.6vh;
+        margin-top: -3px;
     }
 
     .tablero2 .content_imgStreetH2 {
-        margin-top: -1.1vh;
+        margin-top: -6px;
     }
 
-    .tablero3 .content_imgStreetH2,
+
+    .tablero3 .content_imgStreetH2 {
+        margin-left: 93.2px;    
+    }
+
     .tablero3 .content_imgStreetH3 {
-        margin-top: -7vh;
+        margin-left: 275.2px;
     }
-
 
     .tableroNormal .tablero3 .content_img3 .img1 .opcion {
-        height: 5vh;
+        height: 46px;
     }
 
     .containerTablero .perfilDados {
-        width: 23vh;
-        margin-left: 12.5vh;
+        width: 195px;
+        margin-left: 110px;
         position: fixed;
         bottom: -23%;
     }
 
     .containerTablero .perfilDados .btn.btnUsuario {
-        margin-left: 6vh;
-        margin-top: 3.6vh;
-        width: 5vh;
-        height: 5vh;
+        margin-left: 55px;
+        margin-top: 34px;
+        width: 42px;
+        height: 43px;
     }
 
     .containerTablero .perfilDados .btn.btnDados {
-        margin-left: 1vh;
-        margin-top: 2.6vh;
-        width: 6vh;
-        height: 5vh;
+        margin-left: 5px;
+        margin-top: 20px;
+        width: 60px;
+        height: 50px;
         font-size: 35px;
     }
 
@@ -674,44 +697,45 @@
     .imgStreet .posicion6,
     .imgStreet .posicion7,
     .imgStreet .posicion8 {
-        margin-left: 1vh;
-        margin-top: 0.6vh;
-        width: 3vh;
-        height: 3vh;
+        margin-left: 6px;
+        margin-top: 4px;
+        width: 30px;
+        height: 30px;
     }
 
     .imgStreet .posicion1,
     .imgStreet .posicion2,
     .imgStreet .posicion3 {
-        margin-top: -3vh;
+        margin-top: -30px;
     }
 
     .imgStreet .posicion5,
     .imgStreet .posicion6,
     .imgStreet .posicion7,
     .imgStreet .posicion8 {
-        margin-top: 2.5vh;
+        margin-top: 17px;
     }
 
     .imgStreet .posicion1 {
-        margin-left: 7vh;
+        margin-left: 62px;
     }
 
     .imgStreet .posicion2 {
-        margin-left: 11.5vh;
+        margin-left: 100px;
     }
 
     .imgStreet .posicion3 {
-        margin-left: 16vh;
+        margin-left: 140px;
     }
 
     .imgStreet .posicion8 {
-        margin-top: 2.5vh;
+        margin-top: 19px;
     }
 
     .imgStreet .btnUser {
-        top: -9.7vh;
-        width: 3vh;
+        top: -90px;
+        left: 1px;
+        width: 30px;
     }
 
     .containerTablero .preguntas .container.boxPreguntas {
@@ -723,14 +747,14 @@
 
     .containerTablero .preguntas.modal.fade.collapse.in .tituloPregunta {
         margin-left: 28%;
-        margin-bottom: 0px;
+        margin-bottom: -10px;
         font-size: 30px;
         margin-top: 50px;
     }
 
     .containerTablero .preguntas.modal.fade.collapse.in .textoPregunta {
-        font-size: 20px;
-        margin-left: 5%;
+        font-size: 15px;
+        margin-left: 50px;
     }
 
     .containerTablero .preguntas.modal.fade.collapse.in .textoArea {
@@ -740,14 +764,14 @@
     }
 
     .containerTablero .preguntas.modal.fade.collapse.in .btn.btn-block {
-        width: 5vh;
-        height: 5vh;
+        width: 50px;
+        height: 50px;
         margin-left: 175px;
-        margin-top: -6px;
+        margin-top: 10px;
     }
 
     .containerTablero .preguntas.modal.fade.collapse.in .textoRespuesta .boxRadio {
-        margin-left: 75px;
+        margin-left: 52px;
     }
 
 }
