@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../../resources/css/tostadas/pnotify.brighttheme.css">
     <link rel="stylesheet" href="../../resources/css/tostadas/pnotify.buttons.css">
     <link rel="stylesheet" href="../../resources/css/tostadas/pnotify.css">
+    <link rel="stylesheet" href="../../resources/css/tostadas/jquery-confirm.css">
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -20,6 +21,7 @@
     <script src="../js/tostadas/pnotify.animate.js"></script>
     <script src="../js/tostadas/pnotify.buttons.js"></script>
     <script src="../js/tostadas/mensajes.js"></script>
+    <script src="../js/tostadas/jquery-confirm.js"></script>
     <script src="../js/avatar.js"></script>
     <script src="../js/juego.js"></script>
 
@@ -34,7 +36,7 @@
     $ciudad = $_SESSION['data_user_antropolys']['ciudad'];
     $genero = $_SESSION['data_user_antropolys']['genero'];
     $correo = $_SESSION['data_user_antropolys']['email'];
-    $img = $_SESSION['data_user_antropolys']['img']? 'avatar'.$_SESSION['data_user_antropolys']['img']: 'avatarPrincipal';
+    $img = $_SESSION['data_user_antropolys']['img']? 'avatar'.$_SESSION['data_user_antropolys']['img']: 'avatar0';
 
     $icono = ($genero == "M") ? "<i class='fa fa-mars genero'></i>" : "<i class='fa fa-venus genero'></i>";
     $usuario = json_encode($_SESSION['data_user_antropolys']);
