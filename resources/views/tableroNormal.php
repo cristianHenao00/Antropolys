@@ -36,7 +36,7 @@
     $ciudad = $_SESSION['data_user_antropolys']['ciudad'];
     $genero = $_SESSION['data_user_antropolys']['genero'];
     $correo = $_SESSION['data_user_antropolys']['email'];
-    $img = $_SESSION['data_user_antropolys']['img']? 'avatar'.$_SESSION['data_user_antropolys']['img']: 'avatarPrincipal';
+    $img = $_SESSION['data_user_antropolys']['img']? 'avatar'.$_SESSION['data_user_antropolys']['img']: 'avatar0';
 
     $icono = ($genero == "M") ? "<i class='fa fa-mars genero'></i>" : "<i class='fa fa-venus genero'></i>";
     $usuario = json_encode($_SESSION['data_user_antropolys']);
