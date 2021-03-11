@@ -302,7 +302,7 @@
 .imgStreet .btnUser {
     cursor: pointer;
     position: relative;
-    z-index: 3;
+    z-index: 1;
     top: -18vh;
     background-size: 100%;
     height: 12vh;
@@ -392,6 +392,7 @@
     font-family: "Lalezar-Regular";
     font-size: 65px;
     color: #a31bef;
+    display: none;
 }
 
 .containerTablero .perfilDados .modal.fade.collapse.in,
@@ -399,10 +400,6 @@
 .containerTablero .preguntas.modal.fade.collapse.in,
 .containerTablero .preguntas.modal.fade.collapse {
     background-color: rgb(152 151 151 / 48%);
-}
-
-.containerTablero .preguntas .container.boxPreguntas {
-    margin-top: 4%;
 }
 
 .containerTablero .preguntas .container.boxPreguntas,
@@ -417,15 +414,15 @@
     background-position: center;
     background-color: unset;
     background-size: cover;
-    margin-top: 4%;
+    margin-top: -3%;
     margin-left: -12px;
     font-family: "Lalezar-Regular";
 }
 
 
 .containerTablero .preguntas.modal.fade.collapse.in .tituloPregunta {
-    margin-top: 41px;
-    margin-left: 105px;
+    margin-top: 78px;
+    margin-left: 125px;
     margin-bottom: -20px;
     width: 45%;
     text-align: center;
@@ -434,9 +431,9 @@
 }
 
 .containerTablero .preguntas.modal.fade.collapse.in .textoPregunta {
-    margin-left: 54px;
-    margin-top: 10px;
-    margin-bottom: 5px;
+    margin-left: 90px;
+    margin-top: 15px;
+    margin-bottom: 10px;
     width: 60%;
     text-align: center;
     font-size: 14px;
@@ -445,7 +442,7 @@
 
 .containerTablero .preguntas.modal.fade.collapse.in .textoArea {
     margin-left: 75px;
-    width: 60%;
+    width: 65%;
     padding: 5px;
     font-size: 15px;
     color: saddlebrown;
@@ -453,19 +450,20 @@
 }
 
 .containerTablero .preguntas.modal.fade.collapse.in .btn.btn-block {
-    background-image: url(../assets/imagenes_nuevas/PNG/btn_recargar.png);
+    background-image: url(../assets/imagenes_nuevas/PNG/Button-Play.png);
     background-repeat: no-repeat;
     background-position: center;
     background-color: unset;
     background-size: 100%;
-    width: 8vh;
+    width: 15vh;
     height: 8vh;
-    margin-left: 175px;
+    margin-left: 180px;
+    margin-top: 10px;
 }
 
 .containerTablero .preguntas.modal.fade.collapse.in .textoRespuesta .boxRadio {
     margin-left: 15%;
-    width: 80%;
+    width: 75%;
     color: saddlebrown;
     font-size: 12px;
 }
@@ -733,28 +731,30 @@
     }
 
     .imgStreet .btnUser {
-        top: -90px;
+        top: -85px;
         left: 1px;
         width: 30px;
     }
 
-    .containerTablero .preguntas .container.boxPreguntas {
-        width: 380px !important;
-        margin-top: 25% !important;
-        margin-left: 16px;
+    .containerTablero .preguntas .container.boxPreguntas,
+    .containerTablero .preguntas .container.box_preguntas {
+        width: 370px !important;
+        height: 465px !important;
+        margin-top: 10% !important;
+        margin-left: 0px;
     }
 
 
     .containerTablero .preguntas.modal.fade.collapse.in .tituloPregunta {
-        margin-left: 28%;
-        margin-bottom: -10px;
+        margin-left: 30%;
+        margin-bottom: -20px;
         font-size: 30px;
-        margin-top: 50px;
+        margin-top: 75px;
     }
 
     .containerTablero .preguntas.modal.fade.collapse.in .textoPregunta {
         font-size: 15px;
-        margin-left: 50px;
+        margin-left: 70px;
     }
 
     .containerTablero .preguntas.modal.fade.collapse.in .textoArea {
@@ -764,10 +764,10 @@
     }
 
     .containerTablero .preguntas.modal.fade.collapse.in .btn.btn-block {
-        width: 50px;
+        width: 85px;
         height: 50px;
-        margin-left: 175px;
-        margin-top: 10px;
+        margin-left: 152px;
+        margin-top: 15px;
     }
 
     .containerTablero .preguntas.modal.fade.collapse.in .textoRespuesta .boxRadio {

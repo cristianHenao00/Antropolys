@@ -19,6 +19,8 @@
     background-position: center;
     background-size: cover;
     min-height: 88vh;
+    position: relative;
+    z-index: -1;
 }
 
 .container {
@@ -52,8 +54,6 @@
 }
 
 .imgConfig {
-    position: relative;
-    z-index: 1;
     width: 55%;
     margin-left: 95px;
 }
