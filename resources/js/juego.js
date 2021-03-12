@@ -55,7 +55,7 @@ class juego {
                 var fjson = JSON.parse(this.responseText);
                 if(fjson.respuesta == 'Sin respuestas' && fjson.ack == 1){//solo si voy a inicar el juego
                     msjBC.informacion('INFORMACIÓN','Te toca'); 
-                    document.getElementById('btnDados').style.display = 'inline-block';
+                    document.getElementById('btnDados').style.display = 'block';
                 }else ju_ego.conocer_mi_turno();
                 
                 if(fjson.respuesta && fjson.respuesta.position){
@@ -254,7 +254,7 @@ class juego {
                 }else{
                     if(fjson.ack == 1){
                         msjBC.ok('VAMOS!','Mi turno'); 
-                        document.getElementById('btnDados').style.display = 'inline-block';
+                        document.getElementById('btnDados').style.display = 'block';
                         document.getElementById('btnDados').style.backgroundImage = 'url(../assets/dados/quietos_da2.png)';
                         document.getElementById('btnDados').setAttribute('onclick','ju_ego.lanzar()');
                     }else {

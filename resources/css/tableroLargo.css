@@ -30,10 +30,6 @@
     float: left;
 }
 
-.row.tableroNormal,
-.row.tableroLargo {
-    margin-right: -130px;
-}
 
 .content_img1,
 .content_img2,
@@ -98,30 +94,30 @@
 }
 
 .content_img1 .img1 {
-    width: 22vh;
+    width: 12vw;
     height: 26vh;
 }
 
 .content_img1 .imgStreet {
-    width: 14vh;
+    width: 8vw;
     height: 18vh;
 }
 
 .content_img1 .img2 {
-    width: 80vh;
+    width: 40vw;
     height: 16vh;
 }
 
 .content_img1 .img3 {
     margin-top: -2px;
-    width: 57vh;
+    width: 32vw;
     height: 16vh;
 }
 
 .content_img2 .img1 {
-    width: 22vh;
-    height: 58vh;
-    margin-top: -6vh;
+    width: 12vw;
+    height: 53vh;
+    margin-top: -4vh;
 }
 
 .tablero2 .content_img2 .img1 {
@@ -129,66 +125,62 @@
     margin-top: -16vh;
 }
 
-.tablero3 .content_img2 .img1 {
-    margin-top: 0vh;
-}
-
 .content_img2 .imgStreet {
-    width: 14vh;
+    width: 8vw;
     height: 51vh;
     margin-top: -1.2vh;
 }
 
 .content_img2 .img2 {
-    width: 80vh;
+    width: 40vw;
     height: 49vh;
 }
 
 .content_img2 .img3 {
-    width: 57vh;
+    width: 32vw;
     height: 49vh;
 }
 
 .content_img3 .img1 {
-    width: 22vh;
+    width: 12vw;
     height: 58vh;
     margin-top: -20vh;
 }
 
 .content_img3 .imgStreet {
-    width: 14vh;
+    width: 8vw;
     height: 35vh;
     margin-top: -1.2vh;
 }
 
 .content_img3 .img2 {
-    width: 80vh;
+    width: 40vw;
     height: 16vh;
 }
 
 .content_img3 .img3 {
-    width: 57vh;
+    width: 32vw;
     height: 16vh;
 }
 
 .content_img3 .img1 .calle {
-    margin-top: 7vh;
-    width: 23.5vh;
-    height: 13vh;
+    margin-top: 5vh;
+    width: 12vw;
+    height: 15vh;
 }
 
 .content_imgStreetH {
-    width: 83.5vh;
+    width: 42vw;
     height: 13vh;
     margin-top: -10vh;
-    margin-left: 33.5vh;
+    margin-left: 18.5vw;
 }
 
 .content_imgStreetH1 {
-    width: 59vh;
+    width: 33vw;
     height: 13vh;
-    margin-top: -71px;
-    margin-left: 70.2px;
+    margin-top: -10vh;
+    margin-left: 6vw;
 }
 
 .tablero2 .content_imgStreetH,
@@ -197,35 +189,28 @@
 }
 
 .content_imgStreetH2 {
-    width: 83.5vh;
-    height: 13vh;
+    width: 42vw;
+    height: 15vh;
     margin-top: -3vh;
-    margin-left: 33.6vh;
+    margin-left: 18.5vw;
 }
 
 .tablero2 .content_imgStreetH1,
 .tablero3 .content_imgStreetH1 {
-    margin-top: -41px;
+    margin-top: -6vh;
 }
 
-.tablero2 .content_imgStreetH2 {
-    margin-top: -7px;
+.tablero2 .content_imgStreetH2,
+.tablero2 .content_imgStreetH3{
+    margin-top: -1vh;
 }
 
-.tablero3 .content_imgStreetH2,
-.tablero3 .content_imgStreetH3 {
-    margin-top: -62px;
-}
-
-.tablero2 .content_imgStreetH3 {
-    margin-top: -7px;
-}
 
 .content_imgStreetH3 {
-    width: 59vh;
-    height: 13vh;
-    margin-top: -20px;
-    margin-left: 71.2px;
+    width: 33vw;
+    height: 15vh;
+    margin-top: -3vh;
+    margin-left: 6vw;
 }
 
 .tablero3 .content_img3 .img1 .opcion,
@@ -234,7 +219,7 @@
 }
 
 .tableroLargo  .tablero3 .content_img3 .imgStreet {
-    height: 18vh;
+    height: 16vh;
 }
 
 .tableroLargo .tablero3 .content_img3 .imgStreet.uno {
@@ -288,15 +273,15 @@
 }
 
 .imgStreet .posicion1 {
-    margin-left: 28vh;
+    margin-left: 13vw;
 }
 
 .imgStreet .posicion2 {
-    margin-left: 50vh;
+    margin-left: 25vw;
 }
 
 .imgStreet .posicion3 {
-    margin-left: 72vh;
+    margin-left: 38vw;
 }
 
 .imgStreet .posicion8 {
@@ -363,21 +348,21 @@
     background-image: url(../assets/imagenes_nuevas/PNG/hoja_espacio_dados.png);
     background-repeat: no-repeat;
     background-position: top;
-    background-size: 100%;
+    background-size: contain;
     position: fixed;
     z-index: 1;
-    bottom: 0%;
-    width: 86vh;
-    height: 32vh;
-    margin-left: 52vh;
+    bottom: 0;
+    width: 100%;
+    height: 22vh;
 }
 
 .containerTablero .perfilDados .btn.btnUsuario {
     cursor: pointer;
-    margin-left: 27vh;
-    margin-top: 16vh;
-    height: 15vh;
-    width: 14vh;
+    margin-left: 40%;
+    margin-top: 4vh;
+    height: 18vh;
+    width: 8%;
+    float: left;
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: bottom;
@@ -386,11 +371,11 @@
 .containerTablero .perfilDados .btn.btnDados {
     background-image: url(../assets/dados/quietos_da2.png);
     cursor: pointer;
-    margin-left: 5vh;
-    margin-top: 16vh;
-    height: 14vh;
-    width: 20vh;
-    background-size: 70%;
+    margin-left: 52%;
+    margin-top: 3vh;
+    height: 18vh;
+    width: 8%;
+    background-size: 100%;
     background-repeat: no-repeat;
     background-position: bottom;
     font-family: "Lalezar-Regular";
@@ -409,9 +394,8 @@
 
 .containerTablero .preguntas .container.boxPreguntas,
 .containerTablero .preguntas .container.box_preguntas {
-    /*width: 450px;*/
-    width: 860px;
-    height: 500px;
+    width: 70vw;
+    height: 70vh;
 }
 
 .containerTablero .preguntas .container.box_preguntas {
@@ -422,18 +406,20 @@
     background-color: unset;
     background-size: cover;
     margin: auto;
-    margin-top: 3%;
+    margin-top: 3vh;
     font-family: "Lalezar-Regular";
+    width: 70vw;
+    height: 70vh;
 }
 
 
 .containerTablero .preguntas.modal.fade.collapse.in .tituloPregunta {
     margin: auto;
-    margin-top: 78px;
+    margin-top: 9vh;
     margin-bottom: -20px;
     width: 45%;
     text-align: center;
-    font-size: 40px;
+    font-size: 5vh;
     color: #a31bef;
 }
 
@@ -443,13 +429,14 @@
     margin-bottom: 10px;
     width: 75%;
     text-align: center;
-    font-size: 14px;
+    font-size: 2.5vh;
     color: saddlebrown;
 }
 
 .containerTablero .preguntas.modal.fade.collapse.in .textoArea {
     margin: auto;
-    width: 60%;
+    margin-left: 10%;
+    width: 80%;
     padding: 5px;
     font-size: 15px;
     color: saddlebrown;
@@ -472,7 +459,7 @@
     margin: auto;
     width: 75%;
     color: saddlebrown;
-    font-size: 12px;
+    font-size: 1.8vh;
 }
 
 .containerTablero .preguntas.modal.fade.collapse.in .textoRespuesta .boxRadio .radio2 {

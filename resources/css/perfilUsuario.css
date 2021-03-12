@@ -28,17 +28,19 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    margin-top: -40px;
+    margin-top: -8vh;
     position: relative;
     z-index: 2;
     font-family: "Lalezar-Regular";
     font-size: 24px;
     color: saddlebrown;
+    width: 30vw;
+    height: 58vh;
 }
 
 .imgPerfil {
-    width: 55%;
-    margin-left: 55%;
+    width: 17vw;
+    margin-left: 13vw;
     z-index: 1;
     position: relative;
 }
