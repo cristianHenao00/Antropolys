@@ -178,6 +178,16 @@
     .contentAvatar .btn.actualizar {
         margin-left: 33%;
     }
+    .containerTablero .perfilDados .container.avatar, 
+    .containerTablero .perfilDados .container.contentAvatar{
+        width: 95vw;
+        height: 58vh;
+        margin-top: -7vh;
+    }
+    .imgAvatarTitle{
+        width: 50vw;
+        margin-left: 16vw;
+    }
 
 }
 

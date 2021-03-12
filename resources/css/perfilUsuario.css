@@ -177,7 +177,7 @@
     .containerTablero .perfilDados .container.perfil,
     .containerTablero .perfilDados .container.contentPerfil  {
         width: 380px;
-        margin-top: 10%;
+        margin-top: 4%;
         margin-left: 1vh;
     }
 
@@ -185,6 +185,7 @@
         top: 20%;
         position: relative;
         margin-left: 26%;
+        width: 50vw;
     }
 
     .btn.btnCerrarPerfil {
