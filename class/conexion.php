@@ -209,9 +209,11 @@ class conexion {
         if (array_key_exists('idpreguntas', $_POST) && $_POST['idpreguntas']) {//para actualizar la preguna
             $sql = "SELECT * FROM preguntas WHERE idpreguntas = ".$_POST['idpreguntas'];
             $result1 = $mysqli->query($sql);
-            if ($result1->num_rows > 0 && isset($type_img)) {//Si hay resultados…
+            if ($result1->num_rows > 0) {//Si hay resultados…
                 $pre = $result1->fetch_array(MYSQLI_ASSOC);
-                if(array_key_exists('img', $pre)) $row['img'] = $this->save_img_preg($img, $type_img, $name, $pre['img']);
+                if(array_key_exists('img', $pre)){
+                    $row['img'] = isset($type_img)?$this->save_img_preg($img, $type_img, $name, $pre['img']) : $pre['img'];
+                }
             }
             
             $sql = 'UPDATE preguntas SET nombre="' .$nombre. '", tipo=' .$tipo. ', nivel=' .$nivel. ', '
@@ -281,7 +283,7 @@ class conexion {
     private function save_img_preg($img, $type_img, $name, $id = 0){
         $mysqli = $this->conectar();
         if($id){
-            $sql = "UPDATE img_preg SET img=\"$img\", type_img='$type_img' , name='$name' WHERE idimg_preg=$id";
+            $sql = "UPDATE img_preg SET img='$img', type_img='$type_img' , name='$name' WHERE idimg_preg=$id";
             if($result = $mysqli->query($sql)) $id = $id;
             else $id = 0;
         }else{

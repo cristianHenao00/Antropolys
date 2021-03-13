@@ -175,8 +175,11 @@
                             <option value="1">Opc M&uacuteltiple</option>
                         </select>
                         <br><br>
-                        <label id="label_respuesta" for="respuesta_pregunta"> Separe con un menos las posibles respuestas (-) y con asterisco (*) la respuesta correcta, para las preguntas abiertas separe las palabras con coma (,)</label>
-                        <textarea class="form-control" name="respuestas" id="respuesta_pregunta" placeholder="-Respuesta 1 -Respuesta2 -*Respuesta3Correcta"></textarea>
+                        <label id="label_respuesta" for="respuesta_pregunta"> Separe con un menos las posibles respuestas (-) 
+                                y con asterisco (*) la respuesta correcta. <br>
+                                Para las preguntas abiertas separe las palabras con una coma (,)</label>
+                        <textarea class="form-control" name="respuestas" id="respuesta_pregunta" 
+                                  placeholder="-Respuesta 1 -Respuesta2 -*Respuesta3Correcta" rows="6"></textarea>
                         <br>
                         <label id="label_file" for="file"> Cargar imágen </label>
                         <input type="file" name="file" id="file" placeholder="Subir archivo">
@@ -191,7 +194,7 @@
                               <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Nombre</th>
-                                <th scope="col">Tipo</th>
+                                <th scope="col">Categoría</th>
                                 <th scope="col">Respuestas</th>
                                 <th scope="col">Img</th>
                                 <th scope="col">Editar</th>

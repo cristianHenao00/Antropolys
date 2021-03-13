@@ -7,7 +7,6 @@ class preguntas {
             var seguir =0;
             var res = document.getElementById('respuesta_pregunta').value;
             var tp = document.getElementById('select_tipo').value;
-            console.log('tp',tp);
             if(tp == 1){//múltiple
                 if(res.indexOf('-') > -1){
                     var respuestas_1 = res.split('-');
@@ -51,10 +50,9 @@ class preguntas {
             if (this.readyState == 4 && this.status == 200) {
                 var fjson = JSON.parse(this.responseText);
                 pre.list_preguntas();
-                if(fjson.ack){
-                    msjBC.ok('Bien!','Pregunta Ingresada'); 
-                    pre.limpiar_forma();
-                }else msjBC.informacion('Respuesta',fjson.respuesta); 
+                pre.limpiar_forma();
+                if(fjson.ack)msjBC.ok('Bien!','Pregunta Ingresada'); 
+                else msjBC.informacion('Respuesta',fjson.respuesta); 
             }
         };
         xhttp.open("post", '../../../class/conexion.php', true);
@@ -92,11 +90,11 @@ class preguntas {
                          tb.innerHTML += '<tr id="pregunta_'+dat.idpreguntas+'">'+
                                             '<td>'+dat.idpreguntas+'</td>'+
                                             '<td>'+dat.nombre+'</td>'+
-                                            '<td>'+dat.clase+' - '+dat.niv+'</td>'+
+                                            '<td>'+dat.niv+' - '+dat.clase+'</td>'+
                                             '<td style="display:none">'+dat.tipo+'</td>'+
                                             '<td style="display:none">'+dat.nivel+'</td>'+
                                             '<td>'+dat.respuestas+'</td>'+
-                                            '<td><img src="/class/class.img.php?id='+dat.img+'" style="max-width: 40px;"></td>'+
+                                            '<td><img src="/class/class.img.php?id='+dat.img+'" style="max-width: 50px;"></td>'+
                                             '<td><button type="button" class="btn btn-block btn-default" onclick="pre.editar_pregunta('+dat.idpreguntas+')">Editar</button></td>'+
                                           '</tr>';
                     }
@@ -110,13 +108,12 @@ class preguntas {
     editar_pregunta(id){
         var preg = document.getElementById('pregunta_'+id);
         var it_preg = preg.getElementsByTagName('td');
-        console.log('it_preg',it_preg);
         document.getElementById('idpreguntas').value = it_preg[0].innerHTML;
         document.getElementById('nombre_pregunta').value = it_preg[1].innerHTML;
         document.getElementById('select_tipo').value = it_preg[3].innerHTML;
         document.getElementById('select_nivel').value = it_preg[4].innerHTML;
         document.getElementById('respuesta_pregunta').value = it_preg[5].innerHTML;
-        scroll(0, 150);
+        scroll(0, 130);
     }
     
     limpiar_forma(){
