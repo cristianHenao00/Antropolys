@@ -276,7 +276,8 @@ class juego {
                                 
                                 document.getElementById('btnPosicion_'+posiciones_otros[i].position)?document.getElementById('btnPosicion_'+posiciones_otros[i].position).style.backgroundImage = 'url(../assets/imagenes_nuevas/PNG/avatar_0'+posiciones_otros[i].img+'.png)':'';
                                 document.getElementById('btnPosicion_'+posiciones_otros[i].position)?document.getElementById('btnPosicion_'+posiciones_otros[i].position).style.display = 'block':'';
-                                posicion_old_de = posiciones_otros;
+                                setTimeout(function(){ posicion_old_de = posiciones_otros; }, 100);
+                                
                             }
 
                         }

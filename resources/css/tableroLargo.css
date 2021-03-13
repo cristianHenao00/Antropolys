@@ -652,12 +652,12 @@
     }
 
     .containerTablero .perfilDados .btn.btnUsuario {
-        margin-top: 0px;
+        margin-top: -10px;
         height: 60px;
     }
 
     .containerTablero .perfilDados .btn.btnDados {
-        margin-top: 0px;
+        margin-top: -10px;
         height: 60px;
         font-size: 35px;
     }
