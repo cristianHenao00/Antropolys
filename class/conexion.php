@@ -200,59 +200,32 @@ class conexion {
         $nivel = $_POST['nivel'];
         $respuestas = $_POST['respuestas'];
         
+        foreach ($_FILES as $vAdjunto) {
+            $oFichero = fopen($vAdjunto["tmp_name"], 'r');
+            $sContenido = fread($oFichero, filesize($vAdjunto["tmp_name"]));
+            $img = addslashes($sContenido); $type_img = $vAdjunto['type']; $name = $vAdjunto['name'];
+        }
         $row = array();
-        /*$sql = 'SELECT * FROM preguntas WHERE nombre = "'.$nombre.'"';
-        $result = $mysqli->query($sql);
-        if ($result->num_rows > 0 ) {//Si hay resultados…*/
-        if (array_key_exists('idpreguntas', $_POST) && $_POST['idpreguntas']) {//Si hay resultados…
-            $mensajes['respuesta'] = 'Pregunta ya existe';
-            if (array_key_exists('idpreguntas', $_POST) && $_POST['idpreguntas']) {
-                $sql = 'UPDATE preguntas SET nombre="' .$nombre. '", tipo=' .$tipo. ', nivel=' .$nivel. ', respuestas="' .$respuestas. '" '
-                    . 'WHERE idpreguntas= ' . $_POST['idpreguntas'];
-                if ($result = $mysqli->query($sql)) $mensajes['respuesta'] = 'Se actualizó';
-                $sql = 'DELETE FROM preguntas WHERE idpregunta = '.$_POST['idpreguntas'];
-                if ($result = $mysqli->query($sql)) {
-                    $respuesta = json_decode($_POST['respuesta']);
-                    $correcta = $_POST['correcta'];
-                    $idpregunta = $_POST['idpreguntas'];
-                    $respuestas_save = array();
-                    foreach ($respuesta as $key => $value) {
-                        if($value){
-                            $sql = "INSERT INTO respuestas (idpregunta, respuesta, correcta) values ($idpregunta, '$value','$correcta')";
-                            $row = $_POST;
-                            $result3 = $mysqli->query($sql);
-                            if ($result3) {//Si hay resultados…
-                                $mensajes['ack'] = 1;
-                                $respuestas_save[] = $result3;
-                            }else  $mensajes['ack'] = 0;
-                        }        
-                    }
-                }
+        if (array_key_exists('idpreguntas', $_POST) && $_POST['idpreguntas']) {//para actualizar la preguna
+            $sql = "SELECT * FROM preguntas WHERE idpreguntas = ".$_POST['idpreguntas'];
+            $result1 = $mysqli->query($sql);
+            if ($result1->num_rows > 0 && isset($type_img)) {//Si hay resultados…
+                $pre = $result1->fetch_array(MYSQLI_ASSOC);
+                if(array_key_exists('img', $pre)) $row['img'] = $this->save_img_preg($img, $type_img, $name, $pre['img']);
             }
-        } else if (array_key_exists('nombre', $_POST)) {
-            $sql = "INSERT INTO preguntas (nombre, tipo, nivel, respuestas) values ('$nombre', $tipo, $nivel, '$respuestas')";
+            
+            $sql = 'UPDATE preguntas SET nombre="' .$nombre. '", tipo=' .$tipo. ', nivel=' .$nivel. ', '
+                    . ' respuestas="' .$respuestas. '", img = '.$row['img']
+                . ' WHERE idpreguntas= ' . $_POST['idpreguntas'];
+            if ($result = $mysqli->query($sql)) $mensajes['respuesta'] = 'Se actualizó';
+
+        }else if (array_key_exists('nombre', $_POST)) {//para crear la pregunta
+            $row['img'] = isset($type_img)? $this->save_img_preg($img, $type_img, $name): 0;
+            $im = $row['img'];
+            $sql = "INSERT INTO preguntas (nombre, tipo, nivel, respuestas, img) values ('$nombre', $tipo, $nivel, '$respuestas', $im)";
             
             $result2 = $mysqli->query($sql);
-            if($result2){
-                $mensajes['ack'] = 1;
-                if($tipo){
-                    $respuesta = json_decode($_POST['respuesta']);
-                    $correcta = $_POST['correcta'];
-                    $idpregunta = $result2;
-                    $respuestas_save = array();
-                    foreach ($respuesta as $key => $value) {
-                        if($value){
-                            $sql = "INSERT INTO respuestas (idpregunta, respuesta, correcta) values ($idpregunta, '$value','$correcta')";
-                            $row = $_POST;
-                            $result3 = $mysqli->query($sql);
-                            if ($result3) {//Si hay resultados…
-                                $mensajes['ack'] = 1;
-                                $respuestas_save[] = $result3;
-                            }else  $mensajes['ack'] = 0;
-                        }        
-                    }
-                        
-                }
+            if($result2){                
                 $row['idpreguntas'] = $mysqli->insert_id;
                 session_start();
                 $mensajes['respuesta'] = $row;
@@ -277,7 +250,7 @@ class conexion {
                     WHEN nivel = 1 THEN "Normal" 
                     ELSE "Difícil"
                 END AS niv 
-                FROM preguntas';
+                FROM preguntas ORDER BY idpreguntas DESC';
         $result = $mysqli->query($sql);
         if ($result->num_rows > 0) {//Si hay resultados…
             while ($fila = $result->fetch_array(MYSQLI_ASSOC))$row[] = json_encode($fila);
@@ -303,6 +276,20 @@ class conexion {
             $_SESSION['data_user_antropolys']['img'] = $img;
         }else $mensajes['respuesta'] = 'No se actualizó';
         return $mensajes;
+    }
+    
+    private function save_img_preg($img, $type_img, $name, $id = 0){
+        $mysqli = $this->conectar();
+        if($id){
+            $sql = "UPDATE img_preg SET img=\"$img\", type_img='$type_img' , name='$name' WHERE idimg_preg=$id";
+            if($result = $mysqli->query($sql)) $id = $id;
+            else $id = 0;
+        }else{
+            $sql = "INSERT INTO img_preg (img, type_img, name) values ('$img', '$type_img', '$name')";
+            $result = $mysqli->query($sql);
+            if($result) $id = $mysqli->insert_id;
+        }
+        return $id;
     }
 
 }

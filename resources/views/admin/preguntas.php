@@ -156,29 +156,33 @@
             <div class="content-wrapper" id="vista_content" style="float: left;">
                 <br>
             <?php    echo '<h3>Hola Admin ' . $_SESSION['data_user_antropolys']['nombre'] . '</h3>';?>
-                <form method='post' class="form-question text-center" id="question" role="form">
+                <form method='post' class="form-question text-center" id="question" role="form"  enctype="multipart/form-data" accept="image/png, image/jpeg">
                     <div class="col-sm-4" id="content_question">
                         <h3>Preguntas</h3>
                         <label id="label_name" for="nombre_pregunta"> Enunciado de la pregunta </label>
-                        <input type="text" class="form-control" name="nombre" id="nombre_pregunta" placeholder="nombre">
+                        <textarea type="text" class="form-control" name="nombre" id="nombre_pregunta" placeholder="Pregunta?"></textarea>
                         <input type="hidden" class="form-control" name="idpreguntas" id="idpreguntas" value="0">
                         <br>
                         <label id="label_select_nivel" for="select_nivel"> Nivel de pregunta </label>
                         <select id="select_nivel" name="nivel">
                             <option value="1">Normal</option>
-                            <option value="2">Difícil</option>
-                        </select><br>
+                            <option value="2">Dif&iacutecil</option>
+                        </select>
+                        <br><br>
                         <label id="label_select_tipo" for="select_tipo"> Tipo de pregunta </label>
                         <select id="select_tipo" name="tipo">
                             <option value="0">Abierta</option>
                             <option value="1">Opc M&uacuteltiple</option>
                         </select>
-                        <br>
+                        <br><br>
                         <label id="label_respuesta" for="respuesta_pregunta"> Separe con un menos las posibles respuestas (-) y con asterisco (*) la respuesta correcta, para las preguntas abiertas separe las palabras con coma (,)</label>
                         <textarea class="form-control" name="respuestas" id="respuesta_pregunta" placeholder="-Respuesta 1 -Respuesta2 -*Respuesta3Correcta"></textarea>
                         <br>
-                        <?php echo '<button type="button" class="btn btn-primary" onclick="pre.valid_save_questions()">Crear Forma</button>';?>
-                        <button type="button" class="btn btn-success" onclick="pre.limpiar_forma()">Limpiar Tablero</button>
+                        <label id="label_file" for="file"> Cargar imágen </label>
+                        <input type="file" name="file" id="file" placeholder="Subir archivo">
+                        <br><br>
+                        <button type="button" class="btn btn-primary" onclick="pre.valid_save_questions()">Cargar pregunta</button>
+                        <button type="button" class="btn btn-success" onclick="pre.limpiar_forma()">Limpiar </button>
                     </div>
                     <div class="col-sm-8">
                         <h3>Lista de Preguntas</h3>
@@ -188,8 +192,8 @@
                                 <th scope="col">#</th>
                                 <th scope="col">Nombre</th>
                                 <th scope="col">Tipo</th>
-                                <th scope="col">Nivel</th>
                                 <th scope="col">Respuestas</th>
+                                <th scope="col">Img</th>
                                 <th scope="col">Editar</th>
                               </tr>
                             </thead>

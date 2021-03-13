@@ -20,12 +20,12 @@ class preguntas {
                     if(respuestas.length <1){
                         msjBC.error('ERROR','Pregunta sin respuestas'); 
                         seguir =1;
-                    }else formData.append("respuesta", respuestas);
+                    }
                     
                     if(!correcta){
                         msjBC.error('ERROR','Pregunta sin respuesta correcta'); 
                         seguir =1;
-                    }else formData.append("correcta", correcta);
+                    }
                     
                 }else msjBC.error('ERROR','Las respuestas deben estar separadas por -'); 
                                   
@@ -37,6 +37,7 @@ class preguntas {
             }
             if(seguir == 0){
                 formData.append("key", "C3");
+                console.log("formData", formData);
                 pre.save_questions(formData);
             }
                 
@@ -53,7 +54,7 @@ class preguntas {
                 if(fjson.ack){
                     msjBC.ok('Bien!','Pregunta Ingresada'); 
                     pre.limpiar_forma();
-                }else msjBC.informacion('ERROR',fjson.respuesta); 
+                }else msjBC.informacion('Respuesta',fjson.respuesta); 
             }
         };
         xhttp.open("post", '../../../class/conexion.php', true);
@@ -64,13 +65,14 @@ class preguntas {
     validacion_campos(form){
         var formData = new FormData();
         var data = $("#"+form).serializeArray();
-        console.log("...", data);
         for(var i=0; i<data.length; i++){
             if(/^\s*$/.test(data[i].value)){
                 msjBC.error('ERROR','Todos los datos son obligatorios'); 
                 return false;
             }else formData.append(data[i].name, data[i].value);
         }
+        $.each($('input[type=file]')[0].files, function(i, file) { formData.append('file-'+i, file);});
+
         return formData;
     }
     
@@ -90,16 +92,14 @@ class preguntas {
                          tb.innerHTML += '<tr id="pregunta_'+dat.idpreguntas+'">'+
                                             '<td>'+dat.idpreguntas+'</td>'+
                                             '<td>'+dat.nombre+'</td>'+
-                                            '<td>'+dat.clase+'</td>'+
+                                            '<td>'+dat.clase+' - '+dat.niv+'</td>'+
                                             '<td style="display:none">'+dat.tipo+'</td>'+
                                             '<td style="display:none">'+dat.nivel+'</td>'+
-                                            '<td >'+dat.niv+'</td>'+
                                             '<td>'+dat.respuestas+'</td>'+
+                                            '<td><img src="/class/class.img.php?id='+dat.img+'" style="max-width: 40px;"></td>'+
                                             '<td><button type="button" class="btn btn-block btn-default" onclick="pre.editar_pregunta('+dat.idpreguntas+')">Editar</button></td>'+
                                           '</tr>';
                     }
-                    //msjBC.ok('Hola','Pregunta Ingresada'); 
-
                 }else msjBC.informacion('ERROR',fjson.respuesta); 
             }
         };
@@ -115,8 +115,8 @@ class preguntas {
         document.getElementById('nombre_pregunta').value = it_preg[1].innerHTML;
         document.getElementById('select_tipo').value = it_preg[3].innerHTML;
         document.getElementById('select_nivel').value = it_preg[4].innerHTML;
-        document.getElementById('respuesta_pregunta').value = it_preg[6].innerHTML;
-        //document.getElementById('nombre_pregunta').value = it_preg[1].innerHTML;
+        document.getElementById('respuesta_pregunta').value = it_preg[5].innerHTML;
+        scroll(0, 150);
     }
     
     limpiar_forma(){
