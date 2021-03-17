@@ -96,8 +96,9 @@ class conexion {
         $mensajes = array();
         $mensajes['ack'] = 0;
         $mysqli = $this->conectar();
-        
-        
+        session_start();//iniciando session 
+        unset($_SESSION['data_user_antropolys']);
+        unset($_SESSION['data_game_antropolys']);
         $row = array();
         $sql = 'SELECT * FROM users WHERE email = "'.$_POST['user'].'" AND pass = "'.$_POST['pass'].'"';
         
@@ -107,7 +108,7 @@ class conexion {
             $mensajes['respuesta'] = 'Datos correctos';
             
             $row = $result->fetch_array(MYSQLI_ASSOC);//array los datos arrojados
-            session_start();//iniciando session 
+            
             $_SESSION['data_user_antropolys'] = $row;
             $mensajes['user'] = $_SESSION['data_user_antropolys'];
             $result1 = $mysqli->query('SELECT j.*, u.nombre, u.apellido, l.name AS longitud, n.name AS nivel
