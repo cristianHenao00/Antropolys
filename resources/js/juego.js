@@ -38,8 +38,12 @@ class juego {
             if (this.readyState == 4 && this.status == 200) {
                 var fjson = JSON.parse(this.responseText);
                 msjBC.informacion('INFORMACIÓN',fjson.respuesta); 
-                orden_turno = fjson.ack;
-                ju_ego.verificate_primer_turno();
+                if(fjson.ack){
+                    orden_turno = fjson.ack;
+                    ju_ego.verificate_primer_turno();
+                }else setTimeout(function(){ location.href = "/"; }, 2000);
+
+                    
             }
         };
         xhttp.open("post", '../../class/juego.php', true);

@@ -55,7 +55,9 @@ class juego {
         $iduser = $_SESSION['data_user_antropolys']['iduser'];
         $idjuego = $_SESSION['data_game_antropolys']['idjuegos'];
         
-        $sql = 'SELECT * FROM order_turno WHERE userid = '.$iduser.' AND juegosid = '.$idjuego;
+        $sql = 'SELECT o.* FROM order_turno o
+                INNER JOIN juegos j ON j.idjuegos = o.juegosid
+                WHERE o.userid = '.$iduser.' AND juegosid = '.$idjuego;
         $result = $mysqli->query($sql);
         if ($result->num_rows > 0) {//Si hay resultados…
             $row = $result->fetch_array(MYSQLI_ASSOC);//array los datos arrojados
@@ -64,18 +66,28 @@ class juego {
             $mensajes['ack'] = $row['turno'];
         }else{
             $pos = 1;
-            $sql = 'SELECT * FROM order_turno o WHERE juegosid = '.$idjuego.' ORDER BY o.turno DESC LIMIT 1 ';
+            $sql = 'SELECT o.* FROM order_turno o
+                    INNER JOIN juegos j ON j.idjuegos = o.juegosid
+                    WHERE o. WHERE juegosid = '.$idjuego.' ORDER BY o.turno DESC LIMIT 1 ';
             $result1 = $mysqli->query($sql);
             if ($result1->num_rows > 0) {//Si hay resultados…
                 $row1 = $result1->fetch_array(MYSQLI_ASSOC);//array los datos arrojados
                 $pos = $row1['turno'] + 1;
             }
-            $sql = "INSERT INTO order_turno (turno,juegosid,userid) VALUES ($pos,$idjuego,$iduser)";
-            if($result2 = $mysqli->query($sql)){
-                $mensajes['respuesta'] = 'Su turno es '.$pos;
-                $mensajes['ack'] = $pos;
-                $_SESSION['data_turno_antropolys'] = $pos;
+            $sql = 'SELECT o.* FROM juegos j WHERE j.idjuegos = '.$idjuego;
+            $result2 = $mysqli->query($sql);
+            if ($result2->num_rows > 0) {
+                $sql = "INSERT INTO order_turno (turno,juegosid,userid) VALUES ($pos,$idjuego,$iduser)";
+                if($result2 = $mysqli->query($sql)){
+                    $mensajes['respuesta'] = 'Su turno es '.$pos;
+                    $mensajes['ack'] = $pos;
+                    $_SESSION['data_turno_antropolys'] = $pos;
+                }
+            }else{
+                $mensajes['ack'] = 0;
+                $mensajes['respuesta'] = 'No hay juego';
             }
+                
         }
         $this->close_conexion($mysqli);
         return $mensajes;
