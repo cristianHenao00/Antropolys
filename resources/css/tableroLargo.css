@@ -471,7 +471,7 @@
     margin-top: -5px;
 }
 
-.containerTablero .perfilDados .btn.btnUsuario.avatarPrincipal {
+.containerTablero .perfilDados .btn.btnUsuario.avatarPrincipal, .containerTablero .perfilDados .btn.btnUsuario.avatar0 {
     background-image: url(../assets/imagenes_nuevas/PNG/avatar_principal.png);
 }
 
