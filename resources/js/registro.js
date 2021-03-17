@@ -7,7 +7,7 @@
 
 class registro{
     registrar(){
-        
+        document.getElementById('btn_registrarme').style.display = 'none';
         var formData = false;
         formData = regi.validacion_campos('registro');
         var email = document.getElementById('emailUser');
@@ -31,7 +31,11 @@ class registro{
                             msjBC.ok('Hola','Ingresa al sistema'); 
                             setTimeout(function(){ location.href = window.location.origin; }, 3000);
                             
-                        }else msjBC.informacion('ERROR',fjson.respuesta); 
+                        }else {
+                            msjBC.informacion('ERROR',fjson.respuesta); 
+                            document.getElementById('btn_registrarme').style.display = 'block';
+                            
+                        }
                     }
                 };
                 xhttp.open("post", '../../class/conexion.php', true);
@@ -42,6 +46,7 @@ class registro{
     
     
     ingresar(){
+        document.getElementById('btn_entrar').style.display = 'none';
         var formData = regi.validacion_campos('login');
         if(formData && regi.validacion_corre('user')){
             formData.append("key", "Q1");
@@ -51,14 +56,22 @@ class registro{
                 if (this.readyState == 4 && this.status == 200) {
                     var fjson = JSON.parse(this.responseText);
                     if(fjson.ack){
-                        if(fjson.respuesta == "Juego nuevo"){
-                            setTimeout(function(){ location.href = "resources/views/configuracion.php"; }, 3000);
+                        if(fjson.user && fjson.user.rol && fjson.user.rol == 'jugador'){
+                            if(fjson.respuesta == "Juego nuevo"){
+                                setTimeout(function(){ location.href = "resources/views/configuracion.php"; }, 3000);
+                            }else{
+                                setTimeout(function(){ location.href = "resources/views/aviso.php"; }, 3000);
+                            }
                         }else{
-                            setTimeout(function(){ location.href = "resources/views/aviso.php"; }, 3000);
+                            setTimeout(function(){ location.href = "resources/views/admin/preguntas.php"; }, 3000);
                         }
+                            
                         console.log('...',fjson);
                         
-                    }else msjBC.informacion('ERROR',fjson.respuesta); 
+                    }else {
+                        document.getElementById('btn_entrar').style.display = 'block';
+                        msjBC.informacion('ERROR',fjson.respuesta);
+                    } 
                 }
             };
             xhttp.open("post", '../../class/conexion.php', true);
@@ -70,7 +83,6 @@ class registro{
     validacion_campos(form){
         var formData = new FormData();
         var data = $("#"+form).serializeArray();
-        console.log("...", data)
         for(var i=0; i<data.length; i++){
             if(/^\s*$/.test(data[i].value)){
                 

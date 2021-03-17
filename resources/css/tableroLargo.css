@@ -251,7 +251,7 @@
 .imgStreet .posicion7,
 .imgStreet .posicion8 {
     margin-left: 2vh;
-    width: 10vh;
+    width: 5.5vw;;
     height: 10vh;
 }
 
@@ -471,7 +471,7 @@
     margin-top: -5px;
 }
 
-.containerTablero .perfilDados .btn.btnUsuario.avatarPrincipal {
+.containerTablero .perfilDados .btn.btnUsuario.avatarPrincipal, .containerTablero .perfilDados .btn.btnUsuario.avatar0 {
     background-image: url(../assets/imagenes_nuevas/PNG/avatar_principal.png);
 }
 

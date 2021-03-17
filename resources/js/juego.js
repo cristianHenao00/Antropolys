@@ -38,8 +38,12 @@ class juego {
             if (this.readyState == 4 && this.status == 200) {
                 var fjson = JSON.parse(this.responseText);
                 msjBC.informacion('INFORMACIÓN',fjson.respuesta); 
-                orden_turno = fjson.ack;
-                ju_ego.verificate_primer_turno();
+                if(fjson.ack){
+                    orden_turno = fjson.ack;
+                    ju_ego.verificate_primer_turno();
+                }else setTimeout(function(){ location.href = "/"; }, 2000);
+
+                    
             }
         };
         xhttp.open("post", '../../class/juego.php', true);
@@ -151,9 +155,17 @@ class juego {
                 var palabras = r.value.split(' ');
                 var p2 = respuesta_correcta.split(',');
                 var esta = '';
-                for(var i=1; i< palabras.length; i++){
+                for(var i=0; i< palabras.length; i++){
                     for(var k=0; k< p2.length; k++){
-                        if(palabras[i] == p2[k]) esta += palabras[i];
+                        if(p2[k] && p2[k] != '' && palabras[i] && palabras[i] != ''){
+                            
+                            palabras[i] = ju_ego.limpiar_txt_tildes_espacios(palabras[i]); 
+                            p2[k] = ju_ego.limpiar_txt_tildes_espacios(p2[k]);
+                            var regex2 = new RegExp(p2[k], "gi");//mayusculas y minusculas
+                            if(regex2.test(palabras[i])) esta += palabras[i];
+                            //if(palabras[i] == p2[k]) 
+                        }
+                            
                     }
                 }
                 if(esta == ''){
@@ -203,8 +215,6 @@ class juego {
                 btn_posible.getElementsByClassName('posicionVerde')[0]?btn_posible.getElementsByClassName('posicionVerde')[0].style.display = 'block':'';
 
                 my_pos_actual = my_pos_posible;
-                console.log('largo_juego',largo_juego);
-                console.log('my_pos_actual',my_pos_actual);
                 if(my_pos_actual == largo_juego) gano = 1;//ganó
             }else{
                 avatar_posible.style.backgroundImage = 'none';
@@ -318,6 +328,13 @@ class juego {
                 }
             }
         });
+    }
+    
+    limpiar_txt_tildes_espacios(txt){
+        txt = txt.replace(/([\ \t]+(?=[\ \t])|^\s+|\s+$)/g, '');//espacios
+        txt = txt.replace(/\n|\r/g, "");//saltos de línea
+        txt = txt.normalize("NFD").replace(/[\u0300-\u036f]/g, "");//tildes
+        return txt;
     }
     
     
