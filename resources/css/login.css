@@ -127,11 +127,12 @@
   background-repeat: no-repeat;
   background-position: center;
   background-color: unset;
-  background-size: 70%;
+  background-size: 100%;
   position: absolute;
-  width: 35vh;
-  height: 7vh;
+  width: 165px;
+  height: 60px;
   margin-top: 5px;
+  margin-left: 40px;
 }
 
 .btn.btnRegistro {
@@ -139,11 +140,12 @@
   background-repeat: no-repeat;
   background-position: center;
   background-color: unset;
-  background-size: 70%;
+  background-size: 100%;
   position: absolute;
-  width: 35vh;
-  height: 7vh;
+  width: 165px;
+  height: 60px;
   margin-top: 60px;
+  margin-left: 40px;
 }
 
 .btn.btnEntrar1,
@@ -156,77 +158,80 @@
   background-repeat: no-repeat;
   background-position: center;
   background-color: unset;
-  background-size: 160%;
-  margin-left: 25px;
+  background-size: 100%;
+  margin-left: -79px;
   margin-top: -30px;
-  width: 50vh;
-  height: 50vh;
+  width: 565px;
+  height: 330px;
   z-index: -1;
 }
 
-.container .modal.fade.collapse.in , 
-.container .modal.fade.collapse {
+.container .modal.fade.collapse.in .contentAviso , 
+.container .modal.fade.collapse .contentAviso,
+.container .modal.fade.collapse.in .contentAvisoImg,
+.container .modal.fade.collapse .contentAvisoImg {
+  width: 520px;
+}
+
+.container .modal.fade.collapse.in .contentAvisoImg , 
+.container .modal.fade.collapse .contentAvisoImg {
   background-image: url(../assets/imagenes_nuevas/PNG/hoja_PopUp.png);
   background-repeat: no-repeat;
   background-position: center;
   background-color: unset;
-  background-size: 135%;
-  width: 36%;
-  height: 38%;
-  margin-top: 13%;
-  margin-left: 32%;
+  background-size: cover;
   font-family: "Lalezar-Regular";
-  -webkit-box-shadow: 0px 0px 243px 39px rgb(0 0 0 / 75%);
-  -moz-box-shadow: 0px 0px 243px 39px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 0px 243px 39px rgb(0 0 0 / 75%);
 }
 
-.container .modal.fade.collapse.in .head_modal .textAviso, 
-.container .modal.fade.collapse .head_modal .textAviso {
+.container .modal.fade.collapse.in, 
+.container .modal.fade.collapse  {
+  background-color: rgb(152 151 151 / 48%);
+}
+
+.container .modal.fade.collapse.in .textAviso, 
+.container .modal.fade.collapse  .textAviso {
   color: saddlebrown;
-  position: relative;
-  top: 75px;
-  left: 110px;
+  margin-top: 105px;
+  margin-left: 60px;
   text-align: center;
-  width: 60%;
+  width: 410px;
   padding: 0;
   font-size: 35px;
 }
 
-.container .modal.fade.collapse.in .body_modal .btnsModal, 
-.container .modal.fade.collapse .body_modal .btnsModal {
-  margin-top: 15%;
-  margin-left: -10%;
+.container .modal.fade.collapse.in .btnsModal, 
+.container .modal.fade.collapse .btnsModal {
+  margin-left: 90px;
+  margin-top: 15px;
 }
 
-.container .modal.fade.collapse.in .body_modal .btnsModal .btn1, 
-.container .modal.fade.collapse .body_modal .btnsModal .btn1 {
-  margin-right: 5%;
-}
-
-.btn.btnNo {
+.btn.btn1 {
   background-image: url(../assets/imagenes_nuevas/PNG/btn_no.png);
   background-repeat: no-repeat;
   background-position: center;
   background-color: unset;
-  background-size: 40%;
-  position: absolute;
-  width: 50vh;
-  height: 13vh;
+  background-size: 100%;
+  width: 145px;
+  height: 50px;
 }
 
-.btn.btnSi {
+.btn.btn2 {
   background-image: url(../assets/imagenes_nuevas/PNG/btn_si.png);
   background-repeat: no-repeat;
   background-position: center;
   background-color: unset;
-  background-size: 40%;
+  background-size: 100%;
   position: absolute;
-  width: 50vh;
-  height: 13vh;
+  width: 145px;
+  height: 50px;
 }
 
-@media screen and (max-width: 480px) and (max-height: 900px) {
+.container .modal.fade.collapse.in .btnsModal .btn2, 
+.container .modal.fade.collapse .btnsModal .btn2 {
+  margin-left: 50px;
+}
+
+@media screen and (max-width: 480px) {
 
   html,
   body {
@@ -273,10 +278,9 @@
   }
 
   .imgLogo {
-    background-size: 125%;
-    width: 410px;
-    height: 170px;
-    margin-left: -44px;
+    width: 500px;
+    height: 180px;
+    margin-left: -92px;
     margin-top: -52px;
   }
 
@@ -295,10 +299,11 @@
     background-repeat: no-repeat;
     background-position: center;
     background-color: unset;
-    background-size: 62%;
+    background-size: 100%;
     position: relative;
-    width: 40vh;
-    height: 9vh;
+    width: 235px;
+    height: 70px;
+    margin-left: auto;
   }
 
   .btn.btnRegistro1 {
@@ -307,56 +312,54 @@
     background-repeat: no-repeat;
     background-position: center;
     background-color: unset;
-    background-size: 62%;
+    background-size: 100%;
     position: relative;
-    width: 40vh;
-    height: 9vh;
+    width: 235px;
+    height: 70px;
+    margin-left: auto;
   }
 
   .container .contentBotones {
     margin-left: -25px;
   }
 
-  .container .modal.fade.collapse.in , 
-  .container .modal.fade.collapse {
-    background-size: 125%;
-    width: 90%;
-    height: 22%;
-    margin-top: 40%;
-    margin-left: 5%;
+  .container .modal.fade.collapse.in .contentAviso , 
+  .container .modal.fade.collapse .contentAviso,
+  .container .modal.fade.collapse.in .contentAvisoImg,
+  .container .modal.fade.collapse .contentAvisoImg {
+    width: 400px;
+    height: 260px;
+    margin-left: -10px;
+    margin-top: 20%;
   }
 
-  .container .modal.fade.collapse.in .head_modal .textAviso, 
-  .container .modal.fade.collapse .head_modal .textAviso {
-    top: 45px;
-    left: 80px;
+  .container .modal.fade.collapse.in .textAviso, 
+  .container .modal.fade.collapse .textAviso {
+    margin-top: 70px;
+    margin-left: -5px;
     font-size: 25px;
   }
 
-  .container .modal.fade.collapse.in .body_modal .btnsModal, 
-  .container .modal.fade.collapse .body_modal .btnsModal {
-    margin-top: 5%;
+  .container .modal.fade.collapse.in .btnsModal, 
+  .container .modal.fade.collapse .btnsModal {
+    margin-top: 0px;
+    margin-left: 72px;
   }
 
-  .container .modal.fade.collapse.in .body_modal .btnsModal .btn1, 
-  .container .modal.fade.collapse .body_modal .btnsModal .btn1 {
-    margin-right: 10px;
+
+  .btn.btn1 {
+    width: 120px;
+    height: 50px;
   }
 
-  .btn.btnNo {
-    background-size: 45%;
-    position: absolute;
-    width: 30vh;
-    height: 13vh;
+  .btn.btn2 {
+    width: 120px;
+    height: 45px;
   }
 
-  .btn.btnSi {
-    background-size: 45%;
-    position: absolute;
-    width: 30vh;
-    height: 13vh;
+  .container .modal.fade.collapse.in .btnsModal .btn2, 
+  .container .modal.fade.collapse .btnsModal .btn2 {
+    margin-left: 25px;
   }
 
 }
-
-
