@@ -13,6 +13,10 @@ var orden_turno = 0;
 var correcta = 0;
 var turno_de = '';
 var posicion_old_de = [];
+var tiempo_contador = 60;
+var tiempo_contador_otro = 60;
+var timer = null;
+var timer_otro = null;
 
 class juego {
     generate_turno(){
@@ -60,13 +64,17 @@ class juego {
                 if(fjson.respuesta == 'Sin respuestas' && fjson.ack == 1){//solo si voy a inicar el juego
                     msjBC.informacion('INFORMACIÓN','Te toca'); 
                     document.getElementById('btnDados').style.display = 'block';
+                    timer = setInterval(ju_ego.showRemaining_mi, 1000);
                 }else ju_ego.conocer_mi_turno();
                 
                 if(fjson.respuesta && fjson.respuesta.position){
                     my_pos_actual = parseInt(fjson.respuesta.position);
-                    var avatar_posible = document.getElementById('btnPosicion_'+my_pos_actual);
-                    avatar_posible.style.backgroundImage = 'url(../assets/imagenes_nuevas/PNG/avatar_0'+usuario.img+'.png)'
-                    avatar_posible.style.display = 'block';
+                    if(document.getElementById('btnPosicion_'+my_pos_actual)){
+                        var avatar_posible = document.getElementById('btnPosicion_'+my_pos_actual);
+                        avatar_posible.style.backgroundImage = 'url(../assets/imagenes_nuevas/PNG/avatar_0'+usuario.img+'.png)'
+                        avatar_posible.style.display = 'block';
+                    }
+                        
                     var btn_actual = document.getElementById('posicion_'+my_pos_actual);
                     btn_actual? btn_actual.getElementsByClassName('posicionGris')[0].style.display = 'none': '';
                     btn_actual? btn_actual.getElementsByClassName('posicionVerde')[0].style.display = 'block': '';
@@ -95,9 +103,8 @@ class juego {
             avatar_posible.classList.add("flash");
             avatar_posible.style.display = 'block';
             
-            
             ju_ego.mostrar_pregunta();
-        }, 2000);
+        }, 1500);
     }
     
     
@@ -110,10 +117,14 @@ class juego {
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 pregunta_actual = JSON.parse(this.responseText);
-                var temporal = 1;
                 
-                document.getElementById('pregunta_titulo').innerHTML = my_pos_posible;
+                document.getElementById('pregunta_titulo').style.backgroundImage = 'url(../assets/dados/dado-'+my_pos_posible+'.png)';
                 document.getElementById('pregunta_texto').innerHTML = pregunta_actual['respuesta']['nombre'];
+                if(pregunta_actual['respuesta']['img']>0){
+                    document.getElementById('imgPregunta').style.display = 'block';
+                    document.getElementById('imgPregunta').setAttribute('src','../../class/class.img.php?id='+pregunta_actual['respuesta']['img']);
+                }
+                
                 if(pregunta_actual['respuesta']['tipo'] == 0){
                     var areaText = '<textarea class="textoArea" id="texto_area"> </textarea>' ;
                     document.getElementById('texto_respuesta').innerHTML = areaText;
@@ -222,28 +233,9 @@ class juego {
             }
             document.getElementById('modal_pregunta').classList.remove('in');
             
-            //guardar respuesta y dar nuevo turno
-            var formData = new FormData();           
-            formData.append("key", "C2");
-            formData.append("idpregunta", pregunta_actual.respuesta.idpreguntas);
-            formData.append("respuesta", respuesta);
-            formData.append("turno", orden_turno);
-            formData.append("gano", gano);
-            formData.append("idposicion", my_pos_actual);
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    var fjson = JSON.parse(this.responseText);
-                    if(fjson.ack==1){
-                        var obj = fjson.respuesta;
-                        turno_de = obj.nombre+' '+obj.apellido;
-                        msjBC.informacion('BIEN','Turno de '+turno_de); 
-                        ju_ego.conocer_mi_turno();
-                    }
-                }
-            };
-            xhttp.open("post", '../../class/juego.php', true);
-            xhttp.send(formData);
+            
+            ju_ego.save_respuesta(pregunta_actual.respuesta.idpreguntas, respuesta, gano);
+            
             
         }
        
@@ -258,7 +250,7 @@ class juego {
             if (this.readyState == 4 && this.status == 200) {
                 var fjson = JSON.parse(this.responseText);
                 var obj = fjson.respuesta;
-                
+
                 if(obj && obj.ganador != 0){//notificar que hay ganador
                     ju_ego.notoficar_ganador(obj.name_ganador);
                 }else{
@@ -267,11 +259,19 @@ class juego {
                         document.getElementById('btnDados').style.display = 'block';
                         document.getElementById('btnDados').style.backgroundImage = 'url(../assets/dados/quietos_da2.png)';
                         document.getElementById('btnDados').setAttribute('onclick','ju_ego.lanzar()');
+                        tiempo_contador = 60;
+                        timer = setInterval(ju_ego.showRemaining_mi, 1000);
+                        turno_de = obj.turno;
+                        ju_ego.terminar_otro_contador();
+                        
                     }else {
+                        var turno1 = obj.turno;
                         var turno = obj.nombre+' '+obj.apellido;
-                        if(turno != turno_de){
+                        if(turno1 != turno_de){
                             msjBC.informacion('BIEN','Turno de '+turno);
-                            turno_de = turno;
+                            turno_de = turno1;
+                            tiempo_contador_otro = 60;
+                            ju_ego.llenar_oponente(obj);
                         }
                         document.getElementById('btnDados').style.display = 'none';
                         ju_ego.conocer_mi_turno();
@@ -335,6 +335,88 @@ class juego {
         txt = txt.replace(/\n|\r/g, "");//saltos de línea
         txt = txt.normalize("NFD").replace(/[\u0300-\u036f]/g, "");//tildes
         return txt;
+    }
+    
+    showRemaining_mi(){
+        tiempo_contador = tiempo_contador-1;
+        document.getElementById('tiempoUsuarioMi').innerHTML = tiempo_contador;
+        document.getElementById('tiempoUsuarioMi').style.color = '#fff';
+        if(tiempo_contador>0){
+            
+            document.getElementById('relojUsuarioMi').style.display = 'block';
+        }else ju_ego.terminar_mi_contador(1);
+    }
+    
+    terminar_mi_contador(t=0){
+        clearInterval(timer);
+        document.getElementById('tiempoUsuarioMi').style.color = 'red';
+        document.getElementById('tiempoUsuarioMi').classList.add("flash");
+        document.getElementById('btnDados').style.display = 'none';
+        
+        setTimeout(function(){ 
+            tiempo_contador = 60;
+            document.getElementById('tiempoUsuarioMi').classList.remove("flash");
+            document.getElementById('relojUsuarioMi').style.display = 'none';
+            
+            if(t == 1) ju_ego.save_respuesta();
+            
+        }, 1500);
+    }
+    
+    showRemaining_otro(){
+        tiempo_contador_otro = tiempo_contador_otro-1;
+        document.getElementById('tiempoUsuario').innerHTML = tiempo_contador_otro;
+        if(tiempo_contador_otro>0){
+            document.getElementById('perfil_oponente').style.display = 'block';
+        }else{ ju_ego.terminar_otro_contador();}
+    }
+    
+    terminar_otro_contador(){
+        clearInterval(timer_otro);
+        document.getElementById('perfil_oponente').style.display = 'none';
+        
+        setTimeout(function(){ 
+            tiempo_contador_otro = 60;
+        }, 1500);
+    }
+    
+    save_respuesta(idpreguntas = 0, respuesta = 0, gano = 0){
+        //guardar respuesta y dar nuevo turno //pregunta_actual.respuesta.
+        var formData = new FormData();           
+        formData.append("key", "C2");
+        formData.append("idpregunta", idpreguntas);
+        formData.append("respuesta", respuesta);
+        formData.append("turno", orden_turno);
+        formData.append("gano", gano);
+        formData.append("idposicion", my_pos_actual);
+        var tim = document.getElementById('tiempoUsuarioMi').innerHTML;
+        formData.append("tiempo", tim);
+        
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var fjson = JSON.parse(this.responseText);
+                if(fjson.ack==1){
+                    var obj = fjson.respuesta;
+                    turno_de = obj.nombre+' '+obj.apellido;
+                    msjBC.informacion('BIEN -','Turno de '+turno_de); 
+                    ju_ego.terminar_mi_contador();//param en 0 para nopetir guardado
+                    ju_ego.conocer_mi_turno();
+                }
+            }
+        };
+        xhttp.open("post", '../../class/juego.php', true);
+        xhttp.send(formData);
+    }
+    
+    llenar_oponente(obj){
+        console.log('obj',obj);
+        document.getElementById('perfil_oponente').style.display = 'block';
+        document.getElementById('jugador_turno').innerHTML = obj.turno;
+        document.getElementById('nombre_oponente').innerHTML = obj.nombre;
+        document.getElementById('apellido_oponente').innerHTML = obj.apellido;
+        
+        timer_otro = setInterval(ju_ego.showRemaining_otro, 1000);
     }
     
     

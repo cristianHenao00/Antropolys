@@ -131,7 +131,9 @@ class juego {
         $mysqli = $this->conectar();
         $mensajes['ack']  = 0;
         $idpregunta = $_POST['idpregunta'];
-        $sql = "SELECT * FROM preguntas WHERE idpreguntas = $idpregunta";
+        $sql = "SELECT * FROM preguntas p
+                -- LEFT JOIN img_preg i ON i.idimg_preg = p.img
+                WHERE p.idpreguntas = $idpregunta";
         $result1 = $mysqli->query($sql);
         if ($result1->num_rows > 0) {//Si hay resultados…
             $mensajes['ack']  = 1;
@@ -150,11 +152,12 @@ class juego {
         $respuesta = $_POST['respuesta'];
         $turno = $_POST['turno'];
         $idposicion = $_POST['idposicion'];
+        $tiempo = $_POST['tiempo'];
         $idjuego = $_SESSION['data_game_antropolys']['idjuegos'];
         $iduser = $_SESSION['data_user_antropolys']['iduser'];
         
-        $sql = "INSERT INTO contestar (userid,idposition,idpregunta,respuesta,juegosid,turno) 
-                VALUES ($iduser,$idposicion,$idpregunta,'$respuesta',$idjuego,$turno)";
+        $sql = "INSERT INTO contestar (userid,idposition,idpregunta,respuesta,juegosid,turno,tiempo) 
+                VALUES ($iduser,$idposicion,$idpregunta,'$respuesta',$idjuego,$turno,$tiempo)";
         if($result1 = $mysqli->query($sql)){
             $sql = 'SELECT * FROM turno_actual WHERE juegosid = '.$idjuego;
             $result = $mysqli->query($sql);
@@ -224,16 +227,17 @@ class juego {
         $idjuego = $_SESSION['data_game_antropolys']['idjuegos'];
         $iduser = $_SESSION['data_user_antropolys']['iduser'];
         
-        $sql = 'SELECT t.*, u.*, j.ganador,
+        $sql = 'SELECT t.*, u.*, j.ganador, o.turno,
                 CASE
                     WHEN j.ganador = 0 THEN "NA" 
-                    ELSE (SELECT concat(nombre, " ", apellido) FROM users WHERE iduser = j.ganador)
+                    ELSE (SELECT CONCAT(nombre, " ", apellido) FROM users WHERE iduser = j.ganador)
                 END AS name_ganador,
                 (SELECT idposition FROM contestar WHERE userid = t.userid 
-                    order by idcontestar desc limit 1) as pos_otro
+                    ORDER BY idcontestar DESC LIMIT 1) AS pos_otro
                 FROM turno_actual t
-                INNER JOIN users u on u.iduser = t.userid
-                INNER JOIN juegos j on idjuegos = t.juegosid
+                INNER JOIN order_turno o ON (o.userid = t.userid AND o.juegosid = t.juegosid)
+                INNER JOIN users u ON u.iduser = t.userid
+                INNER JOIN juegos j ON idjuegos = t.juegosid
                 WHERE t.juegosid = '.$idjuego;
 
         $result = $mysqli->query($sql);
