@@ -380,6 +380,7 @@
     margin-left: 740px;
     width: 365px;
     height: 135px;
+    display: none;
 }
 
 .containerTablero .perfilDados .btn.btnUsuario {
@@ -397,7 +398,7 @@
 .containerTablero .perfilDados .btn.btnDados {
     background-image: url(../assets/dados/quietos_da2.png);
     cursor: pointer;
-    margin-left: 10px;
+    margin-left: 220px;
     margin-top: 25px;
     height: 120px;
     width: 100px;
@@ -497,13 +498,14 @@
 
 
 .containerTablero .preguntas.modal.fade.collapse.in .tituloPregunta {
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
     margin: auto;
-    margin-top: 9vh;
-    margin-bottom: -20px;
-    width: 45%;
-    text-align: center;
-    font-size: 5vh;
-    color: #a31bef;
+    margin-top: 25px;
+    margin-bottom: -25px;
+    height: 100px;
+    width: 65px;
 }
 
 .containerTablero .preguntas.modal.fade.collapse.in .textoPregunta {
@@ -882,9 +884,9 @@
 
     .containerTablero .preguntas.modal.fade.collapse.in .tituloPregunta {
         margin: auto;
-        margin-bottom: -20px;
-        font-size: 30px;
-        margin-top: 75px;
+        width: 55px;
+        margin-bottom: -25px;
+        margin-top: 50px;
     }
 
     .containerTablero .preguntas.modal.fade.collapse.in .textoPregunta {

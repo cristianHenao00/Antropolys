@@ -18,11 +18,13 @@ and open the template in the editor.
 </head>
 <body id="body_ganaste">
 
-    <div class="container" >
-        <img id="img_ganaste" src="../../resources/assets/imagenes_nuevas/PNG/ganaste_letrero.png">
+    <div class="container ganaste" >
+        <img class="imgTerminado" src="../../resources/assets/imagenes_nuevas/PNG/tabla_terminado.png">
         <div class="row">
-            <div class="container" id="content_ganaste">
-                <div class="row" id="content_ganaste1">
+            <div class="container content_ganaste">
+                <div class="imgGanaste"></div>
+                <div class="row content_ganaste1" id="contentGanaste">
+                    
                     <img id="img_fondoEstrella_uno" src="../assets/imagenes_nuevas/PNG/estrella-fondo.png">
                     <img id="img_fondoEstrella_dos" src="../assets/imagenes_nuevas/PNG/estrella-fondo.png">
                     <img id="img_fondoEstrella_tres" src="../assets/imagenes_nuevas/PNG/estrella-fondo.png">
