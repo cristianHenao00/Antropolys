@@ -767,10 +767,13 @@
             </div>               
         </div>
 
+        <div class="col-xs-12 imgSombra"></div>
+
         <div class="perfilDados" id="dados">
             <div class="btn btnUsuario <?php echo $img ?>" id="btnUsuario" type="submit" data-toggle="collapse" data-target="#perfilUsuarioModal"  aria-expanded="true"> </div>
             <div class="btn btnDados" type="submit" id="btnDados" onclick="ju_ego.lanzar()"> </div>
-            
+            <div class="imgReloj" id="relojUsuario"> <div class="tiempoReloj" id="tiempoUsuario"> 00 </div> </div>
+
             <div class="modal fade collapse" tabindex="-1" role="dialog" id="perfilUsuarioModal" aria-expanded="true" style="">
                 <div class="content_modal">
                     <div class="container perfil" >
@@ -828,6 +831,13 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="perfilOponente" id="perfil_oponente">
+            <div class="jugadorTurno" id="jugador_turno"> Jugador 1 </div>
+            <div class="nombreOponente" id="nombre_oponente"> Sandra </div>
+            <div class="ApellidoOponente" id="apellido_oponente"> Montoya </div>
+            <div class="imgReloj" id="relojUsuario"> <div class="tiempoReloj" id="tiempoUsuario"> 60 </div> </div>
         </div>
 
         <div class="preguntas modal fade collapse" tabindex="-1" role="dialog" id="modal_pregunta" aria-expanded="true" style="">

@@ -343,25 +343,51 @@
     display: block;
 }
 
+.containerTablero .imgSombra {
+    background-image: url(../assets/imagenes_nuevas/PNG/sombra_transparente.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100%;
+    position: fixed;
+    bottom: 0px;
+    height: 300px;
+    margin-left: -15px;
+    z-index: 1;
+}
+
 
 .containerTablero .perfilDados {
-    background-image: url(../assets/imagenes_nuevas/PNG/hoja_espacio_dados.png);
+    background-image: url(../assets/imagenes_nuevas/PNG/tabla_usuario.png);
     background-repeat: no-repeat;
-    background-position: top;
-    background-size: contain;
+    background-position: bottom;
+    background-size: cover;
     position: fixed;
     z-index: 1;
     bottom: 0;
-    width: 100%;
-    height: 22vh;
+    width: 570px;
+    height: 160px;
+    margin-left: 135px;
+}
+
+.containerTablero .perfilOponente {
+    background-image: url(../assets/imagenes_nuevas/PNG/tabla_oponentes.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    margin-left: 740px;
+    width: 365px;
+    height: 135px;
 }
 
 .containerTablero .perfilDados .btn.btnUsuario {
     cursor: pointer;
-    margin-left: 40%;
-    margin-top: 4vh;
-    height: 18vh;
-    width: 8%;
+    margin-left: 75px;
+    margin-top: 20px;
+    height: 140px;
+    width: 130px;
     float: left;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -371,17 +397,74 @@
 .containerTablero .perfilDados .btn.btnDados {
     background-image: url(../assets/dados/quietos_da2.png);
     cursor: pointer;
-    margin-left: 52%;
-    margin-top: 3vh;
-    height: 18vh;
-    width: 8%;
+    margin-left: 10px;
+    margin-top: 25px;
+    height: 120px;
+    width: 100px;
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: bottom;
-    font-family: "Lalezar-Regular";
-    font-size: 65px;
-    color: #a31bef;
     display: none;
+}
+
+.containerTablero .perfilDados .imgReloj,
+.containerTablero .perfilOponente .imgReloj {
+    background-image: url(../assets/imagenes_nuevas/PNG/temporizador.png);
+    position: absolute;
+    left: 330px;
+    top: 45px;
+    height: 95px;
+    width: 200px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+.containerTablero .perfilOponente .imgReloj {
+    left: 150px;
+    top: 26px;
+}
+
+.containerTablero .perfilDados .imgReloj .tiempoReloj,
+.containerTablero .perfilOponente .jugadorTurno,
+.containerTablero .perfilOponente .nombreOponente,
+.containerTablero .perfilOponente .imgReloj .tiempoReloj,
+.containerTablero .perfilOponente .ApellidoOponente {
+    font-family: "Lalezar-Regular";
+}
+
+.containerTablero .perfilDados .imgReloj .tiempoReloj,
+.containerTablero .perfilOponente .imgReloj .tiempoReloj {
+    font-size: 45px;
+    margin-top: 22px;
+    margin-left: 44px;
+    color: #fff;
+}
+
+.containerTablero .perfilOponente .jugadorTurno,
+.containerTablero .perfilOponente .nombreOponente,
+.containerTablero .perfilOponente .ApellidoOponente {
+    color: saddlebrown;
+}
+
+.containerTablero .perfilOponente .jugadorTurno {
+    width: max-content;
+    margin-left: 90px;
+    margin-top: 32px;
+    font-weight: bold;
+}
+
+.containerTablero .perfilOponente .nombreOponente,
+.containerTablero .perfilOponente .ApellidoOponente {
+    width: max-content;
+    margin-left: 60px;
+    margin-top: 10px;
+    font-size: 26px;
+    font-weight: bold;
+}    
+
+.containerTablero .perfilOponente .ApellidoOponente {
+    margin-top: -16px;
 }
 
 .containerTablero .perfilDados .modal.fade.collapse.in,
@@ -641,25 +724,71 @@
     }
     
     
-        
     .tableroNormal .tablero3 .content_img3 .img1 .opcion,
     .tableroLargo .tablero3 .content_img3 .img1 .opcion {
         height: 46px;
     }
-
+    
     .containerTablero .perfilDados {
-        height: 8vh;
+        width: 236px;
+        height: 55px;
+        margin-left: -25px;
     }
 
+    .containerTablero .perfilOponente {
+        width: 140px;
+        height: 55px;
+        margin-left: 225px;
+    }
+    
     .containerTablero .perfilDados .btn.btnUsuario {
-        margin-top: -10px;
-        height: 60px;
+        margin-left: 32px;
+        margin-top: -7px;
+        height: 62px;
+        width: 50px;
+    }
+    
+    .containerTablero .perfilDados .btn.btnDados {
+        margin-left: 8px;
+        margin-top: -7px;
+        height: 62px;
+        width: 50px;
+    }
+    
+    .containerTablero .perfilDados .imgReloj,
+    .containerTablero .perfilOponente .imgReloj  {
+        height: 30px;
+        width: 68px;
+        left: 145px;
+        top: 14px;
     }
 
-    .containerTablero .perfilDados .btn.btnDados {
-        margin-top: -10px;
-        height: 60px;
-        font-size: 35px;
+    .containerTablero .perfilOponente .imgReloj {
+        left: 60px;
+    }
+    
+    .containerTablero .perfilDados .imgReloj .tiempoReloj,
+    .containerTablero .perfilOponente .imgReloj .tiempoReloj {
+        font-size: 12px;
+        margin-top: 8px;
+        margin-left: 17px;
+    }
+
+    .containerTablero .perfilOponente .jugadorTurno {
+        margin-left: 35px;
+        margin-top: 12px;
+        font-size: 7px;
+    }
+    
+    .containerTablero .perfilOponente .nombreOponente,
+    .containerTablero .perfilOponente .ApellidoOponente {
+        margin-left: 23px;
+        margin-top: 2px;
+        font-size: 11px;
+    }    
+    
+    .containerTablero .perfilOponente .ApellidoOponente {
+        margin-top: -6px;
     }
 
     .imgStreet .posicion,
