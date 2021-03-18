@@ -772,7 +772,7 @@
         <div class="perfilDados" id="dados">
             <div class="btn btnUsuario <?php echo $img ?>" id="btnUsuario" type="submit" data-toggle="collapse" data-target="#perfilUsuarioModal"  aria-expanded="true"> </div>
             <div class="btn btnDados" type="submit" id="btnDados" onclick="ju_ego.lanzar()"> </div>
-            <div class="imgReloj" id="relojUsuario"> <div class="tiempoReloj" id="tiempoUsuario"> 00 </div> </div>
+            <div class="imgReloj" id="relojUsuario"> <div class="tiempoReloj" id="tiempoUsuarioMi"> 00 </div> </div>
 
             <div class="modal fade collapse" tabindex="-1" role="dialog" id="perfilUsuarioModal" aria-expanded="true" style="">
                 <div class="content_modal">

@@ -110,9 +110,8 @@ class juego {
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 pregunta_actual = JSON.parse(this.responseText);
-                var temporal = 1;
                 
-                document.getElementById('pregunta_titulo').innerHTML = my_pos_posible;
+                document.getElementById('pregunta_titulo').style.backgroundImage = 'url(../assets/dados/dado-'+my_pos_posible+'.png)';
                 document.getElementById('pregunta_texto').innerHTML = pregunta_actual['respuesta']['nombre'];
                 if(pregunta_actual['respuesta']['tipo'] == 0){
                     var areaText = '<textarea class="textoArea" id="texto_area"> </textarea>' ;
