@@ -30,8 +30,8 @@ and open the template in the editor.
     <div class="container">
 		
         <div class="row">
-            <div class="container formContainer" id="formContainer">
-                <img class="imgConfig" src="../assets/imagenes_nuevas/PNG/tabla_config.png">    
+            <img class="imgConfig" src="../assets/imagenes_nuevas/PNG/tabla_config.png">    
+            <div class="container formContainer" id="formContainer">  
                 <div class="row contentConfig" id="content_config1">
                     <div class="col-xs-12 label"> DIFICULTAD </div>
                     <div class="col-xs-12 contentConfigBtns" id="contentConfig_btns1">
