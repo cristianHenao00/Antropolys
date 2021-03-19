@@ -20,35 +20,34 @@ and open the template in the editor.
 
     <div class="container ganaste" >
         <img class="imgTerminado" src="../../resources/assets/imagenes_nuevas/PNG/tabla_terminado.png">
-        <div class="row">
-            <div class="container content_ganaste">
-                <div class="imgGanaste"></div>
-                <div class="row content_ganaste1" id="contentGanaste">
-                    
-                    <img id="img_fondoEstrella_uno" src="../assets/imagenes_nuevas/PNG/estrella-fondo.png">
-                    <img id="img_fondoEstrella_dos" src="../assets/imagenes_nuevas/PNG/estrella-fondo.png">
-                    <img id="img_fondoEstrella_tres" src="../assets/imagenes_nuevas/PNG/estrella-fondo.png">
-                    <img id="img_estrella_uno" src="../assets/imagenes_nuevas/PNG/estrella.png">
-                    <img id="img_estrella_dos" src="../assets/imagenes_nuevas/PNG/estrella.png">
-                    <img id="img_estrella_tres" src="../assets/imagenes_nuevas/PNG/estrella.png">
+        <div class="container content_ganaste" id="contentGanaste">
+            <div class="imgGanaste"></div>
+            <div class="row" id="content_avatar">
+                <div class="col-xs-1 segundo avatar0" id="">
+                    <div class="numero imgSegundo"></div>
+                    <div class="infoUsuario">
+                        <div id="nombreUsuario2">Sandra</div>
+                        <div class="apellido" id="apellidoUsuario2">Montoya</div>
+                    </div>
                 </div>
-                <div class="row" id="content_ganaste2">
-                    <label for="etiqueta">Puntaje Total</label>
-                    <br>
-                    <label id="puntos" for="puntos">. . . . . . . . . . . . . . . . . . . . . . .</label>
-                    <br>
-                    <label id="puntaje" for="puntaje">12 584</label>
-                    <br>
-                    <img id="img_reloj" src="../assets/imagenes_nuevas/PNG/reloj.png">
-                    <label for="tiempo">Tiempo</label>
+                <div class="col-xs-1 primero avatar0" id="">
+                    <div class="numero imgPrimero"></div>
+                    <div class="infoUsuario tmp">
+                        <div id="nombreUsuario1">Sandra</div>
+                        <div class="apellido" id="apellidoUsuario1">Montoya</div>
+                    </div>
                 </div>
-                <div class="row" id="content_ganaste3">
-                    <button class="btn" id="btn_menu" type="submit"></button>
-                    <button class="btn" id="btn_recarga" type="submit"></button>
-                    <button class="btn" id="btn_flecha_ste" type="submit"></button>
-                </div>
+                <div class="col-xs-1 tercero avatar0" id="">
+                    <div class="numero imgTercero"></div>
+                    <div class="infoUsuario">
+                        <div id="nombreUsuario3">Sandra</div>
+                        <div class="apellido" id="apellidoUsuario3">Montoya</div>
+                    </div>
+                </div> 
             </div>
+            <div class="btn btnNuevoJuego" id="btn_nuevoJuego" type="submit" onclick="document.getElementById('modal_ganaste').classList.remove('in');""></div>
         </div>
     </div>
+
 </body>
 </html>

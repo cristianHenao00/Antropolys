@@ -14,13 +14,14 @@
 
 .container.ganaste,
 .container.content_ganaste{
-    width: 30vw;
-    height: 58vh;
+    width: 420px;
+    height: 390px;
 }
 
 .container.ganaste {
     margin-top: 4%;
 }
+
 .container.ganaste .content_ganaste{
     background-image: url(../assets/imagenes_nuevas/PNG/tablero_solo.png);
     background-repeat: no-repeat;
@@ -34,123 +35,203 @@
 
 .container.ganaste .imgTerminado{
     width: 250px;
-    margin-left: 90px;
+    margin-left: 114px;
     z-index: 1;
     position: relative;
 }
 
 .container.ganaste .content_ganaste .imgGanaste {
-    background-image: url(../assets/imagenes_nuevas/PNG/tablero_solo.png);
+    background-image: url(../assets/imagenes_nuevas/PNG/txt_ganaste.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%;
-    width: 500px;
+    width: 290px;
     height: 180px;
+    margin-top: 20px;
+    margin-left: 48px;
 }
 
-.content_ganaste1{
-    max-width: 320px;
-    margin: 32px auto;
-    text-align: center;
-    margin-bottom: -90px;
+.container.ganaste .content_ganaste .row {
+    margin-left: 60px;
+    margin-top: -15px;
 }
 
-#img_fondoEstrella_uno,#img_fondoEstrella_tres{
-    width: 13vh;
-    margin-top: 1vh;
-    position: relative;
-    top: 25px;
+.container.ganaste .content_ganaste .col-xs-4 {
+    padding: 0;
+}    
+
+.container.ganaste .content_ganaste .primero {
+    height: 90px;
+    width: 90px;
+    margin:-20px 10px auto 10px;
 }
 
-#img_fondoEstrella_uno{
-    right: -20px;
+.container.ganaste .content_ganaste .segundo,
+.container.ganaste .content_ganaste .tercero {
+    height: 80px;
+    width: 80px;
 }
 
-#img_fondoEstrella_tres{
-    left: -20px;
+.container.ganaste .content_ganaste .primero,
+.container.ganaste .content_ganaste .segundo,
+.container.ganaste .content_ganaste .tercero {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
 }
 
-#img_fondoEstrella_dos{
-    width: 18vh;
+.container.ganaste .content_ganaste .avatar0 {
+    background-image: url(../assets/imagenes_nuevas/PNG/avatar_principal.png);
 }
 
-#img_estrella_uno,#img_estrella_tres{
-    width: 12vh;
-    margin-top: 1vh;
-    position: relative;
-    top: -90px;
+.container.ganaste .content_ganaste .avatar1 {
+    background-image: url(../assets/imagenes_nuevas/PNG/avatar_01.png);
 }
 
-#img_estrella_uno{
-    right: -10px;
+.container.ganaste .content_ganaste .avatar2 {
+    background-image: url(../assets/imagenes_nuevas/PNG/avatar_02.png);
 }
 
-#img_estrella_dos{
-    width: 16vh;
-    position: relative;
-    right: -2px;
-    top: -116px;
+.container.ganaste .content_ganaste .avatar3 {
+    background-image: url(../assets/imagenes_nuevas/PNG/avatar_03.png);
 }
 
-#img_estrella_tres{
-    right: 8px;
+.container.ganaste .content_ganaste .avatar4 {
+    background-image: url(../assets/imagenes_nuevas/PNG/avatar_04.png);
 }
 
-#content_ganaste2{
-    max-width: 300px;
-    margin: 4px auto;
-    text-align: center;
-    font-family: "Lalezar-Regular";
+.container.ganaste .content_ganaste .avatar5 {
+    background-image: url(../assets/imagenes_nuevas/PNG/avatar_05.png);
+}
+
+.container.ganaste .content_ganaste .avatar6 {
+    background-image: url(../assets/imagenes_nuevas/PNG/avatar_06.png);
+}
+
+.container.ganaste .content_ganaste .numero {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    height: 30px;
+    width: 36px;
+    margin: 60px auto auto 7px;
+}
+
+.container.ganaste .content_ganaste .numero.imgPrimero {
+    margin: 66px auto auto 12px;
+}
+
+.container.ganaste .content_ganaste .imgSegundo {
+    background-image: url(../assets/imagenes_nuevas/PNG/n_2.png);
+}
+
+.container.ganaste .content_ganaste .imgPrimero {
+    background-image: url(../assets/imagenes_nuevas/PNG/n_1.png);
+}
+
+.container.ganaste .content_ganaste .imgTercero {
+    background-image: url(../assets/imagenes_nuevas/PNG/n_3.png);
+}
+
+.container.ganaste .content_ganaste .infoUsuario {
     font-size: 15px;
-}
-
-label{
-    margin-bottom: -5px;
-}
-
-#puntaje{
-    font-size: 6vh;
-}
-
-#img_reloj{
-    width: 5vh;
-    margin-bottom: -3px;
-}
-
-#content_ganaste3{
-    max-width: 285px;
-    margin: 10px auto;
+    margin: -1px auto auto -4px;
+    font-family: "Lalezar-Regular";
     text-align: center;
+    font-weight: bold;
+    color: saddlebrown;
 }
 
-.btn#btn_menu{
-    background-image: url(../assets/imagenes_nuevas/PNG/btn_menu.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: unset;
-    background-size: 7vh;
-    width: 6vh;
-    height: 6vh;
+.container.ganaste .content_ganaste .infoUsuario.tmp {
+    margin: -3px auto auto -14px;
 }
 
-.btn#btn_recarga{
-    background-image: url(../assets/imagenes_nuevas/PNG/btn_recargar.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: unset;
-    background-size: 7vh;
-    width: 6vh;
-    height: 6vh;
-    margin-left: 6vh;
-    margin-right: 6vh;
+.container.ganaste .content_ganaste .infoUsuario .apellido {
+    margin-top: -10px;
 }
 
-.btn#btn_flecha_ste{
-    background-image: url(../assets/imagenes_nuevas/PNG/btn_flecha_ste.png);
+.container.ganaste .content_ganaste .btnNuevoJuego {
+    background-image: url(../assets/imagenes_nuevas/PNG/btn_nuevo_juego.png);
     background-repeat: no-repeat;
     background-position: center;
-    background-color: unset;
-    background-size: 7vh;
-    width: 6vh;
-    height: 6vh;
+    background-size: 100%;
+    width: 200px;
+    height: 55px;
+    margin: 34px auto auto 90px;
+}
+
+@media screen and (max-width: 480px) {
+
+    .container.ganaste,
+    .container.content_ganaste{
+        width: 435px;
+        height: 505px;
+        margin-left: -17px !important;
+        margin-top: 16%;
+    }
+
+    .container.content_ganaste{
+        margin-top: -82px !important;
+    }
+
+    .container.ganaste .imgTerminado{
+        width: 250px;
+        margin-left: 80px;
+    }
+
+    .container.ganaste .content_ganaste .imgGanaste {
+        width: 310px;
+        margin-top: 55px;
+        margin-left: 48px;
+    }
+
+    .container.ganaste .content_ganaste .row {
+        margin-left: 52px;
+        margin-top: -8px;
+    }
+
+    .container.ganaste .content_ganaste .col-xs-4 {
+        padding: 0;
+    }    
+
+    .container.ganaste .content_ganaste .primero {
+        height: 100px;
+        width: 100px;
+    }
+
+    .container.ganaste .content_ganaste .segundo,
+    .container.ganaste .content_ganaste .tercero {
+        height: 90px;
+        width: 90px;
+    }
+
+    .container.ganaste .content_ganaste .numero {
+        height: 35px;
+        width: 39px;
+        margin: 66px auto auto 10px;
+    }
+
+    .container.ganaste .content_ganaste .numero.imgPrimero {
+        margin: 75px auto auto 16px;
+    }
+
+    .container.ganaste .content_ganaste .infoUsuario {
+        font-size: 17px;
+        margin: 0px auto auto -1px;
+    }
+
+    .container.ganaste .content_ganaste .infoUsuario.tmp {
+        margin: -1px auto auto 4px;
+    }
+
+    .container.ganaste .content_ganaste .infoUsuario .apellido {
+        margin-top: -8px;
+    }
+
+    .container.ganaste .content_ganaste .btnNuevoJuego {
+        margin: 65px auto auto 98px;
+        width: 220px;
+    }
+
+    
 }

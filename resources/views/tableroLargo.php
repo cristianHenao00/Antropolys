@@ -10,6 +10,7 @@
     <link href="../../resources/css/tableroLargo.css" rel="stylesheet" >
     <link href="../../resources/css/perfilUsuario.css" rel="stylesheet" >
     <link href="../../resources/css/avatar.css" rel="stylesheet" >
+    <link href="../../resources/css/ganaste.css" rel="stylesheet" >
     <link rel="stylesheet" href="../../resources/css/tostadas/pnotify.brighttheme.css">
     <link rel="stylesheet" href="../../resources/css/tostadas/pnotify.buttons.css">
     <link rel="stylesheet" href="../../resources/css/tostadas/pnotify.css">
@@ -769,62 +770,64 @@
 
         <div class="col-xs-12 imgSombra"></div>
 
-        <div class="perfilDados" id="dados">
-            <div class="btn btnUsuario <?php echo $img ?>" id="btnUsuario" type="submit" data-toggle="collapse" data-target="#perfilUsuarioModal"  aria-expanded="true"> </div>
-            <div class="btn btnDados" type="submit" id="btnDados" onclick="ju_ego.lanzar()"> </div>
-            <div class="imgReloj" id="relojUsuario"> <div class="tiempoReloj" id="tiempoUsuarioMi"> 00 </div> </div>
+        <div class="container perfilUsuario">
+            <div class="container perfilDados" id="dados">
+                <div class="btn btnUsuario <?php echo $img ?>" id="btnUsuario" type="submit" data-toggle="collapse" data-target="#perfilUsuarioModal"  aria-expanded="true"> </div>
+                <div class="btn btnDados" type="submit" id="btnDados" onclick="ju_ego.lanzar()"> </div>
+                <div class="imgReloj" id="relojUsuarioMi"> <div class="tiempoReloj" id="tiempoUsuarioMi"> 00 </div> </div>
 
-            <div class="modal fade collapse" tabindex="-1" role="dialog" id="perfilUsuarioModal" aria-expanded="true" style="">
-                <div class="content_modal">
-                    <div class="container perfil" >
-                        <img class="imgPerfil" id="img_perfil" src="../../resources/assets/imagenes_nuevas/PNG/cabecera_perfil_usuario.png">
-                        <div class="btn btn-block btnCerrarPerfil" type="submit" id="btn_cerrarPerfil" onclick="document.getElementById('perfilUsuarioModal').classList.remove('in');"></div>
-                        <div class="row">
-                            <div class="container contentPerfil" id="content_perfil">
-                                <div class="bloque">
-                                    <div class="imgAvatar <?php echo $img ?>" ></div>
-                                    <div class="btn avatar" type="submit" id="btn_avatar" data-toggle="collapse" data-target="#avatarModal"  aria-expanded="true" onclick="document.getElementById('perfilUsuarioModal').classList.remove('in');"> </div>
-                                    
-                                    <div class="info">
-                                        <div class="nombre" id="nombre"> <?php echo $nombre?> </div>
-                                        <div class="apellido" id="apellido"> <?php echo $apellido?> </div>
-                                        <div class="fecha" id="fecha"> <?php echo $fechaN?> </div>
-                                        <div class="ciudad" id="ciudad"> <?php echo $ciudad ?> <?php echo $icono ?> </div>
-                                        <div class="correo" id="correo"> <?php echo $correo?> </div>
+                <div class="modal fade collapse" tabindex="-1" role="dialog" id="perfilUsuarioModal" aria-expanded="true" style="">
+                    <div class="content_modal">
+                        <div class="container perfil" >
+                            <img class="imgPerfil" id="img_perfil" src="../../resources/assets/imagenes_nuevas/PNG/cabecera_perfil_usuario.png">
+                            <div class="btn btn-block btnCerrarPerfil" type="submit" id="btn_cerrarPerfil" onclick="document.getElementById('perfilUsuarioModal').classList.remove('in');"></div>
+                            <div class="row">
+                                <div class="container contentPerfil" id="content_perfil">
+                                    <div class="bloque">
+                                        <div class="imgAvatar <?php echo $img ?>" ></div>
+                                        <div class="btn avatar" type="submit" id="btn_avatar" data-toggle="collapse" data-target="#avatarModal"  aria-expanded="true" onclick="document.getElementById('perfilUsuarioModal').classList.remove('in');"> </div>
+                                        
+                                        <div class="info">
+                                            <div class="nombre" id="nombre"> <?php echo $nombre?> </div>
+                                            <div class="apellido" id="apellido"> <?php echo $apellido?> </div>
+                                            <div class="fecha" id="fecha"> <?php echo $fechaN?> </div>
+                                            <div class="ciudad" id="ciudad"> <?php echo $ciudad ?> <?php echo $icono ?> </div>
+                                            <div class="correo" id="correo"> <?php echo $correo?> </div>
+                                        </div>
+                                        <div class="btn actualizarClave" type="submit" id="actualizar_clave"></div>
                                     </div>
-                                    <div class="btn actualizarClave" type="submit" id="actualizar_clave"></div>
-                                </div>
-                                
-                                <div class="bloque1">
-                                    <div class="labelActualizar"> actualizar </div>
-                                    <div class="btn actualizar" type="submit" id="actualizar"></div>
+                                    
+                                    <div class="bloque1">
+                                        <div class="labelActualizar"> actualizar </div>
+                                        <div class="btn actualizar" type="submit" id="actualizar"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="modal fade collapse" tabindex="-1" role="dialog" id="avatarModal" aria-expanded="true" style="">
-                <div class="content_modal">
-                    <div class="container avatar" >
-                        <img class="imgAvatarTitle" id="img_avatar" src="../../resources/assets/imagenes_nuevas/PNG/cabecera_avatars.png">
-                        <div class="btn btn-block btnCerrarAvatar" type="submit" id="btn_cerrarAvatar" data-toggle="collapse" data-target="#perfilUsuarioModal"  aria-expanded="true" onclick="document.getElementById('avatarModal').classList.remove('in');"></div>
-                        <div class="row">
-                            <div class="container contentAvatar" id="content_avatar">
-                                <div class="bloque">
-                                    <div class="col-xs-12" id="bloqueAvatar">
-                                        <div class="btn avatar1" type="submit" id="avatar_1" onclick="ava.select_avatar(this)"> </div>
-                                        <div class="btn avatar2" type="submit" id="avatar_2" onclick="ava.select_avatar(this)" style="margin-left:10px; margin-right:10px;"> </div>
-                                        <div class="btn avatar3" type="submit" id="avatar_3" onclick="ava.select_avatar(this)"> </div>
-                                        <div class="btn avatar4" type="submit" id="avatar_4" onclick="ava.select_avatar(this)"> </div>
-                                        <div class="btn avatar5" type="submit" id="avatar_5" onclick="ava.select_avatar(this)" style="margin-left:10px; margin-right:10px;"> </div>
-                                        <div class="btn avatar6" type="submit" id="avatar_6" onclick="ava.select_avatar(this)"> </div>
+                
+                <div class="modal fade collapse" tabindex="-1" role="dialog" id="avatarModal" aria-expanded="true" style="">
+                    <div class="content_modal">
+                        <div class="container avatar" >
+                            <img class="imgAvatarTitle" id="img_avatar" src="../../resources/assets/imagenes_nuevas/PNG/cabecera_avatars.png">
+                            <div class="btn btn-block btnCerrarAvatar" type="submit" id="btn_cerrarAvatar" data-toggle="collapse" data-target="#perfilUsuarioModal"  aria-expanded="true" onclick="document.getElementById('avatarModal').classList.remove('in');"></div>
+                            <div class="row">
+                                <div class="container contentAvatar" id="content_avatar">
+                                    <div class="bloque">
+                                        <div class="col-xs-12" id="bloqueAvatar">
+                                            <div class="btn avatar1" type="submit" id="avatar_1" onclick="ava.select_avatar(this)"> </div>
+                                            <div class="btn avatar2" type="submit" id="avatar_2" onclick="ava.select_avatar(this)" style="margin-left:10px; margin-right:10px;"> </div>
+                                            <div class="btn avatar3" type="submit" id="avatar_3" onclick="ava.select_avatar(this)"> </div>
+                                            <div class="btn avatar4" type="submit" id="avatar_4" onclick="ava.select_avatar(this)"> </div>
+                                            <div class="btn avatar5" type="submit" id="avatar_5" onclick="ava.select_avatar(this)" style="margin-left:10px; margin-right:10px;"> </div>
+                                            <div class="btn avatar6" type="submit" id="avatar_6" onclick="ava.select_avatar(this)"> </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="bloque1">
-                                    <div class="labelActualizar"> actualizar </div>
-                                    <div class="btn actualizar" type="submit" id="actualizar"  onclick="ava.save_avatar()"> </div>
+                                    <div class="bloque1">
+                                        <div class="labelActualizar"> actualizar </div>
+                                        <div class="btn actualizar" type="submit" id="actualizar"  onclick="ava.save_avatar()"> </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -833,11 +836,13 @@
             </div>
         </div>
 
-        <div class="perfilOponente" id="perfil_oponente">
-            <div class="jugadorTurno" id="jugador_turno"> Jugador 1 </div>
-            <div class="nombreOponente" id="nombre_oponente"> Sandra </div>
-            <div class="ApellidoOponente" id="apellido_oponente"> Montoya </div>
-            <div class="imgReloj" id="relojUsuario"> <div class="tiempoReloj" id="tiempoUsuario"> 60 </div> </div>
+        <div class="container perfilUsuarioOponente">
+            <div class="containte perfilOponente" id="perfil_oponente">
+                <div class="jugadorTurno" id="jugador_turno"> Jugador 1 </div>
+                <div class="nombreOponente" id="nombre_oponente"> Sandra </div>
+                <div class="ApellidoOponente" id="apellido_oponente"> Montoya </div>
+                <div class="imgReloj" id="relojUsuario"> <div class="tiempoReloj" id="tiempoUsuario"> 60 </div> </div>
+            </div>
         </div>
 
         <div class="preguntas modal fade collapse" tabindex="-1" role="dialog" id="modal_pregunta" aria-expanded="true" style="">
@@ -846,8 +851,8 @@
                     <div class="container box_preguntas" >
                         <div class="tituloPregunta" id="pregunta_titulo"> </div>
                         <div class="textoPregunta" id="pregunta_texto"> </div>
+                        <img class="imgPregunta" id="imgPregunta" src="" style="display: none;">
                         <div class="textoRespuesta" id="texto_respuesta"> </div>
-
                         <div class="row btnsModal" id="btns_modal">
                             <div class="btn btn-block" type="submit" id="btnPregunta" onclick="document.getElementById('modal_pregunta').classList.remove('in');"> </div>
                         </div>
@@ -855,6 +860,42 @@
                 </div>
            </div>
         </div>
+
+        <div class="ganaste modal fade collapse" tabindex="-1" role="dialog" id="modal_ganaste" aria-expanded="true" style="">
+           <div class="content_modal">
+                <div class="container ganaste" >
+                    <img class="imgTerminado" src="../../resources/assets/imagenes_nuevas/PNG/tabla_terminado.png">
+                    <div class="container content_ganaste" id="contentGanaste">
+                        <div class="imgGanaste"></div>
+                        <div class="row" id="content_avatar">
+                            <div class="col-xs-1 segundo avatar0" id="">
+                                <div class="numero imgSegundo"></div>
+                                <div class="infoUsuario">
+                                    <div id="nombreUsuario2">Sandra</div>
+                                    <div class="apellido" id="apellidoUsuario2">Montoya</div>
+                                </div>
+                            </div>
+                            <div class="col-xs-1 primero avatar0" id="">
+                                <div class="numero imgPrimero"></div>
+                                <div class="infoUsuario tmp">
+                                    <div id="nombreUsuario1">Sandra</div>
+                                    <div class="apellido" id="apellidoUsuario1">Montoya</div>
+                                </div>
+                            </div>
+                            <div class="col-xs-1 tercero avatar0" id="">
+                                <div class="numero imgTercero"></div>
+                                <div class="infoUsuario">
+                                    <div id="nombreUsuario3">Sandra</div>
+                                    <div class="apellido" id="apellidoUsuario3">Montoya</div>
+                                </div>
+                            </div> 
+                        </div>
+                        <div class="btn btnNuevoJuego" id="btn_nuevoJuego" type="submit" onclick="document.getElementById('modal_ganaste').classList.remove('in');""></div>
+                    </div>
+                </div>
+           </div>
+        </div>
+
     </div>
 </body>
 </html>
