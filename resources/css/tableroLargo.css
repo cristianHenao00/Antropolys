@@ -477,10 +477,12 @@
 .containerTablero .preguntas.modal.fade.collapse.in,
 .containerTablero .preguntas.modal.fade.collapse,
 .containerTablero .ganaste.modal.fade.collapse.in,
-.containerTablero .ganaste.modal.fade.collapse
-.containerTablero .juguemos.modal.fade.collapse.in,
-.containerTablero .juguemos.modal.fade.collapse {
+.containerTablero .ganaste.modal.fade.collapse {
     background-color: rgb(152 151 151 / 48%);
+}
+
+.containerTablero .juguemos.modal {
+    display: block;
 }
 
 .container.juguemos,

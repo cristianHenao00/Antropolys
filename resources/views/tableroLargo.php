@@ -896,15 +896,13 @@
            </div>
         </div>
 
-        <div class="juguemos modal fade collapse" tabindex="-1" role="dialog" id="modal_juguemos" aria-expanded="true" style="">
-           <div class="content_modal">
-                <div class="container juguemos" >
-                    <div class="container content_juguemos" id="contentJuguemos">
-                        <div class="imgJuguemos"></div>
-                        <div class="txtJuguemos" id="txt_juguemos"> Tu turno es 03 </div>                        
-                    </div>
+        <div class="juguemos modal" id="mjuguemos">
+            <div class="container juguemos" >
+                <div class="container content_juguemos" id="contentJuguemos">
+                    <div class="imgJuguemos"></div>
+                    <div class="txtJuguemos" id="txt_juguemos"> Tu turno es 03 </div>                        
                 </div>
-           </div>
+            </div>
         </div>
 
     </div>
