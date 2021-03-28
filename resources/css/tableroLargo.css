@@ -477,10 +477,52 @@
 .containerTablero .preguntas.modal.fade.collapse.in,
 .containerTablero .preguntas.modal.fade.collapse,
 .containerTablero .ganaste.modal.fade.collapse.in,
-.containerTablero .ganaste.modal.fade.collapse {
+.containerTablero .ganaste.modal.fade.collapse
+.containerTablero .juguemos.modal.fade.collapse.in,
+.containerTablero .juguemos.modal.fade.collapse {
     background-color: rgb(152 151 151 / 48%);
 }
 
+.container.juguemos,
+.container.content_juguemos{
+    width: 380px;
+    height: 400px;
+}
+
+.container.juguemos {
+    margin-top: 4%;
+}
+
+.container.juguemos .content_juguemos{
+    background-image: url(../assets/imagenes_nuevas/PNG/tablas.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    margin-top: -15px;
+    margin-left: 25px;
+    position: relative;
+    z-index: 2;
+}
+
+.container.juguemos .content_juguemos .imgJuguemos {
+    background-image: url(../assets/imagenes_nuevas/PNG/juguemos_txt.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    width: 320px;
+    height: 180px;
+    margin-top: 50px;
+    margin-left: 25px;
+}
+
+.container.juguemos .content_juguemos .txtJuguemos {
+    font-size: 40px;
+    margin: 15px auto auto 15px;
+    font-family: "Lalezar-Regular";
+    text-align: center;
+    font-weight: bold;
+    color: saddlebrown;
+}
 
 .containerTablero .preguntas .container.boxPreguntas,
 .containerTablero .preguntas .container.box_preguntas {
@@ -862,7 +904,6 @@
     }
     
     
-
     .tableroLargo .tablero3 .content_img3 .img2,
     .tableroLargo .tablero3 .content_img3 .img3 {
         height: 52px;
@@ -919,6 +960,29 @@
         height: 60px;
         margin: auto;
         margin-top: 15px;
+    }
+
+    .container.juguemos,
+    .container.content_juguemos{
+        width: 420px;
+        height: 505px;
+        margin-left: -17px !important;
+        margin-top: 16%;
+    }
+
+    .container.content_juguemos{
+        margin-top: -82px !important;
+    }
+
+    .container.juguemos .content_juguemos .imgJuguemos {
+        width: 350px;
+        margin-top: 85px;
+        margin-left: 22px;
+    }
+
+    .container.juguemos .content_juguemos .txtJuguemos {
+        font-size: 48px;
+        margin: 22px auto auto 15px;
     }
 
 
