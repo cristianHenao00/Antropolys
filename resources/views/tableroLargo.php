@@ -900,7 +900,7 @@
             <div class="container juguemos" >
                 <div class="container content_juguemos" id="contentJuguemos">
                     <div class="imgJuguemos"></div>
-                    <div class="txtJuguemos" id="txt_juguemos"> Tu turno es 03 </div>                        
+                    <div class="txtJuguemos" id="txt_juguemos"></div>                        
                 </div>
             </div>
         </div>

@@ -41,7 +41,13 @@ class juego {
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 var fjson = JSON.parse(this.responseText);
-                msjBC.informacion('INFORMACIÓN',fjson.respuesta); 
+
+                document.getElementById('txt_juguemos').innerHTML = fjson.respuesta;
+
+                setTimeout(function(){ 
+                    document.getElementById('mjuguemos').style.display = 'none';
+                }, 2300);
+
                 if(fjson.ack){
                     orden_turno = fjson.ack;
                     ju_ego.verificate_primer_turno();
@@ -54,6 +60,7 @@ class juego {
         xhttp.send(formData);
         
     }
+
     verificate_primer_turno(){
         var formData = new FormData();           
         formData.append("key", "Q1");
