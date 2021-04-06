@@ -18,9 +18,16 @@ class juego {
             case 'C2':
                 $res = $this->save_response();
                 break;
+            case 'C3':
+                $res = $this->save_response_otro();
+                break;
             case 'Q3':
                 $res = $this->conocer_mi_turno();
                 break;
+            case 'C4':
+                $res = $this->saltar_turno();
+                break;
+            
             
         }
 
@@ -220,6 +227,76 @@ class juego {
         return $mensajes;
     }
     
+    private function save_response_otro() {
+        $mensajes['ack'] = 0;
+        session_start();//iniciando session 
+        $mysqli = $this->conectar();
+        $idpregunta = 0;
+        $respuesta = '';
+        $idposicion = 0;
+        $tiempo = 0;
+        $idjuego = $_SESSION['data_game_antropolys']['idjuegos'];
+        $iduser = $_SESSION['data_user_antropolys']['iduser'];
+        
+        
+        $turno_de = $_POST['turno_de'];
+        
+        $sql = 'SELECT * FROM turno_actual WHERE juegosid = '.$idjuego;
+
+        $result = $mysqli->query($sql);
+        if ($result->num_rows > 0) {
+            $turno  = $result->fetch_array(MYSQLI_ASSOC);//array los datos arrojados
+            $mensajes['respuesta'] = $turno;
+            if($turno['userid'] == $turno_de){//si el turno actual es el mismo del parámetro
+                $sql = "INSERT INTO contestar (userid,idposition,idpregunta,respuesta,juegosid,turno,tiempo) 
+                        VALUES ($turno_de,$idposicion,$idpregunta,'$respuesta',$idjuego,$turno,$tiempo)";
+                if($result1 = $mysqli->query($sql)){
+
+                        $turno_actual  = $result->fetch_array(MYSQLI_ASSOC);//array los datos arrojados
+                        $id_turno_actual = $turno_actual['idturno'];
+                        $sql = 'SELECT * FROM order_turno t
+                                inner join users u on u.iduser = t.userid
+                                WHERE t.turno = '.($turno+1) .' AND t.juegosid = '.$idjuego;
+                        $result2 = $mysqli->query($sql);
+
+                        if (($result2->num_rows > 0)) {
+                            $next_turno  = $result2->fetch_array(MYSQLI_ASSOC);//array los datos arrojados
+                            $id_user_next_turno = $next_turno['userid'];
+
+                            $sql = 'UPDATE turno_actual SET userid=' .$id_user_next_turno. '
+                                    WHERE idturno= ' .$id_turno_actual;
+                            $result = $mysqli->query($sql);
+                            $mensajes['ack']  = 1;
+                            $mensajes['respuesta'] = $next_turno;
+                        }else{
+                            $sql = 'SELECT * FROM order_turno t
+                            inner join users u on u.iduser = t.userid
+                            WHERE t.juegosid = '.$idjuego. ' ORDER BY t.turno LIMIT 1';
+
+                            $result3 = $mysqli->query($sql);
+                            if (($result3->num_rows > 0)) {
+                                $next_turno  = $result3->fetch_array(MYSQLI_ASSOC);//array los datos arrojados
+                                $id_user_next_turno = $next_turno['userid'];
+                                $sql = 'UPDATE turno_actual SET userid=' .$id_user_next_turno. ' WHERE idturno= ' .$id_turno_actual;
+                                $result = $mysqli->query($sql);
+                                $mensajes['ack']  = 1;
+                                $mensajes['respuesta']  = $next_turno;
+                            }
+                        }
+                    
+                }
+            }
+        }
+        
+        
+        
+        
+        
+                
+        $this->close_conexion($mysqli);
+        return $mensajes;
+    }
+    
     private function conocer_mi_turno() {
         $mensajes['ack'] = 0;
         session_start();//iniciando session 
@@ -253,6 +330,41 @@ class juego {
                 $mensajes['turnos'] = array();
                 while ($fila = $result1->fetch_array(MYSQLI_ASSOC))$mensajes['turnos'][] = $fila;
             } 
+        }
+        $this->close_conexion($mysqli);
+        return $mensajes;
+        
+    }
+    
+    
+    private function saltar_turno() {
+        $mensajes['ack'] = 0;
+        session_start();//iniciando session 
+        $mysqli = $this->conectar();
+        $idjuego = $_SESSION['data_game_antropolys']['idjuegos'];
+        $iduser = $_SESSION['data_user_antropolys']['iduser'];
+        $turno_de = $_POST['turno_de'];
+        
+        $sql = 'SELECT t.*, u.*, j.ganador, o.turno,
+                CASE
+                    WHEN j.ganador = 0 THEN "NA" 
+                    ELSE (SELECT CONCAT(nombre, " ", apellido) FROM users WHERE iduser = j.ganador)
+                END AS name_ganador,
+                (SELECT idposition FROM contestar WHERE userid = t.userid 
+                    ORDER BY idcontestar DESC LIMIT 1) AS pos_otro
+                FROM turno_actual t
+                INNER JOIN order_turno o ON (o.userid = t.userid AND o.juegosid = t.juegosid)
+                INNER JOIN users u ON u.iduser = t.userid
+                INNER JOIN juegos j ON idjuegos = t.juegosid
+                WHERE t.juegosid = '.$idjuego;
+
+        $result = $mysqli->query($sql);
+        if ($result->num_rows > 0) {
+            $turno  = $result->fetch_array(MYSQLI_ASSOC);//array los datos arrojados
+            $mensajes['respuesta'] = $turno;
+            if($turno['turno'] == $turno_de){//si el turno actual es el mismo del parámetro
+                
+            }
         }
         $this->close_conexion($mysqli);
         return $mensajes;

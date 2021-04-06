@@ -41,7 +41,13 @@ class juego {
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 var fjson = JSON.parse(this.responseText);
-                msjBC.informacion('INFORMACIÓN',fjson.respuesta); 
+
+                document.getElementById('txt_juguemos').innerHTML = fjson.respuesta;
+
+                setTimeout(function(){ 
+                    document.getElementById('mjuguemos').style.display = 'none';
+                }, 2300);
+
                 if(fjson.ack){
                     orden_turno = fjson.ack;
                     ju_ego.verificate_primer_turno();
@@ -54,6 +60,7 @@ class juego {
         xhttp.send(formData);
         
     }
+
     verificate_primer_turno(){
         var formData = new FormData();           
         formData.append("key", "Q1");
@@ -374,10 +381,7 @@ class juego {
     terminar_otro_contador(){
         clearInterval(timer_otro);
         document.getElementById('perfil_oponente').style.display = 'none';
-        
-        setTimeout(function(){ 
-            tiempo_contador_otro = 60;
-        }, 1500);
+        if(tiempo_contador_otro < 1)    ju_ego.save_respuesta_otro(turno_de)
     }
     
     save_respuesta(idpreguntas = 0, respuesta = 0, gano = 0){
@@ -417,6 +421,22 @@ class juego {
         document.getElementById('apellido_oponente').innerHTML = obj.apellido;
         
         timer_otro = setInterval(ju_ego.showRemaining_otro, 1000);
+    }
+    
+    save_respuesta_otro(t){
+        //guardar respuesta y dar nuevo turno //pregunta_actual.respuesta.
+        var formData = new FormData();           
+        formData.append("key", "C3");
+        formData.append("turno_de", t);     
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var fjson = JSON.parse(this.responseText);
+                if(fjson.ack==1) ju_ego.conocer_mi_turno();
+            }
+        };
+        xhttp.open("post", '../../class/juego.php', true);
+        xhttp.send(formData);
     }
     
     
