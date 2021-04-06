@@ -421,6 +421,10 @@
     background-position: bottom;
 }
 
+.containerTablero .perfilDados .imgReloj {
+    display: none;
+}
+
 .containerTablero .perfilOponente .imgReloj {
     left: 150px;
     top: 26px;
@@ -471,10 +475,56 @@
 .containerTablero .perfilDados .modal.fade.collapse.in,
 .containerTablero .perfilDados .modal.fade.collapse,
 .containerTablero .preguntas.modal.fade.collapse.in,
-.containerTablero .preguntas.modal.fade.collapse {
+.containerTablero .preguntas.modal.fade.collapse,
+.containerTablero .ganaste.modal.fade.collapse.in,
+.containerTablero .ganaste.modal.fade.collapse {
     background-color: rgb(152 151 151 / 48%);
 }
 
+.containerTablero .juguemos.modal {
+    display: block;
+}
+
+.container.juguemos,
+.container.content_juguemos{
+    width: 380px;
+    height: 400px;
+}
+
+.container.juguemos {
+    margin-top: 4%;
+}
+
+.container.juguemos .content_juguemos{
+    background-image: url(../assets/imagenes_nuevas/PNG/tablas.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    margin-top: -15px;
+    margin-left: 25px;
+    position: relative;
+    z-index: 2;
+}
+
+.container.juguemos .content_juguemos .imgJuguemos {
+    background-image: url(../assets/imagenes_nuevas/PNG/juguemos_txt.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    width: 320px;
+    height: 180px;
+    margin-top: 50px;
+    margin-left: 25px;
+}
+
+.container.juguemos .content_juguemos .txtJuguemos {
+    font-size: 40px;
+    margin: 15px auto auto 15px;
+    font-family: "Lalezar-Regular";
+    text-align: center;
+    font-weight: bold;
+    color: saddlebrown;
+}
 
 .containerTablero .preguntas .container.boxPreguntas,
 .containerTablero .preguntas .container.box_preguntas {
@@ -488,12 +538,12 @@
     background-repeat: no-repeat;
     background-position: center;
     background-color: unset;
-    background-size: cover;
+    background-size: 100% 100%;
     margin: auto;
     margin-top: 3vh;
     font-family: "Lalezar-Regular";
     width: 70vw;
-    height: 70vh;
+    height: 90vh;
 }
 
 
@@ -502,20 +552,26 @@
     background-repeat: no-repeat;
     background-position: center;
     margin: auto;
-    margin-top: 25px;
+    margin-top: 8vh;
     margin-bottom: -25px;
     height: 100px;
     width: 65px;
 }
 
 .containerTablero .preguntas.modal.fade.collapse.in .textoPregunta {
-    margin: auto;
-    margin-top: 15px;
-    margin-bottom: 10px;
+    margin: 15px auto 0px auto;
     width: 75%;
     text-align: center;
     font-size: 2.5vh;
     color: saddlebrown;
+}
+
+.containerTablero .preguntas.modal.fade.collapse.in .imgPregunta {
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 15vh;
+    margin: auto;
 }
 
 .containerTablero .preguntas.modal.fade.collapse.in .textoArea {
@@ -751,7 +807,7 @@
     }
     
     .containerTablero .perfilDados .btn.btnDados {
-        margin-left: 8px;
+        margin-left: 86px;
         margin-top: -7px;
         height: 62px;
         width: 50px;
@@ -850,7 +906,6 @@
     }
     
     
-
     .tableroLargo .tablero3 .content_img3 .img2,
     .tableroLargo .tablero3 .content_img3 .img3 {
         height: 52px;
@@ -907,6 +962,29 @@
         height: 60px;
         margin: auto;
         margin-top: 15px;
+    }
+
+    .container.juguemos,
+    .container.content_juguemos{
+        width: 420px;
+        height: 505px;
+        margin-left: -17px !important;
+        margin-top: 16%;
+    }
+
+    .container.content_juguemos{
+        margin-top: -82px !important;
+    }
+
+    .container.juguemos .content_juguemos .imgJuguemos {
+        width: 350px;
+        margin-top: 85px;
+        margin-left: 22px;
+    }
+
+    .container.juguemos .content_juguemos .txtJuguemos {
+        font-size: 48px;
+        margin: 22px auto auto 15px;
     }
 
 
