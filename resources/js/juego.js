@@ -381,6 +381,7 @@ class juego {
     terminar_otro_contador(){
         clearInterval(timer_otro);
         document.getElementById('perfil_oponente').style.display = 'none';
+        //ju_ego.conocer_mi_turno = null;
         if(tiempo_contador_otro < 1)    ju_ego.save_respuesta_otro(turno_de)
     }
     
@@ -432,7 +433,7 @@ class juego {
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 var fjson = JSON.parse(this.responseText);
-                if(fjson.ack==1) ju_ego.conocer_mi_turno();
+                //if(fjson.ack==1) ju_ego.conocer_mi_turno();
             }
         };
         xhttp.open("post", '../../class/juego.php', true);

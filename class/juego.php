@@ -244,22 +244,33 @@ class juego {
         $sql = 'SELECT * FROM turno_actual WHERE juegosid = '.$idjuego;
 
         $result = $mysqli->query($sql);
+        
         if ($result->num_rows > 0) {
             $turno  = $result->fetch_array(MYSQLI_ASSOC);//array los datos arrojados
             $mensajes['respuesta'] = $turno;
-            if($turno['userid'] == $turno_de){//si el turno actual es el mismo del parámetro
-                $sql = "INSERT INTO contestar (userid,idposition,idpregunta,respuesta,juegosid,turno,tiempo) 
-                        VALUES ($turno_de,$idposicion,$idpregunta,'$respuesta',$idjuego,$turno,$tiempo)";
-                if($result1 = $mysqli->query($sql)){
+            $sql = 'SELECT * FROM order_turno WHERE turno = '.$turno_de.' AND juegosid = '.$idjuego;
+            $result5 = $mysqli->query($sql);
+            
+            if ($result5->num_rows > 0) {
+                
+                $turno2  = $result5->fetch_array(MYSQLI_ASSOC);//array los datos arrojados
+                //
+                if($turno2['turno'] == $turno_de){//si el turno actual es el mismo del parámetro
+                    $us = $turno2['userid'];
+                    
+                    $sql = "INSERT INTO contestar (userid,idposition,idpregunta,respuesta,juegosid,turno,tiempo) 
+                            VALUES ($us,$idposicion,$idpregunta,'$respuesta',$idjuego,$turno_de,$tiempo)";
 
-                        $turno_actual  = $result->fetch_array(MYSQLI_ASSOC);//array los datos arrojados
-                        $id_turno_actual = $turno_actual['idturno'];
+                    if($result1 = $mysqli->query($sql)){
+
+                        $id_turno_actual = $turno['idturno'];
                         $sql = 'SELECT * FROM order_turno t
                                 inner join users u on u.iduser = t.userid
-                                WHERE t.turno = '.($turno+1) .' AND t.juegosid = '.$idjuego;
+                                WHERE t.turno = '.($turno_de+1) .' AND t.juegosid = '.$idjuego;
                         $result2 = $mysqli->query($sql);
 
                         if (($result2->num_rows > 0)) {
+
                             $next_turno  = $result2->fetch_array(MYSQLI_ASSOC);//array los datos arrojados
                             $id_user_next_turno = $next_turno['userid'];
 
@@ -275,17 +286,21 @@ class juego {
 
                             $result3 = $mysqli->query($sql);
                             if (($result3->num_rows > 0)) {
+
                                 $next_turno  = $result3->fetch_array(MYSQLI_ASSOC);//array los datos arrojados
                                 $id_user_next_turno = $next_turno['userid'];
                                 $sql = 'UPDATE turno_actual SET userid=' .$id_user_next_turno. ' WHERE idturno= ' .$id_turno_actual;
                                 $result = $mysqli->query($sql);
+
                                 $mensajes['ack']  = 1;
                                 $mensajes['respuesta']  = $next_turno;
                             }
                         }
-                    
+
+                    }
                 }
             }
+                
         }
         
         
