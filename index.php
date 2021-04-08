@@ -95,7 +95,7 @@ and open the template in the editor.
                         <div class="bloque">
                             <div class="cargoProyecto"> Desarrollo pedagógico </div>
                             <div class="nombreIntegrante"> Dora Inés Orduz Camelo </div>
-                            <div class="nombreIntegrante"> Camilo Ramírez </div>
+                            <div class="nombreIntegrante"> Camilo Motoa Ramírez </div>
                         </div>
                         <div class="bloque">
                             <div class="cargoProyecto"> Diseño gráfico e interfaz </div>
