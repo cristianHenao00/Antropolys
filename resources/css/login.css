@@ -19,6 +19,7 @@
   background-position: center;
   background-size: cover;
   min-height: 88vh;
+  overflow-y: hidden;
 }
 
 .container {
@@ -27,7 +28,8 @@
   margin-top: 4%;
 }
 
-.formContainer {
+.formContainer,
+.container .content_creditosInfo {
   background-image: url(../assets/imagenes_nuevas/PNG/tablero_solo.png);
   background-repeat: no-repeat;
   background-position: center;
@@ -37,7 +39,8 @@
   position: relative;
 }
 
-.imgLogin {
+.imgLogin,
+.container .creditos.modal .imgCreditosInfo {
   width: 55%;
   margin-left: 95px;
   z-index: 1;
@@ -166,14 +169,14 @@
   z-index: -1;
 }
 
-.container .modal.fade.collapse.in .contentAviso , 
+.container .modal.fade.collapse.in .contentAviso,
 .container .modal.fade.collapse .contentAviso,
 .container .modal.fade.collapse.in .contentAvisoImg,
 .container .modal.fade.collapse .contentAvisoImg {
   width: 520px;
 }
 
-.container .modal.fade.collapse.in .contentAvisoImg , 
+.container .modal.fade.collapse.in .contentAvisoImg,
 .container .modal.fade.collapse .contentAvisoImg {
   background-image: url(../assets/imagenes_nuevas/PNG/hoja_PopUp.png);
   background-repeat: no-repeat;
@@ -183,13 +186,14 @@
   font-family: "Lalezar-Regular";
 }
 
-.container .modal.fade.collapse.in, 
-.container .modal.fade.collapse  {
+.container .modal.fade.collapse.in,
+.container .modal.fade.collapse,
+.container .creditos.modal {
   background-color: rgb(152 151 151 / 48%);
 }
 
-.container .modal.fade.collapse.in .textAviso, 
-.container .modal.fade.collapse  .textAviso {
+.container .modal.fade.collapse.in .textAviso,
+.container .modal.fade.collapse .textAviso {
   color: saddlebrown;
   margin-top: 105px;
   margin-left: 60px;
@@ -199,7 +203,7 @@
   font-size: 35px;
 }
 
-.container .modal.fade.collapse.in .btnsModal, 
+.container .modal.fade.collapse.in .btnsModal,
 .container .modal.fade.collapse .btnsModal {
   margin-left: 90px;
   margin-top: 15px;
@@ -226,9 +230,54 @@
   height: 50px;
 }
 
-.container .modal.fade.collapse.in .btnsModal .btn2, 
+.container .modal.fade.collapse.in .btnsModal .btn2,
 .container .modal.fade.collapse .btnsModal .btn2 {
   margin-left: 50px;
+}
+
+.container .btn_info {
+  background-image: url(../assets/imagenes_nuevas/PNG/btn_info.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: unset;
+  background-size: 100%;
+  position: fixed;
+  width: 45px;
+  height: 70px;
+  bottom: 0;
+  right: 15px;
+}
+
+.container .creditos.modal .content_creditosInfo .btnCerrarInfo {
+  background-image: url(../assets/imagenes_nuevas/PNG/btn_cerrar.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: unset;
+  background-size: 100%;
+  position: fixed;
+  width: 70px;
+  height: 45px;
+  margin-left: 295px;
+}
+
+
+.container .content_creditosInfo {
+  margin-left: -10px;
+}
+
+.container .content_creditosInfo .infoProyecto {
+  font-family: "Lalezar-Regular";
+  text-align: center;
+  font-size: 18px;
+  margin-top: 50px;
+}
+
+.container .content_creditosInfo .infoProyecto .cargoProyecto {
+  color: saddlebrown;
+}
+
+.container .content_creditosInfo .infoProyecto .bloque {
+  margin-bottom: 10px;
 }
 
 @media screen and (max-width: 480px) {
@@ -249,7 +298,8 @@
     margin-top: 6%;
   }
 
-  .imgLogin {
+  .imgLogin,
+  .container .creditos.modal .imgCreditosInfo {
     margin-left: 80px;
   }
 
@@ -323,7 +373,7 @@
     margin-left: -25px;
   }
 
-  .container .modal.fade.collapse.in .contentAviso , 
+  .container .modal.fade.collapse.in .contentAviso,
   .container .modal.fade.collapse .contentAviso,
   .container .modal.fade.collapse.in .contentAvisoImg,
   .container .modal.fade.collapse .contentAvisoImg {
@@ -333,14 +383,14 @@
     margin-top: 20%;
   }
 
-  .container .modal.fade.collapse.in .textAviso, 
+  .container .modal.fade.collapse.in .textAviso,
   .container .modal.fade.collapse .textAviso {
     margin-top: 70px;
     margin-left: -5px;
     font-size: 25px;
   }
 
-  .container .modal.fade.collapse.in .btnsModal, 
+  .container .modal.fade.collapse.in .btnsModal,
   .container .modal.fade.collapse .btnsModal {
     margin-top: 0px;
     margin-left: 72px;
@@ -357,9 +407,27 @@
     height: 45px;
   }
 
-  .container .modal.fade.collapse.in .btnsModal .btn2, 
+  .container .modal.fade.collapse.in .btnsModal .btn2,
   .container .modal.fade.collapse .btnsModal .btn2 {
     margin-left: 25px;
+  }
+
+  .container .btn_info {
+    bottom: 170px;
+    left: 180px;
+  }
+
+  .container .creditos.modal .content_creditosInfo .btnCerrarInfo {
+    margin-left: 240px;
+    margin-top: 35px;
+  }
+
+  .container .content_creditosInfo .infoProyecto {
+    margin-top: 60px;
+  }
+
+  .container .content_creditosInfo .infoProyecto .bloque {
+    margin-bottom: 6px;
   }
 
 }

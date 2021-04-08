@@ -79,6 +79,37 @@ and open the template in the editor.
                 </div>
            </div>
         </div>
+
+        <div class="btn btn-block btn_info" type="submit" id="btnInfo" onclick="document.getElementById('creditos_info').style.display = 'block';"></div>
+
+        <div class="creditos modal" id="creditos_info">
+            <div class="container creditosInfo" >
+                <img class="imgCreditosInfo" id="img_creditosInfo" src="resources/assets/imagenes_nuevas/PNG/creditos.png"> 
+                <div class="container content_creditosInfo" id="contentCreditosInfo">
+                    <div class="btn btn-block btnCerrarInfo" type="submit" id="btn_cerrarInfo" onclick="document.getElementById('creditos_info').style.display = 'none';"></div>
+                    <div class="infoProyecto">
+                        <div class="bloque">
+                            <div class="cargoProyecto"> Autor intelectual </div>
+                            <div class="nombreIntegrante"> Dora Inés Orduz Camelo </div>
+                        </div>
+                        <div class="bloque">
+                            <div class="cargoProyecto"> Desarrollo pedagógico </div>
+                            <div class="nombreIntegrante"> Dora Inés Orduz Camelo </div>
+                            <div class="nombreIntegrante"> Camilo Ramírez </div>
+                        </div>
+                        <div class="bloque">
+                            <div class="cargoProyecto"> Diseño gráfico e interfaz </div>
+                            <div class="nombreIntegrante"> Edwin Mauricio Ortiz Solorzano </div>
+                        </div>
+                        <div class="bloque">
+                            <div class="cargoProyecto"> Desarrollo </div>
+                            <div class="nombreIntegrante"> Daniela Liliana Sierra Vergel </div>
+                        </div>
+                    </div>          
+                </div>
+            </div>
+        </div>
+
     </div>
     
 </body>
