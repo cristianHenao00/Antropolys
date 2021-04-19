@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Admin Preguntas</title>
+        <title>Admin Jugadores</title>
         <link rel="icon" type="image/png" href="../../../resources/assets/pix/favico.png">
         <!-- Tell the browser to be responsive to screen width -->
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -25,18 +25,20 @@
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
+        
+        
         <link rel="stylesheet" href="../../../resources/css/admin.css">
         <link rel="stylesheet" href="../../../resources/css/tostadas/pnotify.brighttheme.css">
         <link rel="stylesheet" href="../../../resources/css/tostadas/pnotify.buttons.css">
         <link rel="stylesheet" href="../../../resources/css/tostadas/pnotify.css">
+        <link rel="stylesheet" href="../../../resources/css/datatables.css">
 
         <script src="../../js/tostadas/pnotify.js"></script>
         <script src="../../js/tostadas/pnotify.animate.js"></script>
         <script src="../../js/tostadas/pnotify.buttons.js"></script>
         <script src="../../js/tostadas/mensajes.js"></script>
-
-        <script src="../../js/admin/preguntas.js"></script>
+        
+        <script src="../../js/admin/admin.js"></script>
         <style>
             .table-bordered>thead>tr>th, .table-bordered>tbody>tr>th, 
             .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, 
@@ -48,7 +50,7 @@
         
     </head>
     
-    <body  id="body_juego" onload="pre.list_preguntas()" class="hold-transition skin-blue sidebar-mini">
+    <body  id="body_juego" onload="pre.list_respuestas()" class="hold-transition skin-blue sidebar-mini">
         <?php session_start();?>
         <div class="wrapper">
 
@@ -97,25 +99,17 @@
                     <ul class="sidebar-menu" data-widget="tree">
                         <li class="header">MENÚ NAVEGACIÓN</li>
                         
-                        <li class="preguntas active">
-                            <a href="#">
+                        <li class="preguntas">
+                            <a href="preguntas.php">
                                 <i class="fa fa-question-circle"></i> 
                                 <span>PREGUNTAS</span>
                             </a>
                         </li>                     
-                        <li class="jugadores">
+                        <li class="jugadores ">
                             <a href="jugadores.php">
-                                <i class="fa fa-group"></i> 
+                                <i class="fa fa-users"></i> 
                                 <span>JUGADORES</span>
-                                <!--<span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>-->
                             </a>
-                            <!--<ul class="treeview-menu" style="display: none;">
-                                <li><a href=""><i class="fa fa-circle-o"></i> </a></li>
-                                <li><a href=""><i class="fa fa-circle-o"></i> </a></li>
-                                <li><a href=""><i class="fa fa-circle-o"></i> </a></li>
-                            </ul>-->
                         </li>
                         <li class="jugadores">
                             <a href="partidas.php">
@@ -123,8 +117,8 @@
                                 <span>PARTIDAS</span>
                             </a>
                         </li>
-                        <li class="jugadores">
-                            <a href="respuestas.php">
+                        <li class="jugadores active">
+                            <a href="#">
                                 <i class="fa fa-tasks"></i> 
                                 <span>RESPUESTAS</span>
                             </a>
@@ -149,65 +143,37 @@
             
             //echo '<button type="button" class="btn btn-success">Crear Juego</button>';
             ?>
-            <div class="content-wrapper" id="vista_content" style="float: left;">
+            <div class="content-wrapper" id="vista_content" style="float: left">
                 <br>
             <?php    echo '<h3>Hola Admin ' . $_SESSION['data_user_antropolys']['nombre'] . '</h3>';?>
-                <form method='post' class="form-question text-center" id="question" role="form"  enctype="multipart/form-data" accept="image/png, image/jpeg">
-                    <div class="col-sm-4" id="content_question">
-                        <h3>Preguntas</h3>
-                        <label id="label_name" for="nombre_pregunta"> Enunciado de la pregunta </label>
-                        <textarea type="text" class="form-control" name="nombre" id="nombre_pregunta" placeholder="Pregunta?"></textarea>
-                        <input type="hidden" class="form-control" name="idpreguntas" id="idpreguntas" value="0">
-                        <br>
-                        <label id="label_select_nivel" for="select_nivel"> Nivel de pregunta </label>
-                        <select id="select_nivel" name="nivel">
-                            <option value="1">Normal</option>
-                            <option value="2">Dif&iacutecil</option>
-                        </select>
-                        <br><br>
-                        <label id="label_select_tipo" for="select_tipo"> Tipo de pregunta </label>
-                        <select id="select_tipo" name="tipo">
-                            <option value="0">Abierta</option>
-                            <option value="1">Opc M&uacuteltiple</option>
-                        </select>
-                        <br><br>
-                        <label id="label_respuesta" for="respuesta_pregunta"> Separe con un menos las posibles respuestas (-) 
-                                y con asterisco (*) la respuesta correcta. <br>
-                                Para las preguntas abiertas separe las palabras con una coma (,)</label>
-                        <textarea class="form-control" name="respuestas" id="respuesta_pregunta" 
-                                  placeholder="-Respuesta 1 -Respuesta2 -*Respuesta3Correcta" rows="6"></textarea>
-                        <br>
-                        <label id="label_file" for="file"> Cargar imágen </label>
-                        <input type="file" name="file" id="file" placeholder="Subir archivo">
-                        <br><br>
-                        <button type="button" class="btn btn-primary" onclick="pre.valid_save_questions()">Cargar pregunta</button>
-                        <button type="button" class="btn btn-success" onclick="pre.limpiar_forma()">Limpiar </button>
-                    </div>
-                    <div class="col-sm-8">
-                        <h3>Lista de Preguntas</h3>
-                        <table class="table table-striped table-bordered">
-                            <thead>
-                              <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Nombre</th>
-                                <th scope="col">Categoría</th>
-                                <th scope="col">Respuestas</th>
-                                <th scope="col">Img</th>
-                                <th scope="col">Editar</th>
-                              </tr>
-                            </thead>
-                            <tbody id="list_preguntas">
-                                
-                            </tbody>
-                        </table>
-                    </div>
-                </form>
+                <div class="col-sm-12" id="content_question">
+                    <h3>Jugadores</h3>
+                    <table class="table table-striped table-bordered" id="respuestas">
+                        <thead>
+                          <tr>
+                            <th scope="col">id</th>
+                            <th scope="col">Pregunta</th>
+                            <th scope="col">Clase</th>
+                            <th scope="col">Nivel</th>
+                            <th scope="col"># Correctas</th>
+                            <th scope="col"># Incorrectas</th>
+                            <th scope="col"># Muertas Tiempo</th>
+                          </tr>
+                        </thead>
+                        <tbody id="list_preguntas">
+
+                        </tbody>
+                    </table>
+                </div>
+
+                
+                    
             </div>
             <?php
             
         } else {
             echo '<h2>No tiene permisos de admin</h2>';
-            
+            header("Location: https://antropolys.com/index.php");
         }
         ?>
 
@@ -222,11 +188,8 @@
         <!-- AdminLTE App -->
         <script src="https://adminlte.io/themes/AdminLTE/dist/js/adminlte.min.js"></script>
        
+        <script src="../../js/datatables.min.js"></script>
         
-        <script>
-         
-                
-        </script>
     </body>
 
 </html>

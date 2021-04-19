@@ -52,13 +52,13 @@
                             
                             <li class="dropdown user user-menu">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <img src="https://www.holamascota.com/publicaciones/css/admin/img/user.png" class="user-image" alt="User Image">
+                                    <img src="../../assets/imagenes_nuevas/PNG/avatar_00.png" class="user-image" alt="User Image">
                                     <span class="hidden-xs">Administrador</span>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <!-- User image -->
                                     <li class="user-header">
-                                        <img src="https://www.holamascota.com/publicaciones/css/admin/img/user.png" class="img-circle" alt="User Image">
+                                        <img src="../../assets/imagenes_nuevas/PNG/avatar_00.png" class="img-circle" alt="User Image">
                                         <p>
                                            
                                         </p>
@@ -85,7 +85,7 @@
                     <!-- Sidebar user panel -->
                     <div class="user-panel">
                         <div class="pull-left image">
-                            <img src="https://www.holamascota.com/publicaciones/css/admin/img/user.png"" class="img-circle" alt="User Image">
+                            <img src="../../assets/imagenes_nuevas/PNG/avatar_00.png"" class="img-circle" alt="User Image">
                         </div>
                         <div class="pull-left info">
                             <p>Administrador</p>

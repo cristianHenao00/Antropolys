@@ -163,8 +163,8 @@ class conexion {
                 $st_pre = implode(",",$preguntas);
             }
             
-            $sql = "INSERT INTO juegos (estado, idlongitud, user_create, idnivel, preguntas) 
-                        values ('1', '$longitud', '$user_create', '$nivel', '$st_pre')";
+            $sql = "INSERT INTO juegos (estado, idlongitud, user_create, idnivel, preguntas, creado) 
+                        values ('1', '$longitud', '$user_create', '$nivel', '$st_pre', CONVERT_TZ(NOW(),'SYSTEM','America/Bogota'))";
 
             $result = $mysqli->query($sql);
             if($result){

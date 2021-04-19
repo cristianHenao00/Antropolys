@@ -359,13 +359,18 @@ class juego {
         document.getElementById('tiempoUsuarioMi').style.color = 'red';
         document.getElementById('tiempoUsuarioMi').classList.add("flash");
         document.getElementById('btnDados').style.display = 'none';
+        document.getElementById('modal_pregunta').classList.remove('in');
+        
         
         setTimeout(function(){ 
             tiempo_contador = 60;
             document.getElementById('tiempoUsuarioMi').classList.remove("flash");
             document.getElementById('relojUsuarioMi').style.display = 'none';
             
-            if(t == 1) ju_ego.save_respuesta();
+            if(t == 1){ 
+                ju_ego.save_respuesta();
+                document.getElementById('btnPosicion_'+my_pos_posible).style.display = 'none';
+            }
             
         }, 1500);
     }
